@@ -11,8 +11,7 @@
     <RootNamespace>Comptime_Calculator</RootNamespace>
     <AssemblyName>Comptime Calculator</AssemblyName>
     <MyType>WindowsForms</MyType>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>time.ico</ApplicationIcon>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <ManifestCertificateThumbprint>ECB8F3FA47EB5C40EB1A60AB04637B91DDB05F93</ManifestCertificateThumbprint>
     <ManifestKeyFile>Comptime Calculator_TemporaryKey.pfx</ManifestKeyFile>
@@ -39,7 +38,7 @@
     <PublisherName>Shon Garrison</PublisherName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>4.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -147,7 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <BaseApplicationManifest Include="My Project\app.manifest" />
-    <None Include="Comptime Calculator_TemporaryKey.pfx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
