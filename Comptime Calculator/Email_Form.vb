@@ -90,11 +90,11 @@ Public Class frm_Email
 
     Private Sub frm_Email_Load(sender As Object, e As System.EventArgs) Handles Me.Load
 
-        Cmb_txt.Items.Add("spruett@co.orange.tx.us")
+        Cmb_txt.Items.Add("[Enter/Select One]")
         Cmb_txt.Items.Add("ccorder@co.orange.tx.us")
 
         'sets default email selection
-        Cmb_txt.SelectedIndex = 1
+        Cmb_txt.SelectedIndex = 0
 
 
         txt_Subject.Text = ESubject
