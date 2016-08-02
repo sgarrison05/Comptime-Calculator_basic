@@ -416,7 +416,7 @@ Public Class frm_Main
         End If
 
     End Sub
-    
+
     Public Sub PreviewCalculations()
 
         'declare variables

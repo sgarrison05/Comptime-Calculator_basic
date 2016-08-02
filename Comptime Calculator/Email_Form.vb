@@ -13,16 +13,46 @@ Public Class frm_Email
         Dim pathAttach As String = txt_Path.Text
         Dim today As Date = Date.Now
         Dim SMTPClient As New SmtpClient
+        Dim emailChoice As String
 
+        Me.cboxEmailProvider.Items.Add("County/Local")
+        Me.cboxEmailProvider.Items.Add("Google")
+        Me.cboxEmailProvider.Items.Add("Yahoo")
+        Me.cboxEmailProvider.Items.Add("AT&T")
+        Me.cboxEmailProvider.Items.Add("MSN")
 
-        SMTPClient.Host = "orangeco1.co.orange.tx.us"
-        SMTPClient.Port = 24
+        emailChoice = Me.cboxEmailProvider.Text
+
+        Select Case emailChoice
+
+            Case "County/Local"
+
+                SMTPClient.Host = "orangeco1.co.orange.tx.us"
+                SMTPClient.Port = 24
+
+            Case "Google"
+                SMTPClient.Host = "smtp.gmail.com"
+                SMTPClient.Port = 465
+
+            Case "AT&T"
+                SMTPClient.Host = "outbound.att.net"
+                SMTPClient.Port = 465
+
+            Case "Yahoo"
+                SMTPClient.Host = "smtp.mail.yahoo.com"
+                SMTPClient.Port = 465
+
+            Case "MSN"
+                SMTPClient.Host = "smtp.live.com"
+                SMTPClient.Port = 587
+
+        End Select
 
         Dim UsernamePassword As New Net.NetworkCredential(username, _
-                                                            pw)
+                                                                    pw)
         SMTPClient.Credentials = UsernamePassword
 
-        Dim fromSender As String = username & "@co.orange.tx.us"
+        Dim fromSender As String = username
         Dim toReceipiant As String = Cmb_txt.Text
 
         Dim MsgBody As String = txt_Msg.Text
@@ -49,7 +79,7 @@ Public Class frm_Email
             MsgBox("Error...Something went wrong! Please Try again later.")
 
         End Try
-        
+
 
     End Sub
 
