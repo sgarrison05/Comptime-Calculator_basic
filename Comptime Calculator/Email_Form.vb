@@ -15,11 +15,6 @@ Public Class frm_Email
         Dim SMTPClient As New SmtpClient
         Dim emailChoice As String
 
-        Me.cboxEmailProvider.Items.Add("County/Local")
-        Me.cboxEmailProvider.Items.Add("Google")
-        Me.cboxEmailProvider.Items.Add("Yahoo")
-        Me.cboxEmailProvider.Items.Add("AT&T")
-        Me.cboxEmailProvider.Items.Add("MSN")
 
         emailChoice = Me.cboxEmailProvider.Text
 
@@ -33,24 +28,29 @@ Public Class frm_Email
             Case "Google"
                 SMTPClient.Host = "smtp.gmail.com"
                 SMTPClient.Port = 465
+                SMTPClient.EnableSsl = True
 
             Case "AT&T"
                 SMTPClient.Host = "outbound.att.net"
                 SMTPClient.Port = 465
+                SMTPClient.EnableSsl = True
 
             Case "Yahoo"
                 SMTPClient.Host = "smtp.mail.yahoo.com"
                 SMTPClient.Port = 465
+                SMTPClient.EnableSsl = True
 
             Case "MSN"
                 SMTPClient.Host = "smtp.live.com"
-                SMTPClient.Port = 587
+                SMTPClient.Port = 465
+                SMTPClient.EnableSsl = True
 
         End Select
 
         Dim UsernamePassword As New Net.NetworkCredential(username, _
                                                                     pw)
         SMTPClient.Credentials = UsernamePassword
+
 
         Dim fromSender As String = username
         Dim toReceipiant As String = Cmb_txt.Text
@@ -64,6 +64,8 @@ Public Class frm_Email
         Dim MsgAtt As New Attachment(pathAttach)
 
         MailMsg.Attachments.Add(MsgAtt)
+
+
 
         Try
             SMTPClient.Send(MailMsg)
@@ -119,12 +121,21 @@ Public Class frm_Email
     End Sub
 
     Private Sub frm_Email_Load(sender As Object, e As System.EventArgs) Handles Me.Load
-
+        'Fills the sender box
         Cmb_txt.Items.Add("[Enter/Select One]")
         Cmb_txt.Items.Add("ccorder@co.orange.tx.us")
 
+        'Fills the Email Provider Box
+        Me.cboxEmailProvider.Items.Add("[Choose Provider]")
+        Me.cboxEmailProvider.Items.Add("County/Local")
+        Me.cboxEmailProvider.Items.Add("Google")
+        Me.cboxEmailProvider.Items.Add("Yahoo")
+        Me.cboxEmailProvider.Items.Add("AT&T")
+        Me.cboxEmailProvider.Items.Add("MSN")
+
         'sets default email selection
         Cmb_txt.SelectedIndex = 0
+        cboxEmailProvider.SelectedIndex = 0
 
 
         txt_Subject.Text = ESubject
@@ -133,7 +144,7 @@ Public Class frm_Email
 
 
     
-    Private Sub txt_Username_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+    Private Sub txt_Username_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_Username.TextChanged
 
         txt_From.Text = txt_Username.Text & "@co.orange.tx.us"
 
