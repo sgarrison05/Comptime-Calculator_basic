@@ -122,9 +122,9 @@ Partial Class frm_Reconcile
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(15, 56)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(176, 13)
+        Me.Label3.Size = New System.Drawing.Size(184, 13)
         Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Current Datafile Total Entries:"
+        Me.Label3.Text = "Current Datafile - Total Entries:"
         '
         'libxPreview
         '

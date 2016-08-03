@@ -133,7 +133,7 @@ Public Class frm_Email
 
 
     
-    Private Sub txt_Username_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_Username.TextChanged
+    Private Sub txt_Username_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs)
 
         txt_From.Text = txt_Username.Text & "@co.orange.tx.us"
 

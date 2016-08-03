@@ -36,10 +36,8 @@ Partial Class frm_Email
         Me.txt_Msg = New System.Windows.Forms.TextBox()
         Me.lbl_Subject = New System.Windows.Forms.Label()
         Me.lbl_Msg = New System.Windows.Forms.Label()
-        Me.txt_Username = New System.Windows.Forms.TextBox()
         Me.txt_PW = New System.Windows.Forms.TextBox()
         Me.lbl_PW = New System.Windows.Forms.Label()
-        Me.lbl_Username = New System.Windows.Forms.Label()
         Me.Cmb_txt = New System.Windows.Forms.ComboBox()
         Me.cboxEmailProvider = New System.Windows.Forms.ComboBox()
         Me.lblEmailProvider = New System.Windows.Forms.Label()
@@ -76,7 +74,7 @@ Partial Class frm_Email
         'txt_From
         '
         Me.txt_From.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_From.Location = New System.Drawing.Point(10, 218)
+        Me.txt_From.Location = New System.Drawing.Point(11, 185)
         Me.txt_From.Multiline = True
         Me.txt_From.Name = "txt_From"
         Me.txt_From.Size = New System.Drawing.Size(206, 29)
@@ -103,20 +101,20 @@ Partial Class frm_Email
         'lbl_From
         '
         Me.lbl_From.AutoSize = True
-        Me.lbl_From.Location = New System.Drawing.Point(7, 202)
+        Me.lbl_From.Location = New System.Drawing.Point(8, 169)
         Me.lbl_From.Name = "lbl_From"
-        Me.lbl_From.Size = New System.Drawing.Size(102, 13)
+        Me.lbl_From.Size = New System.Drawing.Size(119, 13)
         Me.lbl_From.TabIndex = 7
-        Me.lbl_From.Text = "From Email Address:"
+        Me.lbl_From.Text = "Email Address (Sender):"
         '
         'lbl_To
         '
         Me.lbl_To.AutoSize = True
-        Me.lbl_To.Location = New System.Drawing.Point(242, 202)
+        Me.lbl_To.Location = New System.Drawing.Point(243, 169)
         Me.lbl_To.Name = "lbl_To"
-        Me.lbl_To.Size = New System.Drawing.Size(92, 13)
+        Me.lbl_To.Size = New System.Drawing.Size(133, 13)
         Me.lbl_To.TabIndex = 8
-        Me.lbl_To.Text = "To Email Address:"
+        Me.lbl_To.Text = "Email Address (Receiving):"
         '
         'lbl_Path
         '
@@ -124,9 +122,9 @@ Partial Class frm_Email
         Me.lbl_Path.CausesValidation = False
         Me.lbl_Path.Location = New System.Drawing.Point(8, 480)
         Me.lbl_Path.Name = "lbl_Path"
-        Me.lbl_Path.Size = New System.Drawing.Size(182, 13)
+        Me.lbl_Path.Size = New System.Drawing.Size(210, 13)
         Me.lbl_Path.TabIndex = 9
-        Me.lbl_Path.Text = "Path to comptimerun.txt file to attach:"
+        Me.lbl_Path.Text = "Insert path to comptimerun.txt file to attach:"
         '
         'OpenFileDialog1
         '
@@ -137,7 +135,7 @@ Partial Class frm_Email
         'txt_Subject
         '
         Me.txt_Subject.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_Subject.Location = New System.Drawing.Point(10, 267)
+        Me.txt_Subject.Location = New System.Drawing.Point(11, 253)
         Me.txt_Subject.Multiline = True
         Me.txt_Subject.Name = "txt_Subject"
         Me.txt_Subject.Size = New System.Drawing.Size(443, 29)
@@ -155,7 +153,7 @@ Partial Class frm_Email
         'lbl_Subject
         '
         Me.lbl_Subject.AutoSize = True
-        Me.lbl_Subject.Location = New System.Drawing.Point(7, 251)
+        Me.lbl_Subject.Location = New System.Drawing.Point(8, 237)
         Me.lbl_Subject.Name = "lbl_Subject"
         Me.lbl_Subject.Size = New System.Drawing.Size(46, 13)
         Me.lbl_Subject.TabIndex = 12
@@ -170,19 +168,10 @@ Partial Class frm_Email
         Me.lbl_Msg.TabIndex = 13
         Me.lbl_Msg.Text = "Brief Message:"
         '
-        'txt_Username
-        '
-        Me.txt_Username.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_Username.Location = New System.Drawing.Point(10, 99)
-        Me.txt_Username.Multiline = True
-        Me.txt_Username.Name = "txt_Username"
-        Me.txt_Username.Size = New System.Drawing.Size(206, 29)
-        Me.txt_Username.TabIndex = 0
-        '
         'txt_PW
         '
         Me.txt_PW.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_PW.Location = New System.Drawing.Point(10, 155)
+        Me.txt_PW.Location = New System.Drawing.Point(10, 104)
         Me.txt_PW.Multiline = True
         Me.txt_PW.Name = "txt_PW"
         Me.txt_PW.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -192,26 +181,17 @@ Partial Class frm_Email
         'lbl_PW
         '
         Me.lbl_PW.AutoSize = True
-        Me.lbl_PW.Location = New System.Drawing.Point(8, 139)
+        Me.lbl_PW.Location = New System.Drawing.Point(8, 88)
         Me.lbl_PW.Name = "lbl_PW"
         Me.lbl_PW.Size = New System.Drawing.Size(56, 13)
         Me.lbl_PW.TabIndex = 16
         Me.lbl_PW.Text = "Password:"
         '
-        'lbl_Username
-        '
-        Me.lbl_Username.AutoSize = True
-        Me.lbl_Username.Location = New System.Drawing.Point(8, 83)
-        Me.lbl_Username.Name = "lbl_Username"
-        Me.lbl_Username.Size = New System.Drawing.Size(58, 13)
-        Me.lbl_Username.TabIndex = 17
-        Me.lbl_Username.Text = "Username:"
-        '
         'Cmb_txt
         '
         Me.Cmb_txt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cmb_txt.FormattingEnabled = True
-        Me.Cmb_txt.Location = New System.Drawing.Point(245, 218)
+        Me.Cmb_txt.Location = New System.Drawing.Point(246, 185)
         Me.Cmb_txt.Name = "Cmb_txt"
         Me.Cmb_txt.Size = New System.Drawing.Size(207, 28)
         Me.Cmb_txt.TabIndex = 3
@@ -244,10 +224,8 @@ Partial Class frm_Email
         Me.Controls.Add(Me.lblEmailProvider)
         Me.Controls.Add(Me.cboxEmailProvider)
         Me.Controls.Add(Me.Cmb_txt)
-        Me.Controls.Add(Me.lbl_Username)
         Me.Controls.Add(Me.lbl_PW)
         Me.Controls.Add(Me.txt_PW)
-        Me.Controls.Add(Me.txt_Username)
         Me.Controls.Add(Me.lbl_Msg)
         Me.Controls.Add(Me.lbl_Subject)
         Me.Controls.Add(Me.txt_Msg)
@@ -284,10 +262,8 @@ Partial Class frm_Email
     Friend WithEvents txt_Msg As System.Windows.Forms.TextBox
     Friend WithEvents lbl_Subject As System.Windows.Forms.Label
     Friend WithEvents lbl_Msg As System.Windows.Forms.Label
-    Friend WithEvents txt_Username As System.Windows.Forms.TextBox
     Friend WithEvents txt_PW As System.Windows.Forms.TextBox
     Friend WithEvents lbl_PW As System.Windows.Forms.Label
-    Friend WithEvents lbl_Username As System.Windows.Forms.Label
     Friend WithEvents Cmb_txt As System.Windows.Forms.ComboBox
     Friend WithEvents cboxEmailProvider As System.Windows.Forms.ComboBox
     Friend WithEvents lblEmailProvider As System.Windows.Forms.Label
