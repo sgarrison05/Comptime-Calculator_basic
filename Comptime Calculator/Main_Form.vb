@@ -50,6 +50,7 @@ Public Class frm_Main
 
         'disable apply calc button till preview is seen
         Me.applyButton.Enabled = False
+        Me.ApplyToolStripMenuItem.Enabled = False
 
 
         Me.caseComboBox.Items.Add("[Enter One]")
@@ -502,6 +503,8 @@ Public Class frm_Main
         End If
 
         Me.applyButton.Enabled = True
+        Me.ApplyToolStripMenuItem.Enabled = True
+
 
     End Sub
 

@@ -159,6 +159,7 @@
   <ItemGroup>
     <Content Include="Icon1.ico" />
     <Content Include="Readme.txt" />
+    <None Include="Resources\email.png" />
     <Content Include="time.ico" />
   </ItemGroup>
   <ItemGroup>

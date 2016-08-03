@@ -22,6 +22,7 @@ Partial Class frm_Email
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Email))
         Me.btn_Exit = New System.Windows.Forms.Button()
         Me.btn_Clear = New System.Windows.Forms.Button()
         Me.btn_Email = New System.Windows.Forms.Button()
@@ -43,6 +44,8 @@ Partial Class frm_Email
         Me.lblEmailProvider = New System.Windows.Forms.Label()
         Me.txt_Username = New System.Windows.Forms.TextBox()
         Me.lbl_Username = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_Exit
@@ -230,9 +233,18 @@ Partial Class frm_Email
         Me.lbl_Username.AutoSize = True
         Me.lbl_Username.Location = New System.Drawing.Point(7, 76)
         Me.lbl_Username.Name = "lbl_Username"
-        Me.lbl_Username.Size = New System.Drawing.Size(153, 13)
+        Me.lbl_Username.Size = New System.Drawing.Size(228, 13)
         Me.lbl_Username.TabIndex = 17
-        Me.lbl_Username.Text = "Username or Email Credentials:"
+        Me.lbl_Username.Text = "Username, Email Address, or Email Credentials:"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(268, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(164, 168)
+        Me.PictureBox1.TabIndex = 20
+        Me.PictureBox1.TabStop = False
         '
         'frm_Email
         '
@@ -241,6 +253,7 @@ Partial Class frm_Email
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btn_Exit
         Me.ClientSize = New System.Drawing.Size(464, 622)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblEmailProvider)
         Me.Controls.Add(Me.cboxEmailProvider)
         Me.Controls.Add(Me.Cmb_txt)
@@ -266,6 +279,7 @@ Partial Class frm_Email
         Me.Name = "frm_Email"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Send Data by Email"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -291,4 +305,5 @@ Partial Class frm_Email
     Friend WithEvents lblEmailProvider As System.Windows.Forms.Label
     Friend WithEvents txt_Username As System.Windows.Forms.TextBox
     Friend WithEvents lbl_Username As System.Windows.Forms.Label
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

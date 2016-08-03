@@ -3,6 +3,8 @@ Imports System.Net.Mail
 
 Public Class frm_Email
 
+    Dim SMTPClient As New SmtpClient
+    Dim emailChoice As String = ""
     Dim ESubject As String = "Emailing Comptime Data for " & DatePart(DateInterval.Month, Today) & "/" & _
                                                                         DatePart(DateInterval.Year, Today)
 
@@ -12,9 +14,6 @@ Public Class frm_Email
         Dim pw As String = txt_PW.Text
         Dim pathAttach As String = txt_Path.Text
         Dim today As Date = Date.Now
-        Dim SMTPClient As New SmtpClient
-        Dim emailChoice As String
-
 
         emailChoice = Me.cboxEmailProvider.Text
 
@@ -27,34 +26,33 @@ Public Class frm_Email
 
             Case "Google"
                 SMTPClient.Host = "smtp.gmail.com"
-                SMTPClient.Port = 465
+                SMTPClient.Port = 587
                 SMTPClient.EnableSsl = True
 
             Case "AT&T"
                 SMTPClient.Host = "outbound.att.net"
-                SMTPClient.Port = 465
+                SMTPClient.Port = 587
                 SMTPClient.EnableSsl = True
 
             Case "Yahoo"
                 SMTPClient.Host = "smtp.mail.yahoo.com"
-                SMTPClient.Port = 465
+                SMTPClient.Port = 587
                 SMTPClient.EnableSsl = True
 
             Case "MSN"
                 SMTPClient.Host = "smtp.live.com"
-                SMTPClient.Port = 465
+                SMTPClient.Port = 587
                 SMTPClient.EnableSsl = True
 
         End Select
+
 
         Dim UsernamePassword As New Net.NetworkCredential(username, _
                                                                     pw)
         SMTPClient.Credentials = UsernamePassword
 
-
-        Dim fromSender As String = username
+        Dim fromSender As String = txt_From.Text
         Dim toReceipiant As String = Cmb_txt.Text
-
         Dim MsgBody As String = txt_Msg.Text
 
         Dim MailMsg As New MailMessage(fromSender, _
@@ -63,8 +61,8 @@ Public Class frm_Email
                                         MsgBody)
         Dim MsgAtt As New Attachment(pathAttach)
 
-        MailMsg.Attachments.Add(MsgAtt)
 
+        MailMsg.Attachments.Add(MsgAtt)
 
 
         Try
@@ -121,8 +119,11 @@ Public Class frm_Email
     End Sub
 
     Private Sub frm_Email_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+
         'Fills the sender box
         Cmb_txt.Items.Add("[Enter/Select One]")
+        Cmb_txt.Items.Add("ltaylor@co.orange.tx.us")
+        Cmb_txt.Items.Add("wcolbert@co.orange.tx.us")
         Cmb_txt.Items.Add("ccorder@co.orange.tx.us")
 
         'Fills the Email Provider Box
@@ -140,13 +141,46 @@ Public Class frm_Email
 
         txt_Subject.Text = ESubject
 
+
+
     End Sub
 
 
     
-    Private Sub txt_Username_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_Username.TextChanged
+    
 
-        txt_From.Text = txt_Username.Text & "@co.orange.tx.us"
+    Private Sub cboxEmailProvider_TextChanged(sender As Object, e As EventArgs) Handles cboxEmailProvider.TextChanged
+
+        emailChoice = Me.cboxEmailProvider.Text
+
+        Select Case emailChoice
+
+            Case "County/Local"
+
+                SmtpClient.Host = "orangeco1.co.orange.tx.us"
+                SmtpClient.Port = 24
+
+            Case "Google"
+                SmtpClient.Host = "smtp.gmail.com"
+                SmtpClient.Port = 465
+                SmtpClient.EnableSsl = True
+
+            Case "AT&T"
+                SmtpClient.Host = "outbound.att.net"
+                SmtpClient.Port = 465
+                SmtpClient.EnableSsl = True
+
+            Case "Yahoo"
+                SmtpClient.Host = "smtp.mail.yahoo.com"
+                SmtpClient.Port = 465
+                SmtpClient.EnableSsl = True
+
+            Case "MSN"
+                SmtpClient.Host = "smtp.live.com"
+                SmtpClient.Port = 465
+                SmtpClient.EnableSsl = True
+
+        End Select
 
     End Sub
 End Class

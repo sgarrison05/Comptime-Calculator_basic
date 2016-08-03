@@ -224,27 +224,27 @@ Partial Class frm_Main
         Me.casereasonLabel.AutoSize = True
         Me.casereasonLabel.Location = New System.Drawing.Point(180, 53)
         Me.casereasonLabel.Name = "casereasonLabel"
-        Me.casereasonLabel.Size = New System.Drawing.Size(82, 13)
+        Me.casereasonLabel.Size = New System.Drawing.Size(118, 13)
         Me.casereasonLabel.TabIndex = 2
-        Me.casereasonLabel.Text = "Case / Reason:"
+        Me.casereasonLabel.Text = "Case/Reason for Entry:"
         '
         'earnedidLabel
         '
         Me.earnedidLabel.AutoSize = True
         Me.earnedidLabel.Location = New System.Drawing.Point(180, 105)
         Me.earnedidLabel.Name = "earnedidLabel"
-        Me.earnedidLabel.Size = New System.Drawing.Size(71, 13)
+        Me.earnedidLabel.Size = New System.Drawing.Size(70, 13)
         Me.earnedidLabel.TabIndex = 5
-        Me.earnedidLabel.Text = "Input Earned:"
+        Me.earnedidLabel.Text = "Time Earned:"
         '
         'takenidLabel
         '
         Me.takenidLabel.AutoSize = True
         Me.takenidLabel.Location = New System.Drawing.Point(180, 173)
         Me.takenidLabel.Name = "takenidLabel"
-        Me.takenidLabel.Size = New System.Drawing.Size(68, 13)
+        Me.takenidLabel.Size = New System.Drawing.Size(67, 13)
         Me.takenidLabel.TabIndex = 9
-        Me.takenidLabel.Text = "Input Taken:"
+        Me.takenidLabel.Text = "Time Taken:"
         '
         'newbalLabel
         '
@@ -371,7 +371,7 @@ Partial Class frm_Main
         Me.OpenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ComptimerunToolStripMenuItem, Me.BankToolStripMenuItem})
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
         Me.OpenToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.OpenToolStripMenuItem.Text = "Open.."
         '
         'ComptimerunToolStripMenuItem
@@ -389,13 +389,13 @@ Partial Class frm_Main
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(145, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(149, 6)
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'EditToolStripMenuItem
@@ -408,7 +408,7 @@ Partial Class frm_Main
         'ClearToolStripMenuItem
         '
         Me.ClearToolStripMenuItem.Name = "ClearToolStripMenuItem"
-        Me.ClearToolStripMenuItem.Size = New System.Drawing.Size(101, 22)
+        Me.ClearToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ClearToolStripMenuItem.Text = "Clear"
         '
         'HelpToolStripMenuItem
@@ -429,13 +429,13 @@ Partial Class frm_Main
         'CalculateToolStripMenuItem
         '
         Me.CalculateToolStripMenuItem.Name = "CalculateToolStripMenuItem"
-        Me.CalculateToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
+        Me.CalculateToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CalculateToolStripMenuItem.Text = "Calc"
         '
         'ApplyToolStripMenuItem
         '
         Me.ApplyToolStripMenuItem.Name = "ApplyToolStripMenuItem"
-        Me.ApplyToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
+        Me.ApplyToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ApplyToolStripMenuItem.Text = "Apply "
         '
         'HelpToolStripMenuItem1

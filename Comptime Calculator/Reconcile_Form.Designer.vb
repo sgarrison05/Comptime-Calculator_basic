@@ -33,7 +33,7 @@ Partial Class frm_Reconcile
         Me.btnPreview = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.libxPreview = New System.Windows.Forms.ListBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblCPreview = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.libxOrig = New System.Windows.Forms.ListBox()
         Me.lblPreview_Orig = New System.Windows.Forms.Label()
@@ -47,9 +47,9 @@ Partial Class frm_Reconcile
         Me.lblPreview.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPreview.Location = New System.Drawing.Point(508, 56)
         Me.lblPreview.Name = "lblPreview"
-        Me.lblPreview.Size = New System.Drawing.Size(329, 13)
+        Me.lblPreview.Size = New System.Drawing.Size(344, 13)
         Me.lblPreview.TabIndex = 1
-        Me.lblPreview.Text = "Preview of Previous Year (Entries that will be taken out):"
+        Me.lblPreview.Text = "Preview of Previous Year -> (Entries that will be taken out):"
         '
         'GroupBox1
         '
@@ -110,7 +110,7 @@ Partial Class frm_Reconcile
         'btnPreview
         '
         Me.btnPreview.Image = CType(resources.GetObject("btnPreview.Image"), System.Drawing.Image)
-        Me.btnPreview.Location = New System.Drawing.Point(431, 198)
+        Me.btnPreview.Location = New System.Drawing.Point(431, 194)
         Me.btnPreview.Name = "btnPreview"
         Me.btnPreview.Size = New System.Drawing.Size(60, 50)
         Me.btnPreview.TabIndex = 7
@@ -122,9 +122,9 @@ Partial Class frm_Reconcile
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(15, 56)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(184, 13)
+        Me.Label3.Size = New System.Drawing.Size(169, 13)
         Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Current Datafile - Total Entries:"
+        Me.Label3.Text = "Current Datafile - All Entries:"
         '
         'libxPreview
         '
@@ -134,14 +134,13 @@ Partial Class frm_Reconcile
         Me.libxPreview.Size = New System.Drawing.Size(400, 264)
         Me.libxPreview.TabIndex = 9
         '
-        'Label4
+        'lblCPreview
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(428, 178)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(48, 13)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Preview:"
+        Me.lblCPreview.Location = New System.Drawing.Point(428, 159)
+        Me.lblCPreview.Name = "lblCPreview"
+        Me.lblCPreview.Size = New System.Drawing.Size(48, 32)
+        Me.lblCPreview.TabIndex = 10
+        Me.lblCPreview.Text = " Click to Preview:"
         '
         'Label5
         '
@@ -166,9 +165,9 @@ Partial Class frm_Reconcile
         Me.lblPreview_Orig.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPreview_Orig.Location = New System.Drawing.Point(508, 339)
         Me.lblPreview_Orig.Name = "lblPreview_Orig"
-        Me.lblPreview_Orig.Size = New System.Drawing.Size(251, 13)
+        Me.lblPreview_Orig.Size = New System.Drawing.Size(328, 13)
         Me.lblPreview_Orig.TabIndex = 13
-        Me.lblPreview_Orig.Text = "Preview of Current Year (What will remain):"
+        Me.lblPreview_Orig.Text = "Preview of Current Year -> (What will remain in Datafile):"
         '
         'libxReconcile
         '
@@ -182,12 +181,12 @@ Partial Class frm_Reconcile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1051, 719)
+        Me.ClientSize = New System.Drawing.Size(1051, 667)
         Me.Controls.Add(Me.libxReconcile)
         Me.Controls.Add(Me.lblPreview_Orig)
         Me.Controls.Add(Me.libxOrig)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblCPreview)
         Me.Controls.Add(Me.libxPreview)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnPreview)
@@ -215,7 +214,7 @@ Partial Class frm_Reconcile
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents btnReload As System.Windows.Forms.Button
     Friend WithEvents libxPreview As System.Windows.Forms.ListBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblCPreview As System.Windows.Forms.Label
     Friend WithEvents btnClearPrev As System.Windows.Forms.Button
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents libxOrig As System.Windows.Forms.ListBox
