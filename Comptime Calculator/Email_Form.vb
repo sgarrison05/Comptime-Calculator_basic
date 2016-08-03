@@ -46,39 +46,46 @@ Public Class frm_Email
 
         End Select
 
+        If txt_Path.Text = "" Then
 
-        Dim UsernamePassword As New Net.NetworkCredential(username, _
-                                                                    pw)
-        SMTPClient.Credentials = UsernamePassword
+            MessageBox.Show("Please do not forget to attach your comtimerun.txt file", "Important", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Me.brn_Browse.Focus()
 
-        Dim fromSender As String = txt_From.Text
-        Dim toReceipiant As String = Cmb_txt.Text
-        Dim MsgBody As String = txt_Msg.Text
+        Else
 
-        Dim MailMsg As New MailMessage(fromSender, _
-                                        toReceipiant, _
-                                        ESubject, _
-                                        MsgBody)
-        Dim MsgAtt As New Attachment(pathAttach)
+            Dim UsernamePassword As New Net.NetworkCredential(username, _
+                                                                        pw)
+            SMTPClient.Credentials = UsernamePassword
 
+            Dim fromSender As String = txt_From.Text
+            Dim toReceipiant As String = Cmb_txt.Text
+            Dim MsgBody As String = txt_Msg.Text
 
-        MailMsg.Attachments.Add(MsgAtt)
+            Dim MailMsg As New MailMessage(fromSender, _
+                                            toReceipiant, _
+                                            ESubject, _
+                                            MsgBody)
 
+            Dim MsgAtt As New Attachment(pathAttach)
 
-        Try
-            SMTPClient.Send(MailMsg)
-            MsgBox("Email Sent Successfully!")
-
-            Call clearlabels()
-
-            Me.Close()
-            frm_Main.Show()
+            MailMsg.Attachments.Add(MsgAtt)
 
 
-        Catch ex As Exception
-            MsgBox("Error...Something went wrong! Please Try again later.")
+            Try
+                SMTPClient.Send(MailMsg)
+                MsgBox("Email Sent Successfully!")
 
-        End Try
+                Call clearlabels()
+
+                Me.Close()
+                frm_Main.Show()
+
+
+            Catch ex As Exception
+                MsgBox("Error...Something went wrong! Please Try again later.")
+
+            End Try
+        End If
 
 
     End Sub
