@@ -51,7 +51,7 @@ Partial Class frm_Email
         'btn_Exit
         '
         Me.btn_Exit.DialogResult = System.Windows.Forms.DialogResult.Yes
-        Me.btn_Exit.Location = New System.Drawing.Point(14, 583)
+        Me.btn_Exit.Location = New System.Drawing.Point(14, 555)
         Me.btn_Exit.Name = "btn_Exit"
         Me.btn_Exit.Size = New System.Drawing.Size(83, 27)
         Me.btn_Exit.TabIndex = 8
@@ -60,7 +60,7 @@ Partial Class frm_Email
         '
         'btn_Clear
         '
-        Me.btn_Clear.Location = New System.Drawing.Point(182, 583)
+        Me.btn_Clear.Location = New System.Drawing.Point(198, 555)
         Me.btn_Clear.Name = "btn_Clear"
         Me.btn_Clear.Size = New System.Drawing.Size(83, 27)
         Me.btn_Clear.TabIndex = 9
@@ -69,7 +69,7 @@ Partial Class frm_Email
         '
         'btn_Email
         '
-        Me.btn_Email.Location = New System.Drawing.Point(365, 583)
+        Me.btn_Email.Location = New System.Drawing.Point(390, 555)
         Me.btn_Email.Name = "btn_Email"
         Me.btn_Email.Size = New System.Drawing.Size(83, 27)
         Me.btn_Email.TabIndex = 10
@@ -82,21 +82,21 @@ Partial Class frm_Email
         Me.txt_From.Location = New System.Drawing.Point(10, 209)
         Me.txt_From.Multiline = True
         Me.txt_From.Name = "txt_From"
-        Me.txt_From.Size = New System.Drawing.Size(206, 29)
+        Me.txt_From.Size = New System.Drawing.Size(225, 29)
         Me.txt_From.TabIndex = 2
         '
         'txt_Path
         '
         Me.txt_Path.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_Path.Location = New System.Drawing.Point(10, 496)
+        Me.txt_Path.Location = New System.Drawing.Point(10, 458)
         Me.txt_Path.Multiline = True
         Me.txt_Path.Name = "txt_Path"
-        Me.txt_Path.Size = New System.Drawing.Size(443, 29)
+        Me.txt_Path.Size = New System.Drawing.Size(463, 29)
         Me.txt_Path.TabIndex = 6
         '
         'brn_Browse
         '
-        Me.brn_Browse.Location = New System.Drawing.Point(15, 531)
+        Me.brn_Browse.Location = New System.Drawing.Point(15, 493)
         Me.brn_Browse.Name = "brn_Browse"
         Me.brn_Browse.Size = New System.Drawing.Size(83, 27)
         Me.brn_Browse.TabIndex = 7
@@ -125,7 +125,7 @@ Partial Class frm_Email
         '
         Me.lbl_Path.AutoSize = True
         Me.lbl_Path.CausesValidation = False
-        Me.lbl_Path.Location = New System.Drawing.Point(8, 480)
+        Me.lbl_Path.Location = New System.Drawing.Point(8, 442)
         Me.lbl_Path.Name = "lbl_Path"
         Me.lbl_Path.Size = New System.Drawing.Size(182, 13)
         Me.lbl_Path.TabIndex = 9
@@ -143,16 +143,16 @@ Partial Class frm_Email
         Me.txt_Subject.Location = New System.Drawing.Point(10, 267)
         Me.txt_Subject.Multiline = True
         Me.txt_Subject.Name = "txt_Subject"
-        Me.txt_Subject.Size = New System.Drawing.Size(443, 29)
+        Me.txt_Subject.Size = New System.Drawing.Size(463, 29)
         Me.txt_Subject.TabIndex = 4
         '
         'txt_Msg
         '
         Me.txt_Msg.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_Msg.Location = New System.Drawing.Point(10, 317)
+        Me.txt_Msg.Location = New System.Drawing.Point(10, 321)
         Me.txt_Msg.Multiline = True
         Me.txt_Msg.Name = "txt_Msg"
-        Me.txt_Msg.Size = New System.Drawing.Size(443, 149)
+        Me.txt_Msg.Size = New System.Drawing.Size(463, 109)
         Me.txt_Msg.TabIndex = 5
         '
         'lbl_Subject
@@ -167,7 +167,7 @@ Partial Class frm_Email
         'lbl_Msg
         '
         Me.lbl_Msg.AutoSize = True
-        Me.lbl_Msg.Location = New System.Drawing.Point(7, 301)
+        Me.lbl_Msg.Location = New System.Drawing.Point(7, 305)
         Me.lbl_Msg.Name = "lbl_Msg"
         Me.lbl_Msg.Size = New System.Drawing.Size(77, 13)
         Me.lbl_Msg.TabIndex = 13
@@ -180,7 +180,7 @@ Partial Class frm_Email
         Me.txt_PW.Multiline = True
         Me.txt_PW.Name = "txt_PW"
         Me.txt_PW.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txt_PW.Size = New System.Drawing.Size(206, 29)
+        Me.txt_PW.Size = New System.Drawing.Size(225, 29)
         Me.txt_PW.TabIndex = 1
         '
         'lbl_PW
@@ -188,9 +188,9 @@ Partial Class frm_Email
         Me.lbl_PW.AutoSize = True
         Me.lbl_PW.Location = New System.Drawing.Point(8, 136)
         Me.lbl_PW.Name = "lbl_PW"
-        Me.lbl_PW.Size = New System.Drawing.Size(56, 13)
+        Me.lbl_PW.Size = New System.Drawing.Size(117, 13)
         Me.lbl_PW.TabIndex = 16
-        Me.lbl_PW.Text = "Password:"
+        Me.lbl_PW.Text = "Password (If Required):"
         '
         'Cmb_txt
         '
@@ -198,7 +198,7 @@ Partial Class frm_Email
         Me.Cmb_txt.FormattingEnabled = True
         Me.Cmb_txt.Location = New System.Drawing.Point(247, 209)
         Me.Cmb_txt.Name = "Cmb_txt"
-        Me.Cmb_txt.Size = New System.Drawing.Size(207, 28)
+        Me.Cmb_txt.Size = New System.Drawing.Size(227, 28)
         Me.Cmb_txt.TabIndex = 3
         '
         'cboxEmailProvider
@@ -225,7 +225,7 @@ Partial Class frm_Email
         Me.txt_Username.Location = New System.Drawing.Point(9, 92)
         Me.txt_Username.Multiline = True
         Me.txt_Username.Name = "txt_Username"
-        Me.txt_Username.Size = New System.Drawing.Size(206, 29)
+        Me.txt_Username.Size = New System.Drawing.Size(225, 29)
         Me.txt_Username.TabIndex = 0
         '
         'lbl_Username
@@ -240,7 +240,7 @@ Partial Class frm_Email
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(268, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(286, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(164, 168)
         Me.PictureBox1.TabIndex = 20
@@ -252,7 +252,7 @@ Partial Class frm_Email
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btn_Exit
-        Me.ClientSize = New System.Drawing.Size(464, 622)
+        Me.ClientSize = New System.Drawing.Size(486, 594)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblEmailProvider)
         Me.Controls.Add(Me.cboxEmailProvider)

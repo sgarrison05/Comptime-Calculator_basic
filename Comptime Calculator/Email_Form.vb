@@ -46,9 +46,10 @@ Public Class frm_Email
 
         End Select
 
-        If txt_Path.Text = "" Then
+        If Me.txt_Path.Text = "" Or Me.txt_Username.Text = "" Or Me.txt_PW.Text = "" Or Me.txt_From.Text = "" Or Me.Cmb_txt.Text = "" Or _
+            Me.txt_Subject.Text = "" Or Me.txt_Msg.Text = "" Then
 
-            MessageBox.Show("Please do not forget to attach your comtimerun.txt file", "Important", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("You forgot something or to attach your comtimerun.txt file. Please check all blanks.", "Important", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Me.brn_Browse.Focus()
 
         Else
@@ -153,9 +154,6 @@ Public Class frm_Email
     End Sub
 
 
-    
-    
-
     Private Sub cboxEmailProvider_TextChanged(sender As Object, e As EventArgs) Handles cboxEmailProvider.TextChanged
 
         emailChoice = Me.cboxEmailProvider.Text
@@ -169,25 +167,32 @@ Public Class frm_Email
 
             Case "Google"
                 SmtpClient.Host = "smtp.gmail.com"
-                SmtpClient.Port = 465
+                SMTPClient.Port = 587
                 SmtpClient.EnableSsl = True
 
             Case "AT&T"
                 SmtpClient.Host = "outbound.att.net"
-                SmtpClient.Port = 465
+                SMTPClient.Port = 587
                 SmtpClient.EnableSsl = True
 
             Case "Yahoo"
                 SmtpClient.Host = "smtp.mail.yahoo.com"
-                SmtpClient.Port = 465
+                SMTPClient.Port = 587
                 SmtpClient.EnableSsl = True
 
             Case "MSN"
                 SmtpClient.Host = "smtp.live.com"
-                SmtpClient.Port = 465
+                SMTPClient.Port = 587
                 SmtpClient.EnableSsl = True
 
         End Select
+
+        'clears labels
+        Me.txt_Username.Text = ""
+        Me.txt_From.Text = ""
+        Me.txt_PW.Text = ""
+
+
 
     End Sub
 End Class

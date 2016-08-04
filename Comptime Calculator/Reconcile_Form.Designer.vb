@@ -154,7 +154,7 @@ Partial Class frm_Reconcile
         'libxOrig
         '
         Me.libxOrig.FormattingEnabled = True
-        Me.libxOrig.Location = New System.Drawing.Point(511, 357)
+        Me.libxOrig.Location = New System.Drawing.Point(511, 374)
         Me.libxOrig.Name = "libxOrig"
         Me.libxOrig.Size = New System.Drawing.Size(400, 290)
         Me.libxOrig.TabIndex = 12
@@ -163,7 +163,7 @@ Partial Class frm_Reconcile
         '
         Me.lblPreview_Orig.AutoSize = True
         Me.lblPreview_Orig.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPreview_Orig.Location = New System.Drawing.Point(508, 339)
+        Me.lblPreview_Orig.Location = New System.Drawing.Point(508, 356)
         Me.lblPreview_Orig.Name = "lblPreview_Orig"
         Me.lblPreview_Orig.Size = New System.Drawing.Size(328, 13)
         Me.lblPreview_Orig.TabIndex = 13
@@ -174,14 +174,14 @@ Partial Class frm_Reconcile
         Me.libxReconcile.FormattingEnabled = True
         Me.libxReconcile.Location = New System.Drawing.Point(18, 73)
         Me.libxReconcile.Name = "libxReconcile"
-        Me.libxReconcile.Size = New System.Drawing.Size(393, 576)
+        Me.libxReconcile.Size = New System.Drawing.Size(393, 589)
         Me.libxReconcile.TabIndex = 14
         '
         'frm_Reconcile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1051, 667)
+        Me.ClientSize = New System.Drawing.Size(1051, 682)
         Me.Controls.Add(Me.libxReconcile)
         Me.Controls.Add(Me.lblPreview_Orig)
         Me.Controls.Add(Me.libxOrig)
