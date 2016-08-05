@@ -93,7 +93,7 @@ Partial Class frm_Main
         Me.exitButton.Location = New System.Drawing.Point(20, 252)
         Me.exitButton.Name = "exitButton"
         Me.exitButton.Size = New System.Drawing.Size(75, 32)
-        Me.exitButton.TabIndex = 2
+        Me.exitButton.TabIndex = 5
         Me.exitButton.Text = "Exit Application"
         Me.exitButton.UseVisualStyleBackColor = False
         '
@@ -122,7 +122,7 @@ Partial Class frm_Main
         Me.optionsGroupBox.Location = New System.Drawing.Point(477, 53)
         Me.optionsGroupBox.Name = "optionsGroupBox"
         Me.optionsGroupBox.Size = New System.Drawing.Size(117, 305)
-        Me.optionsGroupBox.TabIndex = 16
+        Me.optionsGroupBox.TabIndex = 5
         Me.optionsGroupBox.TabStop = False
         Me.optionsGroupBox.Text = "Options"
         '
@@ -135,7 +135,7 @@ Partial Class frm_Main
         Me.btn_ReconcileData.Location = New System.Drawing.Point(20, 156)
         Me.btn_ReconcileData.Name = "btn_ReconcileData"
         Me.btn_ReconcileData.Size = New System.Drawing.Size(75, 32)
-        Me.btn_ReconcileData.TabIndex = 5
+        Me.btn_ReconcileData.TabIndex = 3
         Me.btn_ReconcileData.Text = "Reconcile Data"
         Me.btn_ReconcileData.UseVisualStyleBackColor = False
         '
@@ -160,7 +160,7 @@ Partial Class frm_Main
         Me.applyButton.Location = New System.Drawing.Point(20, 108)
         Me.applyButton.Name = "applyButton"
         Me.applyButton.Size = New System.Drawing.Size(75, 32)
-        Me.applyButton.TabIndex = 3
+        Me.applyButton.TabIndex = 2
         Me.applyButton.Text = "Apply to Bank"
         Me.applyButton.UseVisualStyleBackColor = False
         '
@@ -170,7 +170,7 @@ Partial Class frm_Main
         Me.comptimeMenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.comptimeMenuStrip.Name = "comptimeMenuStrip"
         Me.comptimeMenuStrip.Size = New System.Drawing.Size(609, 24)
-        Me.comptimeMenuStrip.TabIndex = 21
+        Me.comptimeMenuStrip.TabIndex = 6
         Me.comptimeMenuStrip.Text = "ComptimeMenuStrip"
         '
         'fileToolStripMenuItem
@@ -299,7 +299,7 @@ Partial Class frm_Main
         Me.accruedDateTimePicker.Location = New System.Drawing.Point(16, 69)
         Me.accruedDateTimePicker.Name = "accruedDateTimePicker"
         Me.accruedDateTimePicker.Size = New System.Drawing.Size(120, 21)
-        Me.accruedDateTimePicker.TabIndex = 1
+        Me.accruedDateTimePicker.TabIndex = 0
         '
         'accruedRadioButton
         '
@@ -332,7 +332,7 @@ Partial Class frm_Main
         Me.actionGroupBox.Location = New System.Drawing.Point(16, 117)
         Me.actionGroupBox.Name = "actionGroupBox"
         Me.actionGroupBox.Size = New System.Drawing.Size(120, 94)
-        Me.actionGroupBox.TabIndex = 4
+        Me.actionGroupBox.TabIndex = 2
         Me.actionGroupBox.TabStop = False
         Me.actionGroupBox.Text = "Accrued / Spent"
         '
@@ -438,7 +438,7 @@ Partial Class frm_Main
         Me.earnedTextBox.MaxLength = 5
         Me.earnedTextBox.Name = "earnedTextBox"
         Me.earnedTextBox.Size = New System.Drawing.Size(47, 21)
-        Me.earnedTextBox.TabIndex = 6
+        Me.earnedTextBox.TabIndex = 3
         '
         'takenTextBox
         '
@@ -447,7 +447,7 @@ Partial Class frm_Main
         Me.takenTextBox.MaxLength = 5
         Me.takenTextBox.Name = "takenTextBox"
         Me.takenTextBox.Size = New System.Drawing.Size(47, 21)
-        Me.takenTextBox.TabIndex = 10
+        Me.takenTextBox.TabIndex = 4
         Me.takenTextBox.Tag = ""
         '
         'caseComboBox
@@ -457,7 +457,7 @@ Partial Class frm_Main
         Me.caseComboBox.Location = New System.Drawing.Point(183, 69)
         Me.caseComboBox.Name = "caseComboBox"
         Me.caseComboBox.Size = New System.Drawing.Size(108, 23)
-        Me.caseComboBox.TabIndex = 3
+        Me.caseComboBox.TabIndex = 1
         '
         'hrs2Label
         '

@@ -2,10 +2,10 @@
 'Purpose                To calculate comptime time earned or spent
 '                       in a particular instance
 'Created By             Shon Garrison, December 2008
-'Updated Last           September 2015
+'Updated Last           August 2016
 
-'Update Notes:          Added Reconcile Form 
-'                       Improved datasheet lineup ability
+'Update Notes:          Cosmetic Changes, Updated About Form, Added email provider options, 
+'                       Repaired listbox lineup on reconcile sheet
 
 
 Option Explicit On

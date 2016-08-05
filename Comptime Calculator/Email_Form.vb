@@ -149,8 +149,6 @@ Public Class frm_Email
 
         txt_Subject.Text = ESubject
 
-
-
     End Sub
 
 

@@ -54,7 +54,7 @@ Partial Class frm_Email
         Me.btn_Exit.Location = New System.Drawing.Point(14, 555)
         Me.btn_Exit.Name = "btn_Exit"
         Me.btn_Exit.Size = New System.Drawing.Size(83, 27)
-        Me.btn_Exit.TabIndex = 8
+        Me.btn_Exit.TabIndex = 11
         Me.btn_Exit.Text = "Rtn to Main"
         Me.btn_Exit.UseVisualStyleBackColor = True
         '
@@ -63,7 +63,7 @@ Partial Class frm_Email
         Me.btn_Clear.Location = New System.Drawing.Point(198, 555)
         Me.btn_Clear.Name = "btn_Clear"
         Me.btn_Clear.Size = New System.Drawing.Size(83, 27)
-        Me.btn_Clear.TabIndex = 9
+        Me.btn_Clear.TabIndex = 10
         Me.btn_Clear.Text = "Clear Form"
         Me.btn_Clear.UseVisualStyleBackColor = True
         '
@@ -72,7 +72,7 @@ Partial Class frm_Email
         Me.btn_Email.Location = New System.Drawing.Point(390, 555)
         Me.btn_Email.Name = "btn_Email"
         Me.btn_Email.Size = New System.Drawing.Size(83, 27)
-        Me.btn_Email.TabIndex = 10
+        Me.btn_Email.TabIndex = 9
         Me.btn_Email.Text = "Email Data"
         Me.btn_Email.UseVisualStyleBackColor = True
         '
@@ -83,7 +83,7 @@ Partial Class frm_Email
         Me.txt_From.Multiline = True
         Me.txt_From.Name = "txt_From"
         Me.txt_From.Size = New System.Drawing.Size(225, 29)
-        Me.txt_From.TabIndex = 2
+        Me.txt_From.TabIndex = 3
         '
         'txt_Path
         '
@@ -92,14 +92,14 @@ Partial Class frm_Email
         Me.txt_Path.Multiline = True
         Me.txt_Path.Name = "txt_Path"
         Me.txt_Path.Size = New System.Drawing.Size(463, 29)
-        Me.txt_Path.TabIndex = 6
+        Me.txt_Path.TabIndex = 7
         '
         'brn_Browse
         '
         Me.brn_Browse.Location = New System.Drawing.Point(15, 493)
         Me.brn_Browse.Name = "brn_Browse"
         Me.brn_Browse.Size = New System.Drawing.Size(83, 27)
-        Me.brn_Browse.TabIndex = 7
+        Me.brn_Browse.TabIndex = 8
         Me.brn_Browse.Text = "Browse"
         Me.brn_Browse.UseVisualStyleBackColor = True
         '
@@ -144,7 +144,7 @@ Partial Class frm_Email
         Me.txt_Subject.Multiline = True
         Me.txt_Subject.Name = "txt_Subject"
         Me.txt_Subject.Size = New System.Drawing.Size(463, 29)
-        Me.txt_Subject.TabIndex = 4
+        Me.txt_Subject.TabIndex = 5
         '
         'txt_Msg
         '
@@ -153,7 +153,7 @@ Partial Class frm_Email
         Me.txt_Msg.Multiline = True
         Me.txt_Msg.Name = "txt_Msg"
         Me.txt_Msg.Size = New System.Drawing.Size(463, 109)
-        Me.txt_Msg.TabIndex = 5
+        Me.txt_Msg.TabIndex = 6
         '
         'lbl_Subject
         '
@@ -181,7 +181,7 @@ Partial Class frm_Email
         Me.txt_PW.Name = "txt_PW"
         Me.txt_PW.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_PW.Size = New System.Drawing.Size(225, 29)
-        Me.txt_PW.TabIndex = 1
+        Me.txt_PW.TabIndex = 2
         '
         'lbl_PW
         '
@@ -199,7 +199,7 @@ Partial Class frm_Email
         Me.Cmb_txt.Location = New System.Drawing.Point(247, 209)
         Me.Cmb_txt.Name = "Cmb_txt"
         Me.Cmb_txt.Size = New System.Drawing.Size(227, 28)
-        Me.Cmb_txt.TabIndex = 3
+        Me.Cmb_txt.TabIndex = 4
         '
         'cboxEmailProvider
         '
@@ -208,7 +208,7 @@ Partial Class frm_Email
         Me.cboxEmailProvider.Location = New System.Drawing.Point(10, 29)
         Me.cboxEmailProvider.Name = "cboxEmailProvider"
         Me.cboxEmailProvider.Size = New System.Drawing.Size(155, 28)
-        Me.cboxEmailProvider.TabIndex = 18
+        Me.cboxEmailProvider.TabIndex = 0
         '
         'lblEmailProvider
         '
@@ -226,7 +226,7 @@ Partial Class frm_Email
         Me.txt_Username.Multiline = True
         Me.txt_Username.Name = "txt_Username"
         Me.txt_Username.Size = New System.Drawing.Size(225, 29)
-        Me.txt_Username.TabIndex = 0
+        Me.txt_Username.TabIndex = 1
         '
         'lbl_Username
         '
