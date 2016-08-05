@@ -45,7 +45,7 @@ Partial Class frm_Reconcile
         '
         Me.lblPreview.AutoSize = True
         Me.lblPreview.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPreview.Location = New System.Drawing.Point(508, 56)
+        Me.lblPreview.Location = New System.Drawing.Point(609, 55)
         Me.lblPreview.Name = "lblPreview"
         Me.lblPreview.Size = New System.Drawing.Size(344, 13)
         Me.lblPreview.TabIndex = 1
@@ -53,10 +53,11 @@ Partial Class frm_Reconcile
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox1.Controls.Add(Me.btnClearPrev)
         Me.GroupBox1.Controls.Add(Me.btnExit)
         Me.GroupBox1.Controls.Add(Me.btnReconcile)
-        Me.GroupBox1.Location = New System.Drawing.Point(931, 67)
+        Me.GroupBox1.Location = New System.Drawing.Point(1120, 71)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(108, 229)
         Me.GroupBox1.TabIndex = 2
@@ -110,7 +111,7 @@ Partial Class frm_Reconcile
         'btnPreview
         '
         Me.btnPreview.Image = CType(resources.GetObject("btnPreview.Image"), System.Drawing.Image)
-        Me.btnPreview.Location = New System.Drawing.Point(431, 194)
+        Me.btnPreview.Location = New System.Drawing.Point(521, 165)
         Me.btnPreview.Name = "btnPreview"
         Me.btnPreview.Size = New System.Drawing.Size(60, 50)
         Me.btnPreview.TabIndex = 7
@@ -128,42 +129,47 @@ Partial Class frm_Reconcile
         '
         'libxPreview
         '
+        Me.libxPreview.Font = New System.Drawing.Font("Courier New", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.libxPreview.FormattingEnabled = True
-        Me.libxPreview.Location = New System.Drawing.Point(511, 72)
+        Me.libxPreview.ItemHeight = 12
+        Me.libxPreview.Location = New System.Drawing.Point(612, 71)
         Me.libxPreview.Name = "libxPreview"
-        Me.libxPreview.Size = New System.Drawing.Size(400, 264)
+        Me.libxPreview.Size = New System.Drawing.Size(477, 256)
         Me.libxPreview.TabIndex = 9
         '
         'lblCPreview
         '
-        Me.lblCPreview.Location = New System.Drawing.Point(428, 159)
+        Me.lblCPreview.Location = New System.Drawing.Point(521, 130)
         Me.lblCPreview.Name = "lblCPreview"
-        Me.lblCPreview.Size = New System.Drawing.Size(48, 32)
+        Me.lblCPreview.Size = New System.Drawing.Size(60, 32)
         Me.lblCPreview.TabIndex = 10
         Me.lblCPreview.Text = " Click to Preview:"
+        Me.lblCPreview.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Label5
         '
         Me.Label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label5.Location = New System.Drawing.Point(1, 36)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(1050, 10)
+        Me.Label5.Size = New System.Drawing.Size(1248, 10)
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "Label5"
         '
         'libxOrig
         '
+        Me.libxOrig.Font = New System.Drawing.Font("Courier New", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.libxOrig.FormattingEnabled = True
-        Me.libxOrig.Location = New System.Drawing.Point(511, 374)
+        Me.libxOrig.ItemHeight = 12
+        Me.libxOrig.Location = New System.Drawing.Point(612, 373)
         Me.libxOrig.Name = "libxOrig"
-        Me.libxOrig.Size = New System.Drawing.Size(400, 290)
+        Me.libxOrig.Size = New System.Drawing.Size(477, 280)
         Me.libxOrig.TabIndex = 12
         '
         'lblPreview_Orig
         '
         Me.lblPreview_Orig.AutoSize = True
         Me.lblPreview_Orig.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPreview_Orig.Location = New System.Drawing.Point(508, 356)
+        Me.lblPreview_Orig.Location = New System.Drawing.Point(609, 355)
         Me.lblPreview_Orig.Name = "lblPreview_Orig"
         Me.lblPreview_Orig.Size = New System.Drawing.Size(328, 13)
         Me.lblPreview_Orig.TabIndex = 13
@@ -171,17 +177,19 @@ Partial Class frm_Reconcile
         '
         'libxReconcile
         '
+        Me.libxReconcile.Font = New System.Drawing.Font("Courier New", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.libxReconcile.FormattingEnabled = True
+        Me.libxReconcile.ItemHeight = 12
         Me.libxReconcile.Location = New System.Drawing.Point(18, 73)
         Me.libxReconcile.Name = "libxReconcile"
-        Me.libxReconcile.Size = New System.Drawing.Size(393, 589)
+        Me.libxReconcile.Size = New System.Drawing.Size(477, 580)
         Me.libxReconcile.TabIndex = 14
         '
         'frm_Reconcile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1051, 682)
+        Me.ClientSize = New System.Drawing.Size(1250, 682)
         Me.Controls.Add(Me.libxReconcile)
         Me.Controls.Add(Me.lblPreview_Orig)
         Me.Controls.Add(Me.libxOrig)

@@ -50,8 +50,11 @@ Public Class frm_Reconcile
 
                 'if found, it adds it to preview
                 If entrywyr = True Then
+
                     libxReconcile.Items.Add(entry)
+
                 End If
+
 
                 'updates entryindex with next line
                 entryIndex = newLineIndex + 2
