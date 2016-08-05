@@ -44,3 +44,7 @@ v3.02 (3/2014) - First major update in years.  Added ability to email datasheet 
 v3.04 - Corrected the path to comptimerun.txt on email sheet.
 
 v4.01 - Added/Completed Reconcile form.  User can preview datasheet, previous years entries, and current year entries. Added the ability to cull the previous year and create a backup of it in it's own folder.  Added new choices in reason/case combobox.
+
+v.4.02 - Added email provider options
+
+v.4.10 – Cosmetic Changes, Updated About Form, and Repaired listbox lineup on Reconcile Sheet
