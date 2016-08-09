@@ -130,7 +130,7 @@ Public Class frm_Email
 
         'Fills the sender box
         Cmb_txt.Items.Add("[Enter/Select One]")
-        Cmb_txt.Items.Add("ltaylor@co.orange.tx.us")
+        'Cmb_txt.Items.Add("ltaylor@co.orange.tx.us")
         Cmb_txt.Items.Add("wcolbert@co.orange.tx.us")
         Cmb_txt.Items.Add("ccorder@co.orange.tx.us")
 
