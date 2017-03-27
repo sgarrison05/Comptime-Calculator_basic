@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly manifestVersion="1.0" xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asmv1:assemblyIdentity name="Comptime Calculator.exe" version="2.0.0.0" publicKeyToken="d9211c0f81161cdc" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Icon1.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Comptime Calculator" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Comptime Calculator.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet class="System.Security.PermissionSet" version="1" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="4" minorVersion="10" buildNumber="0" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Comptime Calculator.exe" size="49152">
+      <assemblyIdentity name="Comptime Calculator" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>vaRivAwr2vtZ75BY1JBsXXhWVO0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Icon1.ico" size="1078">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>SDCgtjTZ6OuHsXYREJ4Q1rapsjU=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=SHON\Shon" issuerKeyHash="f1e0a34f70314432b9896c80a8a2921f3b96ab1b" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>fcXANkOJAvL34tLGsdOJy74qISU=</DigestValue></Reference></SignedInfo><SignatureValue>q0UmtGEKmiwiRJzvJLjml1Z4C7Qkt/XL4rdLnwxdcUPulV1Gaj2eylcfVJfLrgsnLdriQRzUc2jcXMG/diRXxOasD5e7aa4K5ldiXefIk5bcLBLeQO7JtjZLmvL16hdlmuuyUP8piw9N08RehaiSuezXx7gkNuNwlqtCJ7UxKyg=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>sH1T12Ntr3BarXkvo5loyUe27LhqF5cRTcQeC866fT0VpMD2KMfog0qbRf9PBT3valoMfP5dJQAF/KiHZRmwZRNA5uISpfSGxyu/99sBCf4EireFs5FXq9S95TpfoQ0hmhLWWCFYX2XVRSBLsSRXTbgRIKUtKD9k8kSiNviZWB8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="25212abecb89d3b1c6d2e2f7f202894336c0c57d" Description="" Url=""><as:assemblyIdentity name="Comptime Calculator.exe" version="2.0.0.0" publicKeyToken="d9211c0f81161cdc" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=SHON\Shon</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>M0ZbhYP295fZEzWoyhP9l//o3ZU=</DigestValue></Reference></SignedInfo><SignatureValue>gSCk9yWKVg5HzwHKQci19DwFaCUZLuWdpKGJb29gpg8tUAVMtAGaGnn8GOqQc1i/LqSoqH3iafozJeGlEbEGAmtBtS3HPeY4Ys1MUmEQqWvjgx+mTCJFLUskNidYEgoyY3e4qwS1o8WTPJW14iDftrsLEtNa5fOqJiHg7kDvKL4=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>sH1T12Ntr3BarXkvo5loyUe27LhqF5cRTcQeC866fT0VpMD2KMfog0qbRf9PBT3valoMfP5dJQAF/KiHZRmwZRNA5uISpfSGxyu/99sBCf4EireFs5FXq9S95TpfoQ0hmhLWWCFYX2XVRSBLsSRXTbgRIKUtKD9k8kSiNviZWB8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBtTCCASKgAwIBAgIQF1FA/0fnxaVC9WGZQjjzjDAJBgUrDgMCHQUAMB0xGzAZBgNVBAMeEgBTAEgATwBOAFwAUwBoAG8AbjAeFw0wODEyMzAyMTU5MjJaFw0wOTEyMzEwMzU5MjJaMB0xGzAZBgNVBAMeEgBTAEgATwBOAFwAUwBoAG8AbjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAsH1T12Ntr3BarXkvo5loyUe27LhqF5cRTcQeC866fT0VpMD2KMfog0qbRf9PBT3valoMfP5dJQAF/KiHZRmwZRNA5uISpfSGxyu/99sBCf4EireFs5FXq9S95TpfoQ0hmhLWWCFYX2XVRSBLsSRXTbgRIKUtKD9k8kSiNviZWB8CAwEAATAJBgUrDgMCHQUAA4GBABMFKF/rxnSteQ93vOZTjrw7WKVHI8mhXBOTDqncyfxvwQM3FslqTX8zTjkdYZxnvcn9+MLtBVbSLS5zW1jrumfzqCTgch8Z716R2uv8nAZZ6KMjkVIsNsYSBOlcufhX35lzsyeYkM602gpCNNLggH5otEsVZ93Z9T8OuZZ8v/wp</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

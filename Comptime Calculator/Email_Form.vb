@@ -21,8 +21,7 @@ Public Class frm_Email
 
             Case "County/Local"
 
-                SMTPClient.Host = "orangeco1.co.orange.tx.us"
-                SMTPClient.Port = 24
+                'Your local server settings
 
             Case "Google"
                 SMTPClient.Host = "smtp.gmail.com"
@@ -130,9 +129,7 @@ Public Class frm_Email
 
         'Fills the sender box
         Cmb_txt.Items.Add("[Enter/Select One]")
-        'Cmb_txt.Items.Add("ltaylor@co.orange.tx.us")
-        Cmb_txt.Items.Add("wcolbert@co.orange.tx.us")
-        Cmb_txt.Items.Add("ccorder@co.orange.tx.us")
+        'Fill in more of who you send emails to
 
         'Fills the Email Provider Box
         Me.cboxEmailProvider.Items.Add("[Choose Provider]")
@@ -160,8 +157,7 @@ Public Class frm_Email
 
             Case "County/Local"
 
-                SmtpClient.Host = "orangeco1.co.orange.tx.us"
-                SmtpClient.Port = 24
+                'Again your local server settings
 
             Case "Google"
                 SmtpClient.Host = "smtp.gmail.com"

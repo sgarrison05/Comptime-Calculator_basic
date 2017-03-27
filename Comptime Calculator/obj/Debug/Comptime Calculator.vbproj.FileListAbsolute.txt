@@ -1,0 +1,164 @@
+E:\My Documents\My Files\Visual Studio Projects\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+E:\My Documents\My Files\Visual Studio Projects\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+E:\My Documents\My Files\Visual Studio Projects\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_About.resources
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Email.resources
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Main.resources
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime_Calculator.Resources.resources
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.GenerateResource.Cache
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\bin\Debug\Comptime Calculator.exe.manifest
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\bin\Debug\Comptime Calculator.application
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\bin\Debug\Comptime Calculator.exe
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\bin\Debug\Comptime Calculator.pdb
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\bin\Debug\Comptime Calculator.xml
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime Calculator.TrustInfo.xml
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime Calculator.exe.manifest
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime Calculator.application
+C:\Temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Reconcile.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\bin\Debug\Comptime Calculator.exe.manifest
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\bin\Debug\Comptime Calculator.application
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\bin\Debug\Comptime Calculator.exe
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\bin\Debug\Comptime Calculator.pdb
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\bin\Debug\Comptime Calculator.xml
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_About.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Email.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Main.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\obj\Debug\Comptime_Calculator.Resources.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Reconcile.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.GenerateResource.Cache
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\obj\Debug\Comptime Calculator.TrustInfo.xml
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\obj\Debug\Comptime Calculator.exe.manifest
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01032015\Comptime Calculator\obj\Debug\Comptime Calculator.application
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\bin\Debug\Comptime Calculator.exe.manifest
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\bin\Debug\Comptime Calculator.application
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\bin\Debug\Comptime Calculator.exe
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\bin\Debug\Comptime Calculator.pdb
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\bin\Debug\Comptime Calculator.xml
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_About.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Email.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Main.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\obj\Debug\Comptime_Calculator.Resources.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Reconcile.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.GenerateResource.Cache
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\obj\Debug\Comptime Calculator.TrustInfo.xml
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\obj\Debug\Comptime Calculator.exe.manifest
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_01072015\Comptime Calculator\obj\Debug\Comptime Calculator.application
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\bin\Debug\Comptime Calculator.exe.manifest
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\bin\Debug\Comptime Calculator.application
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\bin\Debug\Comptime Calculator.exe
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\bin\Debug\Comptime Calculator.pdb
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\bin\Debug\Comptime Calculator.xml
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_About.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Email.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Main.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\obj\Debug\Comptime_Calculator.Resources.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Reconcile.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.GenerateResource.Cache
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\obj\Debug\Comptime Calculator.TrustInfo.xml
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\obj\Debug\Comptime Calculator.exe.manifest
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_09282015\Comptime Calculator\obj\Debug\Comptime Calculator.application
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_092015\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_092015\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_092015\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_092015\Comptime Calculator\bin\Debug\Comptime Calculator.exe
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_092015\Comptime Calculator\bin\Debug\Comptime Calculator.pdb
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_092015\Comptime Calculator\bin\Debug\Comptime Calculator.xml
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_092015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_About.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_092015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Email.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_092015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Main.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_092015\Comptime Calculator\obj\Debug\Comptime_Calculator.Resources.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_092015\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Reconcile.resources
+C:\Users\Shon Garrison\Documents\VS_Temp\Comptime Calculator_exp_092015\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.GenerateResource.Cache
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.exe.manifest
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.application
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.exe
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.pdb
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.xml
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_About.resources
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Email.resources
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Main.resources
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime_Calculator.Resources.resources
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Reconcile.resources
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.GenerateResource.Cache
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.TrustInfo.xml
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.exe.manifest
+C:\Users\Shon Garrison\Documents\Visual Studio 2013\Projects\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.application
+C:\Users\Shon Garrison\Documents\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+C:\Users\Shon Garrison\Documents\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+C:\Users\Shon Garrison\Documents\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.exe.manifest
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.application
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.exe
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.pdb
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.xml
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_About.resources
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Email.resources
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Main.resources
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime_Calculator.Resources.resources
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Reconcile.resources
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.GenerateResource.Cache
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.TrustInfo.xml
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.exe.manifest
+D:\VS_Projects_2013\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.application
+G:\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+G:\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+G:\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+G:\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.exe.manifest
+G:\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.application
+G:\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.exe
+G:\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.pdb
+G:\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.xml
+G:\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_About.resources
+G:\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Email.resources
+G:\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Main.resources
+G:\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime_Calculator.Resources.resources
+G:\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Reconcile.resources
+G:\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.GenerateResource.Cache
+G:\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.TrustInfo.xml
+G:\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.exe.manifest
+G:\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.application
+F:\Comptime Calculator_v401\Comptime Calculator\bin\Debug\Comptime Calculator.exe.config
+F:\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+F:\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+F:\Comptime Calculator_v401\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\bin\Debug\Comptime Calculator.exe.manifest
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\bin\Debug\Comptime Calculator.application
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\bin\Debug\Comptime Calculator.exe
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\bin\Debug\Comptime Calculator.pdb
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\bin\Debug\Comptime Calculator.xml
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_About.resources
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Email.resources
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Main.resources
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime_Calculator.Resources.resources
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Reconcile.resources
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.GenerateResource.Cache
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.TrustInfo.xml
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.exe.manifest
+D:\VS_Projects_2013\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.application
+C:\Temp (C)\github\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+C:\Temp (C)\github\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+C:\Temp (C)\github\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+D:\github\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+D:\github\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+D:\github\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.pdb

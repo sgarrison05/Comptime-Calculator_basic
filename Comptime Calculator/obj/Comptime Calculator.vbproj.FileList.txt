@@ -1,0 +1,10 @@
+obj\Debug\Comptime Calculator.exe
+obj\Debug\Comptime Calculator.xml
+obj\Debug\Comptime Calculator.pdb
+bin\Debug\Comptime Calculator.exe
+bin\Debug\Comptime Calculator.pdb
+bin\Debug\Comptime Calculator.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Comptime_Calculator.compcalcForm.resources
+obj\Debug\Comptime_Calculator.Resources.resources
+obj\Debug\Comptime Calculator.vbproj.GenerateResource.Cache

@@ -1,0 +1,87 @@
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime_Calculator.compcalcForm.resources
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime_Calculator.Resources.resources
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.GenerateResource.Cache
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\bin\Debug\Comptime Calculator.exe
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\bin\Debug\Comptime Calculator.pdb
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\bin\Debug\Comptime Calculator.xml
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\bin\Debug\Comptime Calculator.exe.manifest
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\bin\Debug\Comptime Calculator.application
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.TrustInfo.xml
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.exe.manifest
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.application
+E:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+E:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+E:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+E:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\bin\Debug\Comptime Calculator.exe.manifest
+E:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\bin\Debug\Comptime Calculator.application
+E:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\bin\Debug\Comptime Calculator.exe
+E:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\bin\Debug\Comptime Calculator.pdb
+E:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\bin\Debug\Comptime Calculator.xml
+E:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\obj\Debug\ResolveAssemblyReference.cache
+E:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime_Calculator.compcalcForm.resources
+E:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime_Calculator.Resources.resources
+E:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.GenerateResource.Cache
+E:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.TrustInfo.xml
+E:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.exe.manifest
+E:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.application
+F:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+F:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+F:\LSCO Coursework\Current Semester\BCIS_1316_VisualBasic\Project\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+E:\Temp\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+E:\Temp\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+E:\Temp\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+E:\Temp\Comptime Calculator(updated)\Comptime Calculator\bin\Debug\Comptime Calculator.exe.manifest
+E:\Temp\Comptime Calculator(updated)\Comptime Calculator\bin\Debug\Comptime Calculator.application
+E:\Temp\Comptime Calculator(updated)\Comptime Calculator\bin\Debug\Comptime Calculator.exe
+E:\Temp\Comptime Calculator(updated)\Comptime Calculator\bin\Debug\Comptime Calculator.pdb
+E:\Temp\Comptime Calculator(updated)\Comptime Calculator\bin\Debug\Comptime Calculator.xml
+E:\Temp\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\ResolveAssemblyReference.cache
+E:\Temp\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime_Calculator.compcalcForm.resources
+E:\Temp\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime_Calculator.Resources.resources
+E:\Temp\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.GenerateResource.Cache
+E:\Temp\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.TrustInfo.xml
+E:\Temp\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.exe.manifest
+E:\Temp\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.application
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator(updated)\Comptime Calculator\bin\Debug\Comptime Calculator.exe.manifest
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator(updated)\Comptime Calculator\bin\Debug\Comptime Calculator.application
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator(updated)\Comptime Calculator\bin\Debug\Comptime Calculator.exe
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator(updated)\Comptime Calculator\bin\Debug\Comptime Calculator.pdb
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator(updated)\Comptime Calculator\bin\Debug\Comptime Calculator.xml
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime_Calculator.compcalcForm.resources
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime_Calculator.Resources.resources
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.GenerateResource.Cache
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.TrustInfo.xml
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.exe.manifest
+C:\Documents and Settings\Shon\My Documents\Visual Studio 2005\Projects\Comptime Calculator(updated)\Comptime Calculator\obj\Debug\Comptime Calculator.application
+C:\Users\Shon Garrison\Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+C:\Users\Shon Garrison\Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+C:\Users\Shon Garrison\Documents\Visual Studio 2005\Projects\Comptime Calculator\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+C:\Users\Shon Garrison\Documents\Visual Studio 2005\Projects\Comptime Calculator(initial_form)\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+C:\Users\Shon Garrison\Documents\Visual Studio 2005\Projects\Comptime Calculator(initial_form)\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+C:\Users\Shon Garrison\Documents\Visual Studio 2005\Projects\Comptime Calculator(initial_form)\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\bin\Debug\Comptime Calculator.exe.manifest
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\bin\Debug\Comptime Calculator.application
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\bin\Debug\Comptime Calculator.exe
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\bin\Debug\Comptime Calculator.pdb
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\bin\Debug\Comptime Calculator.xml
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\ResolveAssemblyReference.cache
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Main.resources
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Email.resources
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime_Calculator.Resources.resources
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.GenerateResource.Cache
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime Calculator.TrustInfo.xml
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime Calculator.exe.manifest
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime Calculator.application
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_About.resources
+C:\temp(C)\Comptime Calculator_exp\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Reconcillation.resources
