@@ -196,30 +196,43 @@ Public Class frm_Reconcile
                 My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" & txtYear.Text.ToString & ".txt", String.Empty, _
                                                     False)
 
-                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" & txtYear.Text.ToString & ".txt", _
-                                                    "Orange County Juvenile Probation Dept." & ControlChars.NewLine & _
-                                                    "---------------------------------------" & ControlChars.NewLine & _
-                                                    "Personal Comptime for " & frm_Main.user & " for year " & txtYear.Text.ToString & ControlChars.NewLine & _
-                                                    ControlChars.NewLine & _
-                                                    "Date Entered" & Strings.Space(10) & "CaseNo." & Strings.Space(13) & _
-                                                    "Earned(+)" & Strings.Space(10) & "Taken(-)" & Strings.Space(9) & "Balance" & _
-                                                    ControlChars.NewLine & _
-                                                    "------------" & Strings.Space(10) & "---------" & Strings.Space(11) & _
-                                                    "---------" & Strings.Space(10) & "--------" & Strings.Space(9) & _
-                                                    "-------" & ControlChars.NewLine, False)
+                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" & _
+                            txtYear.Text.ToString & ".txt", _
+                            "Orange County Juvenile Probation Dept." & ControlChars.NewLine & _
+                            "---------------------------------------" & ControlChars.NewLine & _
+                            "Personal Comptime for " & frm_Main.user & _
+                            " for year " & _
+                            txtYear.Text.ToString & ControlChars.NewLine & ControlChars.NewLine & _
+                            "Date Entered" & Strings.Space(10) & _
+                            "CaseNo." & Strings.Space(13) & _
+                            "Earned(+)" & Strings.Space(10) & _
+                            "Taken(-)" & Strings.Space(9) & _
+                            "Balance" & ControlChars.NewLine & _
+                            "------------" & Strings.Space(10) & _
+                            "---------" & Strings.Space(11) & _
+                            "---------" & Strings.Space(10) & _
+                            "--------" & Strings.Space(9) & _
+                            "-------" & ControlChars.NewLine, False)
             Else
                 My.Computer.FileSystem.CreateDirectory(path2)
-                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" & txtYear.Text.ToString & ".txt", _
-                                                    "Orange County Juvenile Probation Dept." & ControlChars.NewLine & _
-                                                    "---------------------------------------" & ControlChars.NewLine & _
-                                                    "Personal Comptime for " & frm_Main.user & " for year " & txtYear.Text.ToString & ControlChars.NewLine & _
-                                                    ControlChars.NewLine & _
-                                                    "Date Entered" & Strings.Space(10) & "CaseNo." & Strings.Space(13) & _
-                                                    "Earned(+)" & Strings.Space(10) & "Taken(-)" & Strings.Space(9) & "Balance" & _
-                                                    ControlChars.NewLine & _
-                                                    "------------" & Strings.Space(10) & "---------" & Strings.Space(11) & _
-                                                    "---------" & Strings.Space(10) & "--------" & Strings.Space(9) & _
-                                                    "-------" & ControlChars.NewLine, False)
+                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" & _
+                            txtYear.Text.ToString & _
+                            ".txt", _
+                            "Orange County Juvenile Probation Dept." & ControlChars.NewLine & _
+                            "---------------------------------------" & ControlChars.NewLine & _
+                            "Personal Comptime for " & frm_Main.user & _
+                            " for year " & _
+                            txtYear.Text.ToString & ControlChars.NewLine & ControlChars.NewLine & _
+                            "Date Entered" & Strings.Space(10) & _
+                            "CaseNo." & Strings.Space(13) & _
+                            "Earned(+)" & Strings.Space(10) & _
+                            "Taken(-)" & Strings.Space(9) & _
+                            "Balance" & ControlChars.NewLine & _
+                            "------------" & Strings.Space(10) & _
+                            "---------" & Strings.Space(11) & _
+                            "---------" & Strings.Space(10) & _
+                            "--------" & Strings.Space(9) & _
+                            "-------" & ControlChars.NewLine, False)
             End If
 
             'puts all items in text file
@@ -237,31 +250,39 @@ Public Class frm_Reconcile
                 My.Computer.FileSystem.WriteAllText(path, String.Empty, _
                                                     False)
                 My.Computer.FileSystem.WriteAllText(path, _
-                                                    "Orange County Juvenile Probation Dept." & ControlChars.NewLine & _
-                                                    "---------------------------------------" & ControlChars.NewLine & _
-                                                    "Personal Comptime Account for: " & frm_Main.user & ControlChars.NewLine & _
-                                                    ControlChars.NewLine & _
-                                                    "Date Entered" & Strings.Space(10) & "CaseNo." & Strings.Space(13) & _
-                                                    "Earned(+)" & Strings.Space(10) & "Taken(-)" & Strings.Space(9) & "Balance" & _
-                                                    ControlChars.NewLine & _
-                                                    "------------" & Strings.Space(10) & "---------" & Strings.Space(11) & _
-                                                    "---------" & Strings.Space(10) & "--------" & Strings.Space(9) & _
-                                                    "-------" & ControlChars.NewLine, False)
+                            "Orange County Juvenile Probation Dept." & ControlChars.NewLine & _
+                            "---------------------------------------" & ControlChars.NewLine & _
+                            "Personal Comptime Account for: " & _
+                            frm_Main.user & ControlChars.NewLine & ControlChars.NewLine & _
+                            "Date Entered" & Strings.Space(10) & _
+                            "CaseNo." & Strings.Space(13) & _
+                            "Earned(+)" & Strings.Space(10) & _
+                            "Taken(-)" & Strings.Space(9) & _
+                            "Balance" & ControlChars.NewLine & _
+                            "------------" & Strings.Space(10) & _
+                            "---------" & Strings.Space(11) & _
+                            "---------" & Strings.Space(10) & _
+                            "--------" & Strings.Space(9) & _
+                            "-------" & ControlChars.NewLine, False)
 
 
             Else
 
                 My.Computer.FileSystem.WriteAllText(path, _
-                                                    "Orange County Juvenile Probation Dept." & ControlChars.NewLine & _
-                                                    "---------------------------------------" & ControlChars.NewLine & _
-                                                    "Personal Comptime Account for: " & frm_Main.user & ControlChars.NewLine & _
-                                                    ControlChars.NewLine & _
-                                                    "Date Entered" & Strings.Space(10) & "CaseNo." & Strings.Space(13) & _
-                                                    "Earned(+)" & Strings.Space(10) & "Taken(-)" & Strings.Space(9) & "Balance" & _
-                                                    ControlChars.NewLine & _
-                                                    "------------" & Strings.Space(10) & "---------" & Strings.Space(11) & _
-                                                    "---------" & Strings.Space(10) & "--------" & Strings.Space(9) & _
-                                                    "-------" & ControlChars.NewLine, False)
+                            "Orange County Juvenile Probation Dept." & ControlChars.NewLine & _
+                            "---------------------------------------" & ControlChars.NewLine & _
+                            "Personal Comptime Account for: " & _
+                            frm_Main.user & ControlChars.NewLine & ControlChars.NewLine & _
+                            "Date Entered" & Strings.Space(10) & _
+                            "CaseNo." & Strings.Space(13) & _
+                            "Earned(+)" & Strings.Space(10) & _
+                            "Taken(-)" & Strings.Space(9) & _
+                            "Balance" & ControlChars.NewLine & _
+                            "------------" & Strings.Space(10) & _
+                            "---------" & Strings.Space(11) & _
+                            "---------" & Strings.Space(10) & _
+                            "--------" & Strings.Space(9) & _
+                            "-------" & ControlChars.NewLine, False)
 
             End If
 
@@ -276,15 +297,17 @@ Public Class frm_Reconcile
 
 
             'advises it is going to return to main form.
-            MessageBox.Show("Reconcilliation Complete." & ControlChars.NewLine & "The form will now close and return to the main form", _
-                   "Comptime Calculator", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Reconcilliation Complete." & ControlChars.NewLine & _
+                            "The form will now close and return to the main form", _
+                            "Comptime Calculator", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             'if successful returns to main form
             Me.Close()
             frm_Main.Show()
 
         Else
-            MessageBox.Show("Make sure you have a previous year to reconcile", "Important", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Make sure you have a previous year to reconcile", _
+                            "Important", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
             Me.btnClearPrev.Focus()
 

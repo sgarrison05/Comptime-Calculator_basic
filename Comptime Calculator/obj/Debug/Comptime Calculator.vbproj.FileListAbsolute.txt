@@ -162,3 +162,6 @@ C:\Temp (C)\github\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Compti
 D:\github\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.exe
 D:\github\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.xml
 D:\github\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+D:\Programming\github\comptime_calculator_vb\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+D:\Programming\github\comptime_calculator_vb\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+D:\Programming\github\comptime_calculator_vb\Comptime Calculator\obj\Debug\Comptime Calculator.pdb

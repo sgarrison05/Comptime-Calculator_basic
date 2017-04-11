@@ -324,10 +324,13 @@ Public Class frm_Main
             If My.Computer.FileSystem.FileExists(path2 & "comptimerun.txt") And _
             My.Computer.FileSystem.FileExists(path1) Then
                 My.Computer.FileSystem.WriteAllText(path1, line, False)
-                My.Computer.FileSystem.WriteAllText(path2 & "comptimerun.txt", curdate _
-            & Strings.Space(12) & caseno.PadRight(15, " ") & Strings.Space(6) & earnedTextBox.Text.PadLeft(5, " ") & _
-                Strings.Space(13) & takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & Convert.ToString(previous).PadLeft(5, " ") & _
-                ControlChars.NewLine, True)
+                My.Computer.FileSystem.WriteAllText(path2 & "comptimerun.txt", _
+                curdate & Strings.Space(12) & _
+                caseno.PadRight(15, " ") & Strings.Space(6) & _
+                earnedTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
+                takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
+                Convert.ToString(previous).PadLeft(5, " ") & ControlChars.NewLine, True)
+
                 My.Computer.FileSystem.WriteAllText(path2 & "comptimerun.txt", "".PadLeft(85, "-") _
                 & ControlChars.NewLine, True)
 
@@ -349,18 +352,22 @@ Public Class frm_Main
             Else : My.Computer.FileSystem.CreateDirectory("C:\Comptime")
                 My.Computer.FileSystem.WriteAllText(path1, line, False)
                 My.Computer.FileSystem.WriteAllText(path2 & "comptimerun.txt", _
-                                                    "Orange County Juvenile Probation Dept" & ControlChars.NewLine & _
-                                                    "---------------------------------------" & ControlChars.NewLine & _
-                                                    "Personal Comptime Account for: " & user & ControlChars.NewLine & _
-                                                    heading & ControlChars.NewLine & _
-                                                    "------------" & Strings.Space(10) & "--------------" & Strings.Space(5) & _
-                                                    "---------" & Strings.Space(10) & "--------" & Strings.Space(9) & _
-                                                    "-------" & ControlChars.NewLine, True)
+                    "Orange County Juvenile Probation Dept" & ControlChars.NewLine & _
+                    "---------------------------------------" & ControlChars.NewLine & _
+                    "Personal Comptime Account for: " & user & ControlChars.NewLine & _
+                    heading & ControlChars.NewLine & _
+                    "------------" & Strings.Space(10) & _
+                    "--------------" & Strings.Space(5) & _
+                    "---------" & Strings.Space(10) & _
+                    "--------" & Strings.Space(9) & _
+                    "-------" & ControlChars.NewLine, True)
 
-                My.Computer.FileSystem.WriteAllText(path2 & "comptimerun.txt", curdate & _
-                                                    Strings.Space(12) & caseno.PadRight(15, " ") & Strings.Space(6) & earnedTextBox.Text.PadLeft(5, " ") & _
-                                                    Strings.Space(13) & takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & Convert.ToString(previous).PadLeft(5, " ") & _
-                                                    ControlChars.NewLine, True)
+                My.Computer.FileSystem.WriteAllText(path2 & "comptimerun.txt", _
+                    curdate & Strings.Space(12) & _
+                    caseno.PadRight(15, " ") & Strings.Space(6) & _
+                    earnedTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
+                    takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
+                    Convert.ToString(previous).PadLeft(5, " ") & ControlChars.NewLine, True)
 
                 My.Computer.FileSystem.WriteAllText(path2 & "comptimerun.txt", "".PadLeft(85, "-") & _
                                                     ControlChars.NewLine, True)
@@ -445,21 +452,32 @@ Public Class frm_Main
                 calcearned = earned * 1.5D
                 calcearned = Math.Round(calcearned, 2)
                 previewbankbal = calcearned + Convert.ToDecimal(prevbalLabel.Text)
+
                 calcearnedTextBox.Text = ""
                 calcearnedTextBox.Text = "Total accrued time to enter on affidavit = " & _
-                (earned * 1.5D).ToString("N2") & " hours" & ControlChars.NewLine & "-".PadLeft(83, "-") & _
-                ControlChars.NewLine & "Preview of Entry to Activity Sheet:" & ControlChars.NewLine & _
-                ControlChars.NewLine & "Date Entered" & Strings.Space(13) & "CaseNo." & Strings.Space(16) & _
-                "Earned(+)" & Strings.Space(12) & "Taken(-)" & Strings.Space(15) & "Balance" & _
-                ControlChars.NewLine & "-----------------" & Strings.Space(13) & "----------" & Strings.Space(16) & _
-                "------------" & Strings.Space(13) & "----------" & Strings.Space(17) & _
-                "----------" & ControlChars.NewLine & accruedDateTimePicker.Text & Strings.Space(15) & _
-                caseComboBox.Text.PadRight(15, " ") & Strings.Space(9) & earnedTextBox.Text.PadLeft(5, " ") & _
-                Strings.Space(21) & takenTextBox.Text.PadLeft(5, " ") & Strings.Space(22) & _
+                (earned * 1.5D).ToString("N2") & " hours" & ControlChars.NewLine & _
+                "-".PadLeft(83, "-") & ControlChars.NewLine & _
+                "Preview of Entry to Activity Sheet:" & ControlChars.NewLine & ControlChars.NewLine & _
+                "Date Entered" & Strings.Space(13) & _
+                "CaseNo." & Strings.Space(16) & _
+                "Earned(+)" & Strings.Space(12) & _
+                "Taken(-)" & Strings.Space(15) & _
+                "Balance" & ControlChars.NewLine & _
+                "-----------------" & Strings.Space(13) & _
+                "----------" & Strings.Space(16) & _
+                "------------" & Strings.Space(13) & _
+                "----------" & Strings.Space(17) & _
+                "----------" & ControlChars.NewLine & _
+                accruedDateTimePicker.Text & Strings.Space(15) & _
+                caseComboBox.Text.PadRight(15, " ") & Strings.Space(9) & _
+                earnedTextBox.Text.PadLeft(5, " ") & Strings.Space(21) & _
+                takenTextBox.Text.PadLeft(5, " ") & Strings.Space(22) & _
                 Convert.ToString(previewbankbal).PadLeft(5, " ")
+
                 newbalance = calcearned - taken
                 newbalance = Math.Round(newbalance, 2)
                 newbalLabel.Text = Convert.ToString(newbalance)
+
             Else : MessageBox.Show("Must be numeric", title, MessageBoxButtons.OK, _
             MessageBoxIcon.Information)
                 earnedTextBox.Focus()
@@ -484,18 +502,29 @@ Public Class frm_Main
                 newbalance = Math.Round(newbalance, 2)
                 previewbankbal = newbalance + Convert.ToDecimal(prevbalLabel.Text)
                 newbalLabel.Text = Convert.ToString(newbalance)
+
                 calcearnedTextBox.Text = ""
                 calcearnedTextBox.Text = "Total taken time to enter on affidavit = " & _
-                (taken).ToString("N2") & " hours" & ControlChars.NewLine & "-".PadLeft(83, "-") & _
-                ControlChars.NewLine & "Preview of Entry to Activity Sheet:" & ControlChars.NewLine & _
-                ControlChars.NewLine & "Date Entered" & Strings.Space(13) & "CaseNo." & Strings.Space(16) & _
-                "Earned(+)" & Strings.Space(12) & "Taken(-)" & Strings.Space(15) & "Balance" & _
-                ControlChars.NewLine & "-----------------" & Strings.Space(13) & "----------" & Strings.Space(16) & _
-                "------------" & Strings.Space(13) & "----------" & Strings.Space(17) & _
-                "----------" & ControlChars.NewLine & accruedDateTimePicker.Text & Strings.Space(15) & _
-                caseComboBox.Text.PadRight(15, " ") & Strings.Space(9) & earnedTextBox.Text.PadLeft(5, " ") & _
-                Strings.Space(21) & takenTextBox.Text.PadLeft(5, " ") & Strings.Space(22) & _
+                (taken).ToString("N2") & _
+                " hours" & ControlChars.NewLine & _
+                "-".PadLeft(83, "-") & ControlChars.NewLine & _
+                "Preview of Entry to Activity Sheet:" & ControlChars.NewLine & ControlChars.NewLine & _
+                "Date Entered" & Strings.Space(13) & _
+                "CaseNo." & Strings.Space(16) & _
+                "Earned(+)" & Strings.Space(12) & _
+                "Taken(-)" & Strings.Space(15) & _
+                "Balance" & ControlChars.NewLine & _
+                "-----------------" & Strings.Space(13) & _
+                "----------" & Strings.Space(16) & _
+                "------------" & Strings.Space(13) & _
+                "----------" & Strings.Space(17) & _
+                "----------" & ControlChars.NewLine & _
+                accruedDateTimePicker.Text & Strings.Space(15) & _
+                caseComboBox.Text.PadRight(15, " ") & Strings.Space(9) & _
+                earnedTextBox.Text.PadLeft(5, " ") & Strings.Space(21) & _
+                takenTextBox.Text.PadLeft(5, " ") & Strings.Space(22) & _
                 Convert.ToString(previewbankbal)
+
             Else : MessageBox.Show("Must be numeric", title, MessageBoxButtons.OK, _
             MessageBoxIcon.Information)
                 takenTextBox.Focus()
@@ -545,24 +574,34 @@ Public Class frm_Main
             If button = Windows.Forms.DialogResult.Yes And My.Computer.FileSystem.FileExists(path3 & "comptimerun.txt") _
             And My.Computer.FileSystem.FileExists(path4) Then
                 My.Computer.FileSystem.WriteAllText(path4, line2, False)
-                My.Computer.FileSystem.WriteAllText(path3 & "comptimerun.txt", curdate _
-            & Strings.Space(12) & caseno.PadRight(15, " ") & Strings.Space(6) & earnedTextBox.Text.PadLeft(5, " ") & _
-                Strings.Space(13) & takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & Convert.ToString(previous) & _
-                ControlChars.NewLine, True)
+                My.Computer.FileSystem.WriteAllText(path3 & "comptimerun.txt", _
+                    curdate & Strings.Space(12) & _
+                    caseno.PadRight(15, " ") & Strings.Space(6) & _
+                    earnedTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
+                    takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
+                    Convert.ToString(previous) & ControlChars.NewLine, True)
+
                 My.Computer.FileSystem.WriteAllText(path3 & "comptimerun.txt", "".PadLeft(85, "-") & ControlChars.NewLine, _
                 True)
 
             Else 'Setting up for the first time
                 My.Computer.FileSystem.CreateDirectory("C:\Comptime")
                 My.Computer.FileSystem.WriteAllText(path4, line2, False)
-                My.Computer.FileSystem.WriteAllText(path3 & "comptimerun.txt", heading & ControlChars.NewLine _
-                & "------------" & Strings.Space(10) & "-------" & Strings.Space(5) & _
-                "---------" & Strings.Space(10) & "--------" & Strings.Space(10) & _
-                "-------" & ControlChars.NewLine, True)
-                My.Computer.FileSystem.WriteAllText(path3 & "comptimerun.txt", curdate _
-                & Strings.Space(12) & caseno.PadRight(15, " ") & Strings.Space(6) & earnedTextBox.Text.PadLeft(5, " ") & _
-                Strings.Space(13) & takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & Convert.ToString(previous) & _
-                ControlChars.NewLine, True)
+                My.Computer.FileSystem.WriteAllText(path3 & "comptimerun.txt", _
+                    heading & ControlChars.NewLine & _
+                    "------------" & Strings.Space(10) & _
+                    "-------" & Strings.Space(5) & _
+                    "---------" & Strings.Space(10) & _
+                    "--------" & Strings.Space(10) & _
+                    "-------" & ControlChars.NewLine, True)
+
+                My.Computer.FileSystem.WriteAllText(path3 & "comptimerun.txt", _
+                    curdate & Strings.Space(12) & _
+                    caseno.PadRight(15, " ") & Strings.Space(6) & _
+                    earnedTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
+                    takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
+                    Convert.ToString(previous) & ControlChars.NewLine, True)
+
                 My.Computer.FileSystem.WriteAllText(path3 & "comptimerun.txt", "".PadLeft(85, "-") & ControlChars.NewLine, _
                 True)
             End If
