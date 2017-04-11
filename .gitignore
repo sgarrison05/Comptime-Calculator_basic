@@ -1,6 +1,12 @@
 # Build and Object Folders
 bin/
 obj/
+ 
+#Backup Folders
+Backup/
+
+# Upgrade Logs
+UpgradeLog.xml
 
 #User Specific Files
 *.user
