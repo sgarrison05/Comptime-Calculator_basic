@@ -1,4 +1,4 @@
-# comptime_calculator_vb
+# Comptime Calculator (Visual Basic)
 ### A Compensatory or Overtime Calculator
 
 Comptime Calculator 2009
