@@ -1,5 +1,5 @@
-# Comptime Calculator (Visual Basic)
-### A Compensatory or Overtime Calculator
+# Comptime Calculator v410 (Visual Basic)
+In-production version of the Comptime Calculator at Orange County
 
 Comptime Calculator 2009
 By Shon Garrison
@@ -8,11 +8,11 @@ Program Overview:
 
 This program was written to assist in keeping track of the compensatory time that is accrued when a professional works outside or beyond the average work day/week. This program was mainly written for the Juvenile Probation Department for on-call and extracurricular activities, but it could be adapted to anyone that works as a professional and has to track overtime.
 
-Comptime is basically overtime that is accrued at time 1 1/2 for working beyond an 8 hour day or more than 40 hrs in a given week. This program calculates the time based on that formula (Except chief's edition [straight time] and keeps track of the users balance through a bank file and a running activity file.  Warning:  Both files created by the program are in plain text.  It can be read by any text editor (WARNING: Not all text editors will display exactly the same just like internet browsers. Notepad works best.) and can be modified outside the program.  Any changes to either file, outside the program, can result in a miscalculation, loss of data, or deletion of transactions.
+Comptime is basically overtime that is accrued at time of 1.5 times for working beyond an 8 hour day or more than 40 hrs in a given week. This program calculates the time based on that formula (Except chief's edition [straight time] and keeps track of the users balance through a bank file and a running activity file.  Warning:  Both file created by the program are in plain text.  It can be read by any text editor (WARNING: Not all text editors will display exactly the same just like internet browsers. Notepad works best.) and can be modified outside the program.  Any changes to either file, outside the program, can result in a miscalculation, loss of data, or deletion of transactions.
 
 Program Functions:
 
-When the program is launched for the first time, it will check for two files: bank and activity sheet.  If the files do not exist, the program will ask to create them. These to files are essential for the program to functions.  One is the bank that keeps track of your current balance; the other is activity sheet. The activity sheet gives you a running look at the activity of the comptime as it is changed.  It works very similarly to a check book register.  The program will only check for the files once, unless they are deleted or moved, then the process will start over.  However, after the files are created, the program will ask you if you have an initial balance to enter because rarely will the person be starting from scratch, unless they are a new employee.  
+When the program is launched for the first time, it will check for two file: bank and activity sheet.  If the file does not exist, the program will ask to create it. This t file is essential for the program to functions.  The activity sheet gives you a running look at the activity of the comptime as it is changed.  It works very similarly to a check book register.  The program will only check for the file once, unless it is deleted or moved, then the process will start over.  However, after the file is created, the program will ask you if you have an initial balance to enter because rarely will the person be starting from scratch, unless they are a new employee.  
 
 After the initial balance is obtained, the main form will appear.  You will notice entry text boxes for date, reason, and time accrued / taken.  The radio buttons on the left indicate whether time is earned or used.  Depending on which button you use, it will deactivate the other corresponding text box.  Note:  You can perform both an accrued and taken at the same time by activating either earned or taken, entering the information, then activating the other, but this must be done prior to hitting the calculation button.  For the best results, I suggest that the user enter one transaction at time.  This is allows the activity sheet to track the changes and updates better.  If two calculations are done at the same time, only one entry will be made into the activity sheet.  It will reflect the correct time, but it will only show one transaction.  Also, if two calculations are done at the same time, the preview text box will only reflect the taken time.
 
@@ -51,3 +51,10 @@ v4.01 - Added/Completed Reconcile form.  User can preview datasheet, previous ye
 v.4.02 - Added email provider options
 
 v.4.10 – Cosmetic Changes, Updated About Form, and Repaired listbox lineup on Reconcile Sheet
+
+v.4.20 - Added Subroutine to address bug whereas the Comptime Folder nor Comtimerun/Bank file
+would not be created on the first run if the user did not enter a balance at first start. Updated
+README.md file as well as the appropriate Comptime_Calculator_Users_Guide.pdf.
+
+v.4.21 - Cleaned up variables and elemenated the need for the bank file.  Program now pulls bank
+from comptimerun.txt sheet as I always had intended it.

@@ -2,10 +2,9 @@
 'Purpose                To calculate comptime time earned or spent
 '                       in a particular instance
 'Created By             Shon Garrison, December 2008
-'Updated Last           August 2016
+'Updated Last           September 28, 2021
 
-'Update Notes:          Cosmetic Changes, Updated About Form, Added email provider options, 
-'                       Repaired listbox lineup on reconcile sheet
+'Update Notes:          Elemenated the bank file
 
 
 Option Explicit On
@@ -14,11 +13,13 @@ Imports System.Globalization
 
 Public Class frm_Main
 
+    Private cdirectory As String = "C:\Comptime"
+    Private cpath As String = "C:\Comptime\comptimerun.txt"
     Private title As String = "Comptime Calculator"
     Public user As String
     Private newbalance As Decimal
     Private previous As Decimal
-    Private text1 As String
+    Private myentry As String
 
 
     Private Sub clearButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles clearButton.Click
@@ -45,13 +46,13 @@ Public Class frm_Main
 
     Private Sub compcalcForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        Dim my_decision As DialogResult
 
         Me.calcearnedTextBox.ReadOnly = True
 
         'disable apply calc button till preview is seen
         Me.applyButton.Enabled = False
         Me.ApplyToolStripMenuItem.Enabled = False
-
 
         Me.caseComboBox.Items.Add("[Enter One]")
         Me.caseComboBox.Items.Add("Sick")
@@ -69,18 +70,11 @@ Public Class frm_Main
 
         Me.caseComboBox.SelectedItem = "[Enter One]"
 
-
-        'verifies that .txt file exists.  If is does, it assigns it to a txt variable
-        'otherwise it exits the program.
-        Dim path As String = "C:\Comptime\"
-        Dim button As DialogResult
-
         'sets up a default selection for the radio buttons
         accruedRadioButton.Select()
 
         'Verify txt file exists else ask if the user wants to create it.
-        If My.Computer.FileSystem.FileExists(path & "comptime.txt") Then
-            prevbalLabel.Text = My.Computer.FileSystem.ReadAllText(path & "comptime.txt")
+        If My.Computer.FileSystem.FileExists(cpath) Then
 
             'pulls user variable from text file
             'declare block variables
@@ -92,9 +86,9 @@ Public Class frm_Main
 
             'checks for existing comptimerun.txt
             'if it exists, it pulls it and stores it
-            If My.Computer.FileSystem.FileExists(path & "comptimerun.txt") Then
+            If My.Computer.FileSystem.FileExists(cpath) Then
 
-                readtxt = My.Computer.FileSystem.ReadAllText(path & "comptimerun.txt")
+                readtxt = My.Computer.FileSystem.ReadAllText(cpath)
 
                 'primer for first read of readtxt
                 newLineIndex = readtxt.IndexOf(ControlChars.NewLine, entryIndex)
@@ -107,7 +101,15 @@ Public Class frm_Main
                     'finds line  with username that you are searching for
                     entryuser = entry.Contains("Account")
 
-                    'if found, it adds it to preview
+                    'if line is found with a date, add to myentry variable to find bank balance at the end
+                    If entry.Contains("/") Then
+                        myentry = Trim(Microsoft.VisualBasic.Right(entry, 7))
+                    End If
+
+                    'Retrieve Current Bank balance
+                    prevbalLabel.Text = myentry
+
+                    'if user is found, it adds it to preview
                     If entryuser = True Then
                         user = entry.Substring(31)
                     End If
@@ -125,14 +127,16 @@ Public Class frm_Main
             End If
 
         Else 'sets up the comptime back in the specified path
-            button = MessageBox.Show _
-            ("The current comptime balance file does not exist.  This is your comptime bank, would you like to create it?", _
+            my_decision = MessageBox.Show _
+            ("The current comptime balance file does not exist.  This is your comptime bank, would you like to create it?",
             "Comptime Calculator", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
-            If button = DialogResult.Yes Then
-                Dim button3 As DialogResult
-                button3 = MessageBox.Show("Do you have an current balance to enter?", title, MessageBoxButtons.YesNo, _
+
+            If my_decision = DialogResult.Yes Then
+                Dim init_bal_decision As DialogResult
+                init_bal_decision = MessageBox.Show("Do you have an current balance to enter?", title, MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question)
-                If button3 = Windows.Forms.DialogResult.Yes Then
+
+                If init_bal_decision = Windows.Forms.DialogResult.Yes Then
                     Do Until IsNumeric(prevbalLabel.Text) Or prevbalLabel.Text <> String.Empty
                         prevbalLabel.Text = InputBox("Please enter current balance or click 'Ok' to go to calculator.", title, "0.00")
                         If Not IsNumeric(prevbalLabel.Text) Then
@@ -146,17 +150,17 @@ Public Class frm_Main
                     Me.Text = "Personal Comptime Calculator for " & user
                     newbalLabel.Text = "0.00"
                     calcearnedTextBox.Text = "Ready"
-                ElseIf button3 = Windows.Forms.DialogResult.No Then
+
+                ElseIf init_bal_decision = Windows.Forms.DialogResult.No Then
                     Me.Show()
                     prevbalLabel.Text = "0.00"
                     newbalLabel.Text = "0.00"
                 End If
-            Else : button = DialogResult.No
+
+            Else : my_decision = DialogResult.No
                 Me.Close()
             End If
         End If
-
-
 
     End Sub
 
@@ -197,7 +201,6 @@ Public Class frm_Main
         earnedTextBox.Clear()
     End Sub
 
-
     Private Sub spentRadioButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles spentRadioButton.Click
         earnedTextBox.Enabled = False
         takenTextBox.Enabled = True
@@ -209,13 +212,11 @@ Public Class frm_Main
         earnedTextBox.Enabled = True
     End Sub
 
-
     Private Sub applyButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles applyButton.Click
 
         Call ApplyCalculations()
 
     End Sub
-
 
     Private Sub ExitToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ExitToolStripMenuItem.Click
 
@@ -223,7 +224,6 @@ Public Class frm_Main
 
 
     End Sub
-
 
     Private Sub ComptimerunToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ComptimerunToolStripMenuItem.Click
         'Opens your comptime activity sheet file
@@ -235,24 +235,13 @@ Public Class frm_Main
         proc.Start()
     End Sub
 
-    Private Sub BankToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BankToolStripMenuItem.Click
-        'Opends your comptime bank file
-
-        Dim proc As New System.Diagnostics.Process
-        proc.StartInfo.FileName = "notepad.exe"
-        proc.StartInfo.Arguments = "C:/Comptime/Comptime.txt"
-
-        proc.Start()
-    End Sub
-
-
     Private Sub AboutToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
         frm_About.ShowDialog()
     End Sub
 
     Private Sub ReadMeFileToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ReadMeFileToolStripMenuItem.Click
 
-        'Opends your comptime bank file
+        'Opends your comptime readme file
 
         Dim proc As New System.Diagnostics.Process
         proc.StartInfo.FileName = "notepad.exe"
@@ -289,30 +278,28 @@ Public Class frm_Main
     Public Sub ApplyCalculations()
         'Saves current balance to txt file
 
-        Dim button3 As DialogResult
-        Dim button4 As DialogResult
+        Dim my_apply As DialogResult
+        Dim my_another As DialogResult
 
 
         'It will ask to you append file.
-        button3 = MessageBox.Show("Do you wish to add to new balance to bank?", title, MessageBoxButtons.YesNo, _
+        my_apply = MessageBox.Show("Do you wish to add to new balance to bank?", title, MessageBoxButtons.YesNo,
         MessageBoxIcon.Question)
-        If button3 = Windows.Forms.DialogResult.Yes Then
+        If my_apply = Windows.Forms.DialogResult.Yes Then
 
             'make calculations
             newbalance = Convert.ToDecimal(newbalLabel.Text)
             newbalance = Math.Round(newbalance, 2)
             previous = Convert.ToDecimal(prevbalLabel.Text)
-            previous = previous + newbalance
+            previous += newbalance
             previous = Math.Round(previous, 2)
             prevbalLabel.Text = Convert.ToString(previous)
 
             'Declare text writing variables
-            Dim path1 As String = "C:\Comptime\comptime.txt"
-            Dim path2 As String = "C:\Comptime\"
             Dim line As String
             Dim caseno As String
             Dim curdate As String
-            Dim heading As String = "Date Entered" & Strings.Space(10) & "CaseNo." & Strings.Space(13) & _
+            Dim heading As String = "Date Entered" & Strings.Space(10) & "CaseNo." & Strings.Space(13) &
             "Earned(+)" & Strings.Space(10) & "Taken(-)" & Strings.Space(9) & "Balance"
 
             'Convert the data from the Previous Balance Label and store it in line variable
@@ -321,20 +308,15 @@ Public Class frm_Main
             curdate = accruedDateTimePicker.Text
 
             'If Comptime file exists, the prog writes current balance text file
-            If My.Computer.FileSystem.FileExists(path2 & "comptimerun.txt") And _
-            My.Computer.FileSystem.FileExists(path1) Then
-                My.Computer.FileSystem.WriteAllText(path1, line, False)
-                My.Computer.FileSystem.WriteAllText(path2 & "comptimerun.txt", _
-                curdate & Strings.Space(12) & _
-                caseno.PadRight(15, " ") & Strings.Space(6) & _
-                earnedTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
-                takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
-                Convert.ToString(previous).PadLeft(5, " ") & ControlChars.NewLine, True)
-
-                My.Computer.FileSystem.WriteAllText(path2 & "comptimerun.txt", "".PadLeft(85, "-") _
+            If My.Computer.FileSystem.FileExists(cpath) Then
+                My.Computer.FileSystem.WriteAllText(cpath, curdate &
+                Strings.Space(12) & caseno.PadRight(15, " ") & Strings.Space(6) & earnedTextBox.Text.PadLeft(5, " ") &
+                Strings.Space(13) & takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & Convert.ToString(previous).PadLeft(5, " ") &
+                ControlChars.NewLine, True)
+                My.Computer.FileSystem.WriteAllText(cpath, "".PadLeft(85, "-") _
                 & ControlChars.NewLine, True)
 
-                MessageBox.Show("Processing complete. The form will be cleared.", _
+                MessageBox.Show("Processing complete. The form will be cleared.",
                                 title, MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.Show()
                 newbalLabel.Text = "0.00"
@@ -347,32 +329,27 @@ Public Class frm_Main
                 accruedDateTimePicker.Focus()
                 Me.applyButton.Enabled = False
 
-                'If Comptime file does not exists, the prog creates it and 
+                'If Comptime file does not exists, the program creates it and 
                 'writes current balance text file
-            Else : My.Computer.FileSystem.CreateDirectory("C:\Comptime")
-                My.Computer.FileSystem.WriteAllText(path1, line, False)
-                My.Computer.FileSystem.WriteAllText(path2 & "comptimerun.txt", _
-                    "Orange County Juvenile Probation Dept" & ControlChars.NewLine & _
-                    "---------------------------------------" & ControlChars.NewLine & _
-                    "Personal Comptime Account for: " & user & ControlChars.NewLine & _
-                    heading & ControlChars.NewLine & _
-                    "------------" & Strings.Space(10) & _
-                    "--------------" & Strings.Space(5) & _
-                    "---------" & Strings.Space(10) & _
-                    "--------" & Strings.Space(9) & _
-                    "-------" & ControlChars.NewLine, True)
+            Else : My.Computer.FileSystem.CreateDirectory(cdirectory)
+                My.Computer.FileSystem.WriteAllText(cpath,
+                                                    "Orange County Juvenile Probation Dept" & ControlChars.NewLine &
+                                                    "---------------------------------------" & ControlChars.NewLine &
+                                                    "Personal Comptime Account for: " & user & ControlChars.NewLine &
+                                                    heading & ControlChars.NewLine &
+                                                    "------------" & Strings.Space(10) & "--------------" & Strings.Space(5) &
+                                                    "---------" & Strings.Space(10) & "--------" & Strings.Space(9) &
+                                                    "-------" & ControlChars.NewLine, True)
 
-                My.Computer.FileSystem.WriteAllText(path2 & "comptimerun.txt", _
-                    curdate & Strings.Space(12) & _
-                    caseno.PadRight(15, " ") & Strings.Space(6) & _
-                    earnedTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
-                    takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
-                    Convert.ToString(previous).PadLeft(5, " ") & ControlChars.NewLine, True)
-
-                My.Computer.FileSystem.WriteAllText(path2 & "comptimerun.txt", "".PadLeft(85, "-") & _
+                My.Computer.FileSystem.WriteAllText(cpath, curdate &
+                                                    Strings.Space(12) & caseno.PadRight(15, " ") & Strings.Space(6) & earnedTextBox.Text.PadLeft(5, " ") &
+                                                    Strings.Space(13) & takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & Convert.ToString(previous).PadLeft(5, " ") &
                                                     ControlChars.NewLine, True)
 
-                MessageBox.Show("Processing complete. The form will be cleared.", _
+                My.Computer.FileSystem.WriteAllText(cpath, "".PadLeft(85, "-") &
+                                                    ControlChars.NewLine, True)
+
+                MessageBox.Show("Processing complete. The form will be cleared.",
                                 title, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 Me.Show()
@@ -391,10 +368,10 @@ Public Class frm_Main
             'If user does not want to make calculation, the program
             'will ask if the user wants to return to the program for another calculation.
             'If the user does not, then the program will direct user to exit.
-        Else : button3 = Windows.Forms.DialogResult.No
-            button4 = MessageBox.Show("Do you want to make another calculation?", title, _
+        Else : my_apply = Windows.Forms.DialogResult.No
+            my_another = MessageBox.Show("Do you want to make another calculation?", title,
         MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If button4 = Windows.Forms.DialogResult.Yes Then
+            If my_another = Windows.Forms.DialogResult.Yes Then
                 Me.Show()
                 newbalLabel.Text = "0.00"
                 calcearnedTextBox.Text = "Ready"
@@ -406,8 +383,8 @@ Public Class frm_Main
                 accruedDateTimePicker.Focus()
                 Me.applyButton.Enabled = False
 
-            Else : button4 = Windows.Forms.DialogResult.No
-                MessageBox.Show("No calcuation will be made and the form will be reset. You may exit the program.", title, _
+            Else : my_another = Windows.Forms.DialogResult.No
+                MessageBox.Show("No calcuation will be made and the form will be reset. You may exit the program.", title,
                                 MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.Show()
                 newbalLabel.Text = "0.00"
@@ -424,10 +401,50 @@ Public Class frm_Main
         End If
 
     End Sub
+    Public Sub CreateMyPaths()
 
+        'Only used as a placeholder on first run if no prior transaction is completed
+
+        'Declare text writing variables
+        Dim line As String
+        Dim caseno As String = "Placeholder"
+        Dim curdate As String = accruedDateTimePicker.Text
+        Dim heading As String = "Date Entered" & Strings.Space(10) & "CaseNo." & Strings.Space(13) &
+            "Earned(+)" & Strings.Space(10) & "Taken(-)" & Strings.Space(9) & "Balance"
+
+        'make calculations
+        newbalance = Convert.ToDecimal(newbalLabel.Text)
+        newbalance = Math.Round(newbalance, 2)
+        previous = Convert.ToDecimal(prevbalLabel.Text)
+        previous += newbalance
+        previous = Math.Round(previous, 2)
+        prevbalLabel.Text = Convert.ToString(previous)
+
+        'Convert the data from the Previous Balance Label and store it in line variable
+        line = Convert.ToString(previous)
+
+        My.Computer.FileSystem.CreateDirectory(cdirectory)
+        My.Computer.FileSystem.WriteAllText(cpath,
+                                            "Orange County Juvenile Probation Dept" & ControlChars.NewLine &
+                                            "---------------------------------------" & ControlChars.NewLine &
+                                            "Personal Comptime Account for: " & user & ControlChars.NewLine &
+                                            heading & ControlChars.NewLine &
+                                            "------------" & Strings.Space(10) & "--------------" & Strings.Space(5) &
+                                            "---------" & Strings.Space(10) & "--------" & Strings.Space(9) &
+                                            "-------" & ControlChars.NewLine, True)
+
+        My.Computer.FileSystem.WriteAllText(cpath, curdate &
+                                            Strings.Space(12) & caseno.PadRight(15, " ") & Strings.Space(6) & "0.00".PadLeft(5, " ") &
+                                            Strings.Space(13) & "0.00".PadLeft(5, " ") & Strings.Space(13) & Convert.ToString(previous).PadLeft(5, " ") &
+                                            ControlChars.NewLine, True)
+
+        My.Computer.FileSystem.WriteAllText(cpath, "".PadLeft(85, "-") &
+                                            ControlChars.NewLine, True)
+
+    End Sub
     Public Sub PreviewCalculations()
 
-        'declare variables
+        'declare calculation variables
         Dim earned As Decimal
         Dim calcearned As Decimal
         Dim taken As Decimal
@@ -452,33 +469,22 @@ Public Class frm_Main
                 calcearned = earned * 1.5D
                 calcearned = Math.Round(calcearned, 2)
                 previewbankbal = calcearned + Convert.ToDecimal(prevbalLabel.Text)
-
                 calcearnedTextBox.Text = ""
-                calcearnedTextBox.Text = "Total accrued time to enter on affidavit = " & _
-                (earned * 1.5D).ToString("N2") & " hours" & ControlChars.NewLine & _
-                "-".PadLeft(83, "-") & ControlChars.NewLine & _
-                "Preview of Entry to Activity Sheet:" & ControlChars.NewLine & ControlChars.NewLine & _
-                "Date Entered" & Strings.Space(13) & _
-                "CaseNo." & Strings.Space(16) & _
-                "Earned(+)" & Strings.Space(12) & _
-                "Taken(-)" & Strings.Space(15) & _
-                "Balance" & ControlChars.NewLine & _
-                "-----------------" & Strings.Space(13) & _
-                "----------" & Strings.Space(16) & _
-                "------------" & Strings.Space(13) & _
-                "----------" & Strings.Space(17) & _
-                "----------" & ControlChars.NewLine & _
-                accruedDateTimePicker.Text & Strings.Space(15) & _
-                caseComboBox.Text.PadRight(15, " ") & Strings.Space(9) & _
-                earnedTextBox.Text.PadLeft(5, " ") & Strings.Space(21) & _
-                takenTextBox.Text.PadLeft(5, " ") & Strings.Space(22) & _
+                calcearnedTextBox.Text = "Total accrued time to enter on affidavit = " &
+                (earned * 1.5D).ToString("N2") & " hours" & ControlChars.NewLine & "-".PadLeft(83, "-") &
+                ControlChars.NewLine & "Preview of Entry to Activity Sheet:" & ControlChars.NewLine &
+                ControlChars.NewLine & "Date Entered" & Strings.Space(13) & "CaseNo." & Strings.Space(16) &
+                "Earned(+)" & Strings.Space(12) & "Taken(-)" & Strings.Space(15) & "Balance" &
+                ControlChars.NewLine & "-----------------" & Strings.Space(13) & "----------" & Strings.Space(16) &
+                "------------" & Strings.Space(13) & "----------" & Strings.Space(17) &
+                "----------" & ControlChars.NewLine & accruedDateTimePicker.Text & Strings.Space(15) &
+                caseComboBox.Text.PadRight(15, " ") & Strings.Space(9) & earnedTextBox.Text.PadLeft(5, " ") &
+                Strings.Space(21) & takenTextBox.Text.PadLeft(5, " ") & Strings.Space(22) &
                 Convert.ToString(previewbankbal).PadLeft(5, " ")
-
                 newbalance = calcearned - taken
                 newbalance = Math.Round(newbalance, 2)
                 newbalLabel.Text = Convert.ToString(newbalance)
-
-            Else : MessageBox.Show("Must be numeric", title, MessageBoxButtons.OK, _
+            Else : MessageBox.Show("Must be numeric", title, MessageBoxButtons.OK,
             MessageBoxIcon.Information)
                 earnedTextBox.Focus()
             End If
@@ -502,30 +508,19 @@ Public Class frm_Main
                 newbalance = Math.Round(newbalance, 2)
                 previewbankbal = newbalance + Convert.ToDecimal(prevbalLabel.Text)
                 newbalLabel.Text = Convert.ToString(newbalance)
-
                 calcearnedTextBox.Text = ""
-                calcearnedTextBox.Text = "Total taken time to enter on affidavit = " & _
-                (taken).ToString("N2") & _
-                " hours" & ControlChars.NewLine & _
-                "-".PadLeft(83, "-") & ControlChars.NewLine & _
-                "Preview of Entry to Activity Sheet:" & ControlChars.NewLine & ControlChars.NewLine & _
-                "Date Entered" & Strings.Space(13) & _
-                "CaseNo." & Strings.Space(16) & _
-                "Earned(+)" & Strings.Space(12) & _
-                "Taken(-)" & Strings.Space(15) & _
-                "Balance" & ControlChars.NewLine & _
-                "-----------------" & Strings.Space(13) & _
-                "----------" & Strings.Space(16) & _
-                "------------" & Strings.Space(13) & _
-                "----------" & Strings.Space(17) & _
-                "----------" & ControlChars.NewLine & _
-                accruedDateTimePicker.Text & Strings.Space(15) & _
-                caseComboBox.Text.PadRight(15, " ") & Strings.Space(9) & _
-                earnedTextBox.Text.PadLeft(5, " ") & Strings.Space(21) & _
-                takenTextBox.Text.PadLeft(5, " ") & Strings.Space(22) & _
+                calcearnedTextBox.Text = "Total taken time to enter on affidavit = " &
+                (taken).ToString("N2") & " hours" & ControlChars.NewLine & "-".PadLeft(83, "-") &
+                ControlChars.NewLine & "Preview of Entry to Activity Sheet:" & ControlChars.NewLine &
+                ControlChars.NewLine & "Date Entered" & Strings.Space(13) & "CaseNo." & Strings.Space(16) &
+                "Earned(+)" & Strings.Space(12) & "Taken(-)" & Strings.Space(15) & "Balance" &
+                ControlChars.NewLine & "-----------------" & Strings.Space(13) & "----------" & Strings.Space(16) &
+                "------------" & Strings.Space(13) & "----------" & Strings.Space(17) &
+                "----------" & ControlChars.NewLine & accruedDateTimePicker.Text & Strings.Space(15) &
+                caseComboBox.Text.PadRight(15, " ") & Strings.Space(9) & earnedTextBox.Text.PadLeft(5, " ") &
+                Strings.Space(21) & takenTextBox.Text.PadLeft(5, " ") & Strings.Space(22) &
                 Convert.ToString(previewbankbal)
-
-            Else : MessageBox.Show("Must be numeric", title, MessageBoxButtons.OK, _
+            Else : MessageBox.Show("Must be numeric", title, MessageBoxButtons.OK,
             MessageBoxIcon.Information)
                 takenTextBox.Focus()
             End If
@@ -541,27 +536,24 @@ Public Class frm_Main
 
         'clears the form 
 
-
         'declares variables
-        Dim button As DialogResult
+        Dim my_choice As DialogResult
 
-        button = MessageBox.Show("Do you wish to add to new balance to the bank?", title, MessageBoxButtons.YesNo, _
+        my_choice = MessageBox.Show("Do you wish to add to new balance to the bank?", title, MessageBoxButtons.YesNo,
         MessageBoxIcon.Question)
-        If button = Windows.Forms.DialogResult.Yes Then
+        If my_choice = Windows.Forms.DialogResult.Yes Then
             'declare block variables
             Dim curdate As String
             Dim caseno As String
             Dim line2 As String
-            Dim heading As String = "Date Entered" & Strings.Space(10) & "CaseNo." & Strings.Space(5) & _
+            Dim heading As String = "Date Entered" & Strings.Space(10) & "CaseNo." & Strings.Space(5) &
             "Earned(+)" & Strings.Space(10) & "Taken(-)" & Strings.Space(10) & "Balance"
-            Dim path3 As String = "C:\Comptime\"
-            Dim path4 As String = "C:\Comptime\comptime.txt"
 
             'make calculations
             newbalance = Convert.ToDecimal(newbalLabel.Text)
             newbalance = Math.Round(newbalance, 2)
             previous = Convert.ToDecimal(prevbalLabel.Text)
-            previous = previous + newbalance
+            previous += newbalance
             previous = Math.Round(previous, 2)
             prevbalLabel.Text = Convert.ToString(previous)
 
@@ -571,38 +563,25 @@ Public Class frm_Main
             line2 = Convert.ToString(previous)
 
             'Write current balance text file
-            If button = Windows.Forms.DialogResult.Yes And My.Computer.FileSystem.FileExists(path3 & "comptimerun.txt") _
-            And My.Computer.FileSystem.FileExists(path4) Then
-                My.Computer.FileSystem.WriteAllText(path4, line2, False)
-                My.Computer.FileSystem.WriteAllText(path3 & "comptimerun.txt", _
-                    curdate & Strings.Space(12) & _
-                    caseno.PadRight(15, " ") & Strings.Space(6) & _
-                    earnedTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
-                    takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
-                    Convert.ToString(previous) & ControlChars.NewLine, True)
-
-                My.Computer.FileSystem.WriteAllText(path3 & "comptimerun.txt", "".PadLeft(85, "-") & ControlChars.NewLine, _
+            If my_choice = Windows.Forms.DialogResult.Yes And My.Computer.FileSystem.FileExists(cpath) Then
+                My.Computer.FileSystem.WriteAllText(cpath, curdate &
+                Strings.Space(12) & caseno.PadRight(15, " ") & Strings.Space(6) & earnedTextBox.Text.PadLeft(5, " ") &
+                Strings.Space(13) & takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & Convert.ToString(previous) &
+                ControlChars.NewLine, True)
+                My.Computer.FileSystem.WriteAllText(cpath, "".PadLeft(85, "-") & ControlChars.NewLine,
                 True)
 
             Else 'Setting up for the first time
-                My.Computer.FileSystem.CreateDirectory("C:\Comptime")
-                My.Computer.FileSystem.WriteAllText(path4, line2, False)
-                My.Computer.FileSystem.WriteAllText(path3 & "comptimerun.txt", _
-                    heading & ControlChars.NewLine & _
-                    "------------" & Strings.Space(10) & _
-                    "-------" & Strings.Space(5) & _
-                    "---------" & Strings.Space(10) & _
-                    "--------" & Strings.Space(10) & _
-                    "-------" & ControlChars.NewLine, True)
-
-                My.Computer.FileSystem.WriteAllText(path3 & "comptimerun.txt", _
-                    curdate & Strings.Space(12) & _
-                    caseno.PadRight(15, " ") & Strings.Space(6) & _
-                    earnedTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
-                    takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & _
-                    Convert.ToString(previous) & ControlChars.NewLine, True)
-
-                My.Computer.FileSystem.WriteAllText(path3 & "comptimerun.txt", "".PadLeft(85, "-") & ControlChars.NewLine, _
+                My.Computer.FileSystem.CreateDirectory(cdirectory)
+                My.Computer.FileSystem.WriteAllText(cpath, heading & ControlChars.NewLine _
+                & "------------" & Strings.Space(10) & "-------" & Strings.Space(5) &
+                "---------" & Strings.Space(10) & "--------" & Strings.Space(10) &
+                "-------" & ControlChars.NewLine, True)
+                My.Computer.FileSystem.WriteAllText(cpath, curdate _
+                & Strings.Space(12) & caseno.PadRight(15, " ") & Strings.Space(6) & earnedTextBox.Text.PadLeft(5, " ") &
+                Strings.Space(13) & takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) & Convert.ToString(previous) &
+                ControlChars.NewLine, True)
+                My.Computer.FileSystem.WriteAllText(cpath, "".PadLeft(85, "-") & ControlChars.NewLine,
                 True)
             End If
 
@@ -616,7 +595,7 @@ Public Class frm_Main
             accruedDateTimePicker.Focus()
             Me.applyButton.Enabled = False
 
-        Else : button = Windows.Forms.DialogResult.No
+        Else : my_choice = Windows.Forms.DialogResult.No
             Me.Show()
             newbalance = 0D
             newbalLabel.Text = "0.00"
@@ -631,7 +610,7 @@ Public Class frm_Main
 
         End If
     End Sub
-    
+
     Private Sub ClearToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ClearToolStripMenuItem.Click
         Call CalcClear()
     End Sub
@@ -640,11 +619,12 @@ Public Class frm_Main
     Private Sub exitApp()
         'Exits the Program
 
-        Dim button2 As DialogResult
+        Dim my_result As DialogResult
 
-        button2 = MessageBox.Show("Are you sure that you are ready to exit?", title, _
+        my_result = MessageBox.Show("Are you sure that you are ready to exit?", title,
         MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If button2 = Windows.Forms.DialogResult.No Then
+
+        If my_result = Windows.Forms.DialogResult.No Then
             Me.Show()
             newbalLabel.Text = "0.00"
             calcearnedTextBox.Text = "Ready"
@@ -656,9 +636,15 @@ Public Class frm_Main
             accruedDateTimePicker.Focus()
             Me.applyButton.Enabled = False
 
-        Else : button2 = Windows.Forms.DialogResult.Yes
-            Me.Close()
+        Else : my_result = Windows.Forms.DialogResult.Yes
+            If My.Computer.FileSystem.FileExists(cpath) Then
+                Me.Close()
 
+            Else : CreateMyPaths()
+                Me.Close()
+
+
+            End If
         End If
     End Sub
 
