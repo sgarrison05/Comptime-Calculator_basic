@@ -46,7 +46,7 @@ v3.02 (3/2014) - First major update in years.  Added the ability to email the da
 
 v3.04 - Corrected the path to comptimerun.txt on email sheet.
 
-v4.01 - Added/Completed Reconcile form.  Users can preview datasheet, previous years' entries, and current year entries. Added the ability to cull the previous year and create a backup of it in its own folder.  Added new choices in reason/case combobox.
+v4.01 - Added/Completed Reconcile form.  Users can preview the datasheet, previous years' entries, and current year entries. Added the ability to cull the previous year and create a backup of it in its own folder.  Added new choices in reason/case combobox.
 
 v.4.02 - Added email provider options
 
@@ -59,4 +59,4 @@ README.md file as well as the appropriate Comptime_Calculator_Users_Guide.pdf.
 v.4.21 - Cleaned up variables and eliminated the need for the bank file.  The program now pulls the bank
 from comptimerun.txt sheet as I always had intended it.
 
-### I am currently working on an updated version of this for my department.  This project is basic and I will not say it's minimalist because it does use gui, but the newest version that I am working on brings this up-to-date with a major reconfiguration.  The newest version, which I will eventually make public will track a/the current two-week pay period as well as the bank in two separate files.  
+### I am currently working on an updated version of this for my department.  This project is basic. I will not say it's minimalist because it does use gui, but the newest version that I am working on brings this up-to-date with a major reconfiguration.  The newest version, which I will eventually make public, will track a/the current two-week pay period as well as the bank in two separate files.  
