@@ -59,4 +59,4 @@ README.md file as well as the appropriate Comptime_Calculator_Users_Guide.pdf.
 v.4.21 - Cleaned up variables and eliminated the need for the bank file.  The program now pulls the bank
 from comptimerun.txt sheet as I always had intended it.
 
-### I am currently working on an updated version of this for my department.  This project is basic. I will not say it's minimalist because it does use gui, but the newest version that I am working on brings this up-to-date with a major reconfiguration.  The newest version, which I will eventually make public, will track a/the current two-week pay period as well as the bank in two separate files.  
+### I am currently working on an updated version of this for my department.  This project is basic. I will not say it's minimalist because it does use a gui, but the newer version that I am working on brings this up-to-date with a major reconfiguration.  The newest version, which I may eventually make public, will track a/the current two-week pay period as well as the bank in two separate files.  
