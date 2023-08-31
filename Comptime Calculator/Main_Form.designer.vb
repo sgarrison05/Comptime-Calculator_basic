@@ -27,7 +27,6 @@ Partial Class frm_Main
         Me.calcButton = New System.Windows.Forms.Button()
         Me.optionsGroupBox = New System.Windows.Forms.GroupBox()
         Me.btn_ReconcileData = New System.Windows.Forms.Button()
-        Me.btn_Email = New System.Windows.Forms.Button()
         Me.applyButton = New System.Windows.Forms.Button()
         Me.comptimeMenuStrip = New System.Windows.Forms.MenuStrip()
         Me.fileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -77,7 +76,7 @@ Partial Class frm_Main
         Me.clearButton.BackColor = System.Drawing.SystemColors.ControlLight
         Me.clearButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.clearButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.clearButton.Location = New System.Drawing.Point(20, 19)
+        Me.clearButton.Location = New System.Drawing.Point(20, 33)
         Me.clearButton.Name = "clearButton"
         Me.clearButton.Size = New System.Drawing.Size(75, 32)
         Me.clearButton.TabIndex = 0
@@ -102,7 +101,7 @@ Partial Class frm_Main
         Me.calcButton.BackColor = System.Drawing.SystemColors.ControlLight
         Me.calcButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.calcButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.calcButton.Location = New System.Drawing.Point(20, 64)
+        Me.calcButton.Location = New System.Drawing.Point(20, 85)
         Me.calcButton.Name = "calcButton"
         Me.calcButton.Size = New System.Drawing.Size(75, 32)
         Me.calcButton.TabIndex = 1
@@ -113,7 +112,6 @@ Partial Class frm_Main
         '
         Me.optionsGroupBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(83, Byte), Integer))
         Me.optionsGroupBox.Controls.Add(Me.btn_ReconcileData)
-        Me.optionsGroupBox.Controls.Add(Me.btn_Email)
         Me.optionsGroupBox.Controls.Add(Me.applyButton)
         Me.optionsGroupBox.Controls.Add(Me.clearButton)
         Me.optionsGroupBox.Controls.Add(Me.calcButton)
@@ -132,32 +130,19 @@ Partial Class frm_Main
         Me.btn_ReconcileData.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btn_ReconcileData.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_ReconcileData.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.btn_ReconcileData.Location = New System.Drawing.Point(20, 156)
+        Me.btn_ReconcileData.Location = New System.Drawing.Point(20, 200)
         Me.btn_ReconcileData.Name = "btn_ReconcileData"
         Me.btn_ReconcileData.Size = New System.Drawing.Size(75, 32)
         Me.btn_ReconcileData.TabIndex = 3
         Me.btn_ReconcileData.Text = "Reconcile Data"
         Me.btn_ReconcileData.UseVisualStyleBackColor = False
         '
-        'btn_Email
-        '
-        Me.btn_Email.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.btn_Email.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btn_Email.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Email.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.btn_Email.Location = New System.Drawing.Point(20, 204)
-        Me.btn_Email.Name = "btn_Email"
-        Me.btn_Email.Size = New System.Drawing.Size(75, 32)
-        Me.btn_Email.TabIndex = 4
-        Me.btn_Email.Text = "Email Data"
-        Me.btn_Email.UseVisualStyleBackColor = False
-        '
         'applyButton
         '
         Me.applyButton.BackColor = System.Drawing.SystemColors.ControlLight
         Me.applyButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.applyButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.applyButton.Location = New System.Drawing.Point(20, 108)
+        Me.applyButton.Location = New System.Drawing.Point(20, 143)
         Me.applyButton.Name = "applyButton"
         Me.applyButton.Size = New System.Drawing.Size(75, 32)
         Me.applyButton.TabIndex = 2
@@ -273,8 +258,9 @@ Partial Class frm_Main
         '
         'calcearnedTextBox
         '
-        Me.calcearnedTextBox.BackColor = System.Drawing.Color.Lavender
+        Me.calcearnedTextBox.BackColor = System.Drawing.Color.Black
         Me.calcearnedTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.calcearnedTextBox.ForeColor = System.Drawing.SystemColors.Window
         Me.calcearnedTextBox.Location = New System.Drawing.Point(12, 366)
         Me.calcearnedTextBox.Multiline = True
         Me.calcearnedTextBox.Name = "calcearnedTextBox"
@@ -540,7 +526,6 @@ Partial Class frm_Main
     Friend WithEvents calcearnedTextBox As System.Windows.Forms.TextBox
     Friend WithEvents ReadMeFileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btn_ReconcileData As System.Windows.Forms.Button
-    Friend WithEvents btn_Email As System.Windows.Forms.Button
     Friend WithEvents lbl_CalcResultID As System.Windows.Forms.Label
     Friend WithEvents EditToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ClearToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
