@@ -6,10 +6,7 @@
 
 'Update Notes:          Elemenated the bank file
 
-
 Option Explicit On
-Imports System.Globalization
-
 
 Public Class frm_Main
 
@@ -20,7 +17,6 @@ Public Class frm_Main
     Private newbalance As Decimal
     Private previous As Decimal
     Private myentry As String
-
 
     Private Sub clearButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles clearButton.Click
 
@@ -34,15 +30,11 @@ Public Class frm_Main
 
     End Sub
 
-
     Private Sub exitButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles exitButton.Click
 
         exitApp()
 
-
     End Sub
-
-
 
     Private Sub compcalcForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
@@ -125,7 +117,6 @@ Public Class frm_Main
                 calcearnedTextBox.Text = "Ready"
 
             End If
-
         Else 'sets up the comptime back in the specified path
             my_decision = MessageBox.Show _
             ("The current comptime balance file does not exist.  This is your comptime bank, would you like to create it?",
@@ -156,7 +147,6 @@ Public Class frm_Main
                     prevbalLabel.Text = "0.00"
                     newbalLabel.Text = "0.00"
                 End If
-
             Else : my_decision = DialogResult.No
                 Me.Close()
             End If
@@ -222,7 +212,6 @@ Public Class frm_Main
 
         exitApp()
 
-
     End Sub
 
     Private Sub ComptimerunToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ComptimerunToolStripMenuItem.Click
@@ -272,7 +261,6 @@ Public Class frm_Main
         Me.Hide()
         frm_Email.Show()
 
-
     End Sub
 
     Public Sub ApplyCalculations()
@@ -280,7 +268,6 @@ Public Class frm_Main
 
         Dim my_apply As DialogResult
         Dim my_another As DialogResult
-
 
         'It will ask to you append file.
         my_apply = MessageBox.Show("Do you wish to add to new balance to bank?", title, MessageBoxButtons.YesNo,
@@ -329,7 +316,7 @@ Public Class frm_Main
                 accruedDateTimePicker.Focus()
                 Me.applyButton.Enabled = False
 
-                'If Comptime file does not exists, the program creates it and 
+                'If Comptime file does not exists, the program creates it and
                 'writes current balance text file
             Else : My.Computer.FileSystem.CreateDirectory(cdirectory)
                 My.Computer.FileSystem.WriteAllText(cpath,
@@ -382,7 +369,6 @@ Public Class frm_Main
                 newbalance = 0D
                 accruedDateTimePicker.Focus()
                 Me.applyButton.Enabled = False
-
             Else : my_another = Windows.Forms.DialogResult.No
                 MessageBox.Show("No calcuation will be made and the form will be reset. You may exit the program.", title,
                                 MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -401,6 +387,7 @@ Public Class frm_Main
         End If
 
     End Sub
+
     Public Sub CreateMyPaths()
 
         'Only used as a placeholder on first run if no prior transaction is completed
@@ -442,6 +429,7 @@ Public Class frm_Main
                                             ControlChars.NewLine, True)
 
     End Sub
+
     Public Sub PreviewCalculations()
 
         'declare calculation variables
@@ -452,7 +440,6 @@ Public Class frm_Main
         Dim isTaken As Boolean
         Dim previewbankbal As Decimal
 
-
         'Determine if this time is accrued or taken
         If accruedRadioButton.Checked Then
             If takenTextBox.Text = String.Empty Then
@@ -462,7 +449,6 @@ Public Class frm_Main
             'Convert Input
             isEarned = Decimal.TryParse(earnedTextBox.Text, earned)
             isTaken = Decimal.TryParse(takenTextBox.Text, taken)
-
 
             'If conversions successful, make calculations
             If isEarned And isTaken Then
@@ -489,7 +475,6 @@ Public Class frm_Main
                 earnedTextBox.Focus()
             End If
 
-
         ElseIf spentRadioButton.Checked Then
             If earnedTextBox.Text = String.Empty Then
                 earnedTextBox.Text = "0.00"
@@ -498,7 +483,6 @@ Public Class frm_Main
             'Convert input
             isEarned = Decimal.TryParse(earnedTextBox.Text, earned)
             isTaken = Decimal.TryParse(takenTextBox.Text, taken)
-
 
             'If conversions successful, make calculations
             If isEarned And isTaken Then
@@ -529,12 +513,11 @@ Public Class frm_Main
         Me.applyButton.Enabled = True
         Me.ApplyToolStripMenuItem.Enabled = True
 
-
     End Sub
 
     Public Sub CalcClear()
 
-        'clears the form 
+        'clears the form
 
         'declares variables
         Dim my_choice As DialogResult
@@ -570,7 +553,6 @@ Public Class frm_Main
                 ControlChars.NewLine, True)
                 My.Computer.FileSystem.WriteAllText(cpath, "".PadLeft(85, "-") & ControlChars.NewLine,
                 True)
-
             Else 'Setting up for the first time
                 My.Computer.FileSystem.CreateDirectory(cdirectory)
                 My.Computer.FileSystem.WriteAllText(cpath, heading & ControlChars.NewLine _
@@ -594,7 +576,6 @@ Public Class frm_Main
             accruedRadioButton.Select()
             accruedDateTimePicker.Focus()
             Me.applyButton.Enabled = False
-
         Else : my_choice = Windows.Forms.DialogResult.No
             Me.Show()
             newbalance = 0D
@@ -615,7 +596,6 @@ Public Class frm_Main
         Call CalcClear()
     End Sub
 
-
     Private Sub exitApp()
         'Exits the Program
 
@@ -635,14 +615,11 @@ Public Class frm_Main
             newbalance = 0D
             accruedDateTimePicker.Focus()
             Me.applyButton.Enabled = False
-
         Else : my_result = Windows.Forms.DialogResult.Yes
             If My.Computer.FileSystem.FileExists(cpath) Then
                 Me.Close()
-
             Else : CreateMyPaths()
                 Me.Close()
-
 
             End If
         End If
@@ -654,4 +631,5 @@ Public Class frm_Main
         frm_Reconcile.Show()
 
     End Sub
+
 End Class
