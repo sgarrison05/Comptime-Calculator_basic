@@ -483,8 +483,7 @@ Public Class frm_Main
                                                     takenTextBox.Text.PadLeft(5, " ") & Strings.Space(13) &
                                                     Convert.ToString(previous) & ControlChars.NewLine, True)
 
-                My.Computer.FileSystem.WriteAllText(cpath, "".PadLeft(85, "-") & ControlChars.NewLine,
-                True)
+                Separation()
 
             End If
 
