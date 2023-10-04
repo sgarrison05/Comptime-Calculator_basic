@@ -101,9 +101,6 @@ Public Class frm_Reconcile
         'parses year to search
         Integer.TryParse(Me.txtYear.Text, searchyear)
 
-        ''clears data pull
-        'Me.txtReconcile.Text = ""
-
         'checks for existing comptimerun.txt
         'if it exists, it pulls it and stores it
         If My.Computer.FileSystem.FileExists(path) Then
@@ -135,8 +132,6 @@ Public Class frm_Reconcile
             newLineIndex = readtxt.IndexOf(ControlChars.NewLine, entryIndex)
 
         Loop
-
-
 
         'Previews the Current Year
         'resets variables for second pull of original data
@@ -178,8 +173,6 @@ Public Class frm_Reconcile
         Me.btnReconcile.Enabled = True
     End Sub
 
-
-
     Private Sub btnReconcile_Click(sender As Object, e As EventArgs) Handles btnReconcile.Click
 
         'Creates reconcilled text document for previous year 
@@ -192,114 +185,114 @@ Public Class frm_Reconcile
         If Me.libxOrig.Items.Count > 0 And Me.libxPreview.Items.Count > 0 Then
 
             'checks if file exists.  If is does not, it creates it.
-            If My.Computer.FileSystem.FileExists(path2) And My.Computer.FileSystem.FileExists(path2 & "\Comptimerun_Reconciled_" & txtYear.Text.ToString & ".txt") Then
-                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" & txtYear.Text.ToString & ".txt", String.Empty, _
+            If My.Computer.FileSystem.FileExists(path2) And My.Computer.FileSystem.FileExists(path2 &
+                                                "\Comptimerun_Reconciled_" & txtYear.Text.ToString & ".txt") Then
+                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" &
+                                                    txtYear.Text.ToString & ".txt", String.Empty,
                                                     False)
 
-                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" & _
-                            txtYear.Text.ToString & ".txt", _
-                            "Orange County Juvenile Probation Dept." & ControlChars.NewLine & _
-                            "---------------------------------------" & ControlChars.NewLine & _
-                            "Personal Comptime for " & frm_Main.user & _
-                            " for year " & _
-                            txtYear.Text.ToString & ControlChars.NewLine & ControlChars.NewLine & _
-                            "Date Entered" & Strings.Space(10) & _
-                            "CaseNo." & Strings.Space(13) & _
-                            "Earned(+)" & Strings.Space(10) & _
-                            "Taken(-)" & Strings.Space(9) & _
-                            "Balance" & ControlChars.NewLine & _
-                            "------------" & Strings.Space(10) & _
-                            "---------" & Strings.Space(11) & _
-                            "---------" & Strings.Space(10) & _
-                            "--------" & Strings.Space(9) & _
-                            "-------" & ControlChars.NewLine, False)
+                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" &
+                                                    txtYear.Text.ToString & ".txt",
+                                                    "Orange County Juvenile Probation Dept." & ControlChars.NewLine &
+                                                    "---------------------------------------" & ControlChars.NewLine &
+                                                    "Personal Comptime for " & frm_Main.user &
+                                                    " for year " &
+                                                    txtYear.Text.ToString & ControlChars.NewLine & ControlChars.NewLine &
+                                                    "Date Entered" & Strings.Space(10) &
+                                                    "CaseNo." & Strings.Space(13) &
+                                                    "Earned(+)" & Strings.Space(10) &
+                                                    "Taken(-)" & Strings.Space(9) &
+                                                    "Balance" & ControlChars.NewLine &
+                                                    "------------" & Strings.Space(10) &
+                                                    "---------" & Strings.Space(11) &
+                                                    "---------" & Strings.Space(10) &
+                                                    "--------" & Strings.Space(9) &
+                                                    "-------" & ControlChars.NewLine, False)
             Else
                 My.Computer.FileSystem.CreateDirectory(path2)
-                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" & _
-                            txtYear.Text.ToString & _
-                            ".txt", _
-                            "Orange County Juvenile Probation Dept." & ControlChars.NewLine & _
-                            "---------------------------------------" & ControlChars.NewLine & _
-                            "Personal Comptime for " & frm_Main.user & _
-                            " for year " & _
-                            txtYear.Text.ToString & ControlChars.NewLine & ControlChars.NewLine & _
-                            "Date Entered" & Strings.Space(10) & _
-                            "CaseNo." & Strings.Space(13) & _
-                            "Earned(+)" & Strings.Space(10) & _
-                            "Taken(-)" & Strings.Space(9) & _
-                            "Balance" & ControlChars.NewLine & _
-                            "------------" & Strings.Space(10) & _
-                            "---------" & Strings.Space(11) & _
-                            "---------" & Strings.Space(10) & _
-                            "--------" & Strings.Space(9) & _
-                            "-------" & ControlChars.NewLine, False)
+                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" &
+                                                    txtYear.Text.ToString & ".txt",
+                                                    "Orange County Juvenile Probation Dept." & ControlChars.NewLine &
+                                                    "---------------------------------------" & ControlChars.NewLine &
+                                                    "Personal Comptime for " & frm_Main.user &
+                                                    " for year " &
+                                                    txtYear.Text.ToString & ControlChars.NewLine & ControlChars.NewLine &
+                                                    "Date Entered" & Strings.Space(10) &
+                                                    "CaseNo." & Strings.Space(13) &
+                                                    "Earned(+)" & Strings.Space(10) &
+                                                    "Taken(-)" & Strings.Space(9) &
+                                                    "Balance" & ControlChars.NewLine &
+                                                    "------------" & Strings.Space(10) &
+                                                    "---------" & Strings.Space(11) &
+                                                    "---------" & Strings.Space(10) &
+                                                    "--------" & Strings.Space(9) &
+                                                    "-------" & ControlChars.NewLine, False)
             End If
 
             'puts all items in text file
             For Each item As String In Me.libxPreview.Items
-                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" & txtYear.Text.ToString & ".txt", _
+                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" &
+                                                    txtYear.Text.ToString & ".txt",
                                                     item & ControlChars.NewLine, True)
 
-                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" & txtYear.Text.ToString & ".txt", _
+                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" &
+                                                    txtYear.Text.ToString & ".txt",
                                                     "".PadLeft(85, "-") & ControlChars.NewLine, True)
             Next item
 
-
             'Rebuilds current comptimerun text file
             If My.Computer.FileSystem.FileExists(path) Then
-                My.Computer.FileSystem.WriteAllText(path, String.Empty, _
-                                                    False)
-                My.Computer.FileSystem.WriteAllText(path, _
-                            "Orange County Juvenile Probation Dept." & ControlChars.NewLine & _
-                            "---------------------------------------" & ControlChars.NewLine & _
-                            "Personal Comptime Account for: " & _
-                            frm_Main.user & ControlChars.NewLine & ControlChars.NewLine & _
-                            "Date Entered" & Strings.Space(10) & _
-                            "CaseNo." & Strings.Space(13) & _
-                            "Earned(+)" & Strings.Space(10) & _
-                            "Taken(-)" & Strings.Space(9) & _
-                            "Balance" & ControlChars.NewLine & _
-                            "------------" & Strings.Space(10) & _
-                            "---------" & Strings.Space(11) & _
-                            "---------" & Strings.Space(10) & _
-                            "--------" & Strings.Space(9) & _
-                            "-------" & ControlChars.NewLine, False)
-
+                My.Computer.FileSystem.WriteAllText(path, String.Empty, False)
+                My.Computer.FileSystem.WriteAllText(path,
+                                                    "Orange County Juvenile Probation Dept." & ControlChars.NewLine &
+                                                    "---------------------------------------" & ControlChars.NewLine &
+                                                    "Personal Comptime Account for: " &
+                                                    frm_Main.user & ControlChars.NewLine & ControlChars.NewLine &
+                                                    "Date Entered" & Strings.Space(10) &
+                                                    "CaseNo." & Strings.Space(13) &
+                                                    "Earned(+)" & Strings.Space(10) &
+                                                    "Taken(-)" & Strings.Space(9) &
+                                                    "Balance" & ControlChars.NewLine &
+                                                    "------------" & Strings.Space(10) &
+                                                    "---------" & Strings.Space(11) &
+                                                    "---------" & Strings.Space(10) &
+                                                    "--------" & Strings.Space(9) &
+                                                    "-------" & ControlChars.NewLine, False)
 
             Else
 
-                My.Computer.FileSystem.WriteAllText(path, _
-                            "Orange County Juvenile Probation Dept." & ControlChars.NewLine & _
-                            "---------------------------------------" & ControlChars.NewLine & _
-                            "Personal Comptime Account for: " & _
-                            frm_Main.user & ControlChars.NewLine & ControlChars.NewLine & _
-                            "Date Entered" & Strings.Space(10) & _
-                            "CaseNo." & Strings.Space(13) & _
-                            "Earned(+)" & Strings.Space(10) & _
-                            "Taken(-)" & Strings.Space(9) & _
-                            "Balance" & ControlChars.NewLine & _
-                            "------------" & Strings.Space(10) & _
-                            "---------" & Strings.Space(11) & _
-                            "---------" & Strings.Space(10) & _
-                            "--------" & Strings.Space(9) & _
-                            "-------" & ControlChars.NewLine, False)
+                My.Computer.FileSystem.WriteAllText(path,
+                                                    "Orange County Juvenile Probation Dept." & ControlChars.NewLine &
+                                                    "---------------------------------------" & ControlChars.NewLine &
+                                                    "Personal Comptime Account for: " &
+                                                    frm_Main.user & ControlChars.NewLine & ControlChars.NewLine &
+                                                    "Date Entered" & Strings.Space(10) &
+                                                    "CaseNo." & Strings.Space(13) &
+                                                    "Earned(+)" & Strings.Space(10) &
+                                                    "Taken(-)" & Strings.Space(9) &
+                                                    "Balance" & ControlChars.NewLine &
+                                                    "------------" & Strings.Space(10) &
+                                                    "---------" & Strings.Space(11) &
+                                                    "---------" & Strings.Space(10) &
+                                                    "--------" & Strings.Space(9) &
+                                                    "-------" & ControlChars.NewLine, False)
 
             End If
 
             'puts all original items in comptimerun text file
             For Each item As String In Me.libxOrig.Items
-                My.Computer.FileSystem.WriteAllText(path, _
+                My.Computer.FileSystem.WriteAllText(path,
                                                     item & ControlChars.NewLine, True)
 
-                My.Computer.FileSystem.WriteAllText(path, _
+                My.Computer.FileSystem.WriteAllText(path,
                                                     "".PadLeft(85, "-") & ControlChars.NewLine, True)
             Next item
 
-
             'advises it is going to return to main form.
-            MessageBox.Show("Reconcilliation Complete." & ControlChars.NewLine & _
-                            "The form will now close and return to the main form", _
-                            "Comptime Calculator", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Reconcilliation Complete." & ControlChars.NewLine &
+                            "The form will now close and return to the main form",
+                            "Comptime Calculator",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             'if successful returns to main form
             Me.Close()
@@ -321,12 +314,10 @@ Public Class frm_Reconcile
 
     End Sub
 
-
     Private Sub txtYear_TextChanged(sender As Object, e As EventArgs) Handles txtYear.TextChanged
 
         Me.libxPreview.Items.Clear()
         Me.libxOrig.Items.Clear()
-
 
     End Sub
 
