@@ -2,9 +2,7 @@
 
 By Shon Garrison
 
-Originally written in 2009 as part of my programming final at Lamar State-College
-Orange in Orange, TX.  It became the working production software for my office for
-several years.  
+Originally written in 2009 as part of my programming final at Lamar State College-Orange.  It became the working production software for my office for several years.  
 
 ## Program Overview:
 
