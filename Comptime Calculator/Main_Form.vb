@@ -197,7 +197,7 @@ Public Class frm_Main
                 My.Computer.FileSystem.WriteAllText(cpath,
                                                     "Orange County Juvenile Probation Dept" & ControlChars.NewLine &
                                                     "---------------------------------------" & ControlChars.NewLine &
-                                                    "Personal Comptime Account for: " & user & ControlChars.NewLine &
+                                                    "Personal Comptime Account for: " & user & ControlChars.NewLine & ControlChars.NewLine &
                                                     heading & ControlChars.NewLine &
                                                     "------------" & Strings.Space(10) &
                                                     "--------------" & Strings.Space(5) &
