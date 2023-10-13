@@ -33,7 +33,6 @@ Partial Class frm_Reconcile
         Me.btnPreview = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.libxPreview = New System.Windows.Forms.ListBox()
-        Me.lblCPreview = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.libxOrig = New System.Windows.Forms.ListBox()
         Me.lblPreview_Orig = New System.Windows.Forms.Label()
@@ -111,7 +110,7 @@ Partial Class frm_Reconcile
         'btnPreview
         '
         Me.btnPreview.Image = CType(resources.GetObject("btnPreview.Image"), System.Drawing.Image)
-        Me.btnPreview.Location = New System.Drawing.Point(521, 165)
+        Me.btnPreview.Location = New System.Drawing.Point(521, 319)
         Me.btnPreview.Name = "btnPreview"
         Me.btnPreview.Size = New System.Drawing.Size(60, 50)
         Me.btnPreview.TabIndex = 7
@@ -136,15 +135,6 @@ Partial Class frm_Reconcile
         Me.libxPreview.Name = "libxPreview"
         Me.libxPreview.Size = New System.Drawing.Size(477, 256)
         Me.libxPreview.TabIndex = 9
-        '
-        'lblCPreview
-        '
-        Me.lblCPreview.Location = New System.Drawing.Point(521, 130)
-        Me.lblCPreview.Name = "lblCPreview"
-        Me.lblCPreview.Size = New System.Drawing.Size(60, 32)
-        Me.lblCPreview.TabIndex = 10
-        Me.lblCPreview.Text = " Click to Preview:"
-        Me.lblCPreview.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Label5
         '
@@ -194,7 +184,6 @@ Partial Class frm_Reconcile
         Me.Controls.Add(Me.lblPreview_Orig)
         Me.Controls.Add(Me.libxOrig)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.lblCPreview)
         Me.Controls.Add(Me.libxPreview)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnPreview)
@@ -222,7 +211,6 @@ Partial Class frm_Reconcile
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents btnReload As System.Windows.Forms.Button
     Friend WithEvents libxPreview As System.Windows.Forms.ListBox
-    Friend WithEvents lblCPreview As System.Windows.Forms.Label
     Friend WithEvents btnClearPrev As System.Windows.Forms.Button
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents libxOrig As System.Windows.Forms.ListBox

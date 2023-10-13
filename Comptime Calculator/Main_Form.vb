@@ -23,6 +23,7 @@ Public Class frm_Main
                                 "Taken(-)" & Strings.Space(9) &
                                 "Balance"
 
+    '--------------------------------------------  Events -------------------------------------------------------------------------
     Private Sub compcalcForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         Dim my_decision As DialogResult
@@ -141,7 +142,7 @@ Public Class frm_Main
 
     End Sub
 
-    '----------------------------------------------- Custom Subroutines and Functions ----------------------------------------------------
+    '----------------------------------- Custom Subroutines and Functions ---------------------------------------------------------
 
     Public Sub ApplyCalculations()
         'Saves current balance to txt file
@@ -187,15 +188,8 @@ Public Class frm_Main
                 MessageBox.Show("Processing complete. The form will be cleared.",
                                 title, MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.Show()
-                newbalLabel.Text = "0.00"
-                calcearnedTextBox.Text = "Ready"
-                caseComboBox.Text = ""
-                earnedTextBox.Clear()
-                takenTextBox.Clear()
-                accruedRadioButton.Select()
-                newbalance = 0D
-                accruedDateTimePicker.Focus()
-                Me.applyButton.Enabled = False
+
+                CleanHouse()
 
                 'If Comptime file does not exists, the program creates it and
                 'writes current balance text file
@@ -224,15 +218,8 @@ Public Class frm_Main
                                 title, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 Me.Show()
-                newbalLabel.Text = "0.00"
-                calcearnedTextBox.Text = "Ready"
-                caseComboBox.Text = ""
-                earnedTextBox.Clear()
-                takenTextBox.Clear()
-                accruedRadioButton.Select()
-                newbalance = 0D
-                accruedDateTimePicker.Focus()
-                Me.applyButton.Enabled = False
+
+                CleanHouse()
 
             End If
 
@@ -258,15 +245,9 @@ Public Class frm_Main
                 MessageBox.Show("No calcuation will be made and the form will be reset. You may exit the program.", title,
                                 MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.Show()
-                newbalLabel.Text = "0.00"
-                calcearnedTextBox.Text = "Ready"
-                caseComboBox.Text = ""
-                earnedTextBox.Clear()
-                takenTextBox.Clear()
-                accruedRadioButton.Select()
-                newbalance = 0D
-                accruedDateTimePicker.Focus()
-                Me.applyButton.Enabled = False
+
+                CleanHouse()
+
             End If
 
         End If
@@ -345,32 +326,33 @@ Public Class frm_Main
                 previewbankbal = calcearned + Convert.ToDecimal(prevbalLabel.Text)
                 calcearnedTextBox.Text = ""
                 calcearnedTextBox.Text = "Total accrued time to enter on affidavit = " &
-                (earned * 1.5D).ToString("N2") &
-                " hours" & ControlChars.NewLine & "-".PadLeft(83, "-") &
-                ControlChars.NewLine &
-                "Preview of Entry to Activity Sheet:" & ControlChars.NewLine & ControlChars.NewLine &
-                "Date Entered" & Strings.Space(13) &
-                "CaseNo." & Strings.Space(16) &
-                "Earned(+)" & Strings.Space(12) &
-                "Taken(-)" & Strings.Space(15) &
-                "Balance" & ControlChars.NewLine &
-                "-----------------" & Strings.Space(13) &
-                "----------" & Strings.Space(16) &
-                "------------" & Strings.Space(13) &
-                "----------" & Strings.Space(17) &
-                "----------" & ControlChars.NewLine &
-                accruedDateTimePicker.Text & Strings.Space(15) &
-                caseComboBox.Text.PadRight(15, " ") & Strings.Space(9) &
-                earnedTextBox.Text.PadLeft(5, " ") & Strings.Space(21) &
-                takenTextBox.Text.PadLeft(5, " ") & Strings.Space(22) &
-                Convert.ToString(previewbankbal).PadLeft(5, " ")
+                                         (earned * 1.5D).ToString("N2") &
+                                         " hours" & ControlChars.NewLine &
+                                         "-".PadLeft(83, "-") & ControlChars.NewLine &
+                                         "Preview of Entry to Activity Sheet:" & ControlChars.NewLine &
+                                         ControlChars.NewLine &
+                                         "Date Entered" & Strings.Space(13) &
+                                         "CaseNo." & Strings.Space(16) &
+                                         "Earned(+)" & Strings.Space(12) &
+                                         "Taken(-)" & Strings.Space(15) &
+                                         "Balance" & ControlChars.NewLine &
+                                         "-----------------" & Strings.Space(13) &
+                                         "----------" & Strings.Space(16) &
+                                         "------------" & Strings.Space(13) &
+                                         "----------" & Strings.Space(17) &
+                                         "----------" & ControlChars.NewLine &
+                                         accruedDateTimePicker.Text & Strings.Space(15) &
+                                         caseComboBox.Text.PadRight(15, " ") & Strings.Space(9) &
+                                         earnedTextBox.Text.PadLeft(5, " ") & Strings.Space(21) &
+                                         takenTextBox.Text.PadLeft(5, " ") & Strings.Space(22) &
+                                         Convert.ToString(previewbankbal).PadLeft(5, " ")
 
                 newbalance = calcearned - taken
                 newbalance = Math.Round(newbalance, 2)
                 newbalLabel.Text = Convert.ToString(newbalance)
 
             Else : MessageBox.Show("Must be numeric", title, MessageBoxButtons.OK,
-            MessageBoxIcon.Information)
+                                    MessageBoxIcon.Information)
                 earnedTextBox.Focus()
             End If
 
@@ -394,28 +376,27 @@ Public Class frm_Main
                 newbalLabel.Text = Convert.ToString(newbalance)
                 calcearnedTextBox.Text = ""
                 calcearnedTextBox.Text = "Total taken time to enter on affidavit = " &
-                (taken).ToString("N2") &
-                " hours" & ControlChars.NewLine & "-".PadLeft(83, "-") &
-                ControlChars.NewLine &
-                "Preview of Entry to Activity Sheet:" & ControlChars.NewLine &
-                ControlChars.NewLine &
-                "Date Entered" & Strings.Space(13) &
-                "CaseNo." & Strings.Space(16) &
-                "Earned(+)" & Strings.Space(12) &
-                "Taken(-)" & Strings.Space(15) &
-                "Balance" &
-                ControlChars.NewLine &
-                "-----------------" & Strings.Space(13) &
-                "----------" & Strings.Space(16) &
-                "------------" & Strings.Space(13) &
-                "----------" & Strings.Space(17) &
-                "----------" & ControlChars.NewLine &
-                accruedDateTimePicker.Text & Strings.Space(15) &
-                caseComboBox.Text.PadRight(15, " ") & Strings.Space(9) &
-                earnedTextBox.Text.PadLeft(5, " ") &
-                Strings.Space(21) &
-                takenTextBox.Text.PadLeft(5, " ") & Strings.Space(22) &
-                Convert.ToString(previewbankbal)
+                                         (taken).ToString("N2") &
+                                         " hours" & ControlChars.NewLine & "-".PadLeft(83, "-") &
+                                         ControlChars.NewLine &
+                                         "Preview of Entry to Activity Sheet:" & ControlChars.NewLine &
+                                         ControlChars.NewLine &
+                                         "Date Entered" & Strings.Space(13) &
+                                         "CaseNo." & Strings.Space(16) &
+                                         "Earned(+)" & Strings.Space(12) &
+                                         "Taken(-)" & Strings.Space(15) &
+                                         "Balance" &
+                                         ControlChars.NewLine &
+                                         "-----------------" & Strings.Space(13) &
+                                         "----------" & Strings.Space(16) &
+                                         "------------" & Strings.Space(13) &
+                                         "----------" & Strings.Space(17) &
+                                         "----------" & ControlChars.NewLine &
+                                         accruedDateTimePicker.Text & Strings.Space(15) &
+                                         caseComboBox.Text.PadRight(15, " ") & Strings.Space(9) &
+                                         earnedTextBox.Text.PadLeft(5, " ") & Strings.Space(21) &
+                                         takenTextBox.Text.PadLeft(5, " ") & Strings.Space(22) &
+                                         Convert.ToString(previewbankbal)
 
             Else : MessageBox.Show("Must be numeric", title, MessageBoxButtons.OK,
             MessageBoxIcon.Information)
@@ -487,28 +468,13 @@ Public Class frm_Main
 
             End If
 
-            calcearnedTextBox.Text = ""
-            calcearnedTextBox.Text = "Ready"
-            newbalLabel.Text = "0.00"
-            earnedTextBox.Clear()
-            caseComboBox.SelectedItem = "[Enter One]"
-            takenTextBox.Clear()
-            accruedRadioButton.Select()
-            accruedDateTimePicker.Focus()
-            Me.applyButton.Enabled = False
+            CleanHouse()
 
         Else : my_choice = Windows.Forms.DialogResult.No
             Me.Show()
-            newbalance = 0D
-            newbalLabel.Text = "0.00"
-            calcearnedTextBox.Text = ""
-            calcearnedTextBox.Text = "Ready"
-            caseComboBox.SelectedItem = "[Enter One]"
-            earnedTextBox.Clear()
-            takenTextBox.Clear()
-            accruedRadioButton.Select()
-            accruedDateTimePicker.Focus()
-            Me.applyButton.Enabled = False
+
+            CleanHouse()
+
 
         End If
     End Sub
@@ -524,22 +490,15 @@ Public Class frm_Main
         If my_result = Windows.Forms.DialogResult.No Then
 
             Me.Show()
-            newbalLabel.Text = "0.00"
-            calcearnedTextBox.Text = "Ready"
-            caseComboBox.SelectedItem = "[Enter One]"
-            earnedTextBox.Clear()
-            takenTextBox.Clear()
-            accruedRadioButton.Select()
-            newbalance = 0D
-            accruedDateTimePicker.Focus()
-            Me.applyButton.Enabled = False
+
+            CleanHouse()
 
         Else : my_result = Windows.Forms.DialogResult.Yes
+
             If My.Computer.FileSystem.FileExists(cpath) Then
                 Me.Close()
             Else : CreateMyPaths()
                 Me.Close()
-
             End If
         End If
     End Sub
@@ -551,7 +510,23 @@ Public Class frm_Main
 
     End Sub
 
-    '----------------------------------------------- Buttons and Click Events ----------------------------------------------------
+    Private Sub CleanHouse()
+
+        newbalance = 0D
+        newbalLabel.Text = "0.00"
+        calcearnedTextBox.Text = ""
+        calcearnedTextBox.Text = "Ready"
+        caseComboBox.Text = ""
+        caseComboBox.SelectedItem = "[Enter One]"
+        earnedTextBox.Clear()
+        takenTextBox.Clear()
+        accruedRadioButton.Select()
+        accruedDateTimePicker.Focus()
+        Me.applyButton.Enabled = False
+
+    End Sub
+
+    '---------------------------------------Buttons and Click Events -------------------------------------------------------------
 
     Private Sub clearButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles clearButton.Click
 
@@ -658,7 +633,7 @@ Public Class frm_Main
 
     Private Sub ReadMeFileToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ReadMeFileToolStripMenuItem.Click
 
-        'Opends your comptime readme file
+        'Opens your comptime readme file
 
         Dim proc As New System.Diagnostics.Process
         proc.StartInfo.FileName = "notepad.exe"
