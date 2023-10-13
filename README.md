@@ -1,16 +1,18 @@
-# Comptime Calculator v421 (Visual Basic)
-In-production version of the Comptime Calculator at Orange County
+# Comptime Calculator Basic Edition
 
-Comptime Calculator 2009
 By Shon Garrison
 
-Program Overview:
+Originally written in 2009 as part of my programming final at Lamar State-College
+Orange in Orange, TX.  It became the working production software for my office for
+several years.  
+
+## Program Overview:
 
 This program was written to assist in keeping track of the compensatory time that is accrued when a professional works outside or beyond the average work day/week. This program was mainly written for the Juvenile Probation Department for on-call and extracurricular activities, but it could be adapted to anyone that works as a professional and has to track overtime.
 
 Comptime is basically overtime that is accrued at a time of 1.5 times for working beyond an 8-hour day or more than 40 hrs in a given week. This program calculates the time based on that formula (Except chief's edition [straight time] and keeps track of the user's balance through a bank file and a running activity file.  Warning:  Both files created by the program are in plain text.  It can be read by any text editor (WARNING: Not all text editors will display exactly the same just like internet browsers. Notepad works best.) and can be modified outside the program.  Any changes to either file, outside the program, can result in a miscalculation, loss of data, or deletion of transactions.
 
-Program Functions:
+## Program Functions:
 
 When the program is launched for the first time, it will check for two files: bank and activity sheet.  If the file does not exist, the program will ask to create it. This file is essential for the program to function.  The activity sheet gives you a running look at the activity of the comptime as it is changed.  It works very similarly to a checkbook register.  The program will only check for the file once unless it is deleted or moved, then the process will start over.  However, after the file is created, the program will ask you if you have an initial balance to enter because rarely will the person be starting from scratch unless they are a new employee.  
 
@@ -25,7 +27,6 @@ The email button takes you to an email form, where the user may email his balanc
 The tool strip menu at the top of the main form is for convenience.  It allows shortcuts to the bank and activity file as well as exiting the program.  You can access command buttons from there as well.  The user can also find out information about the program from the help tool strip menu item.
 
 I tried to make this program as user-friendly as possible.  The program will ask for decisions before completing any operations.  Should you experience any problems, feel free to contact me.   Enjoy the program!
-
 
 
 ## Release Notes:
@@ -59,4 +60,4 @@ README.md file as well as the appropriate Comptime_Calculator_Users_Guide.pdf.
 v.4.21 - Cleaned up variables and eliminated the need for the bank file.  The program now pulls the bank
 from comptimerun.txt sheet as I always had intended it.
 
-### I am currently working on an updated version of this for my department.  This project is basic. I will not say it's minimalist because it does use a gui, but the newer version that I am working on brings this up-to-date with a major reconfiguration.  The newest version, which I may eventually make public, will track a/the current two-week pay period as well as the bank in two separate files.  
+**I am currently working on an updated version of this for my department.  This project is basic. I will not say it's minimalist because it does use a gui, but the newer version that I am working on brings this up-to-date with a major reconfiguration.  The newest version, which I may eventually make public, will track a/the current two-week pay period as well as the bank in two separate files.**  
