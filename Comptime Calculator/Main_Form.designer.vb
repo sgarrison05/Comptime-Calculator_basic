@@ -32,7 +32,6 @@ Partial Class frm_Main
         Me.fileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComptimerunToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BankToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -167,10 +166,10 @@ Partial Class frm_Main
         '
         'OpenToolStripMenuItem
         '
-        Me.OpenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ComptimerunToolStripMenuItem, Me.BankToolStripMenuItem})
+        Me.OpenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ComptimerunToolStripMenuItem})
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
         Me.OpenToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.OpenToolStripMenuItem.Text = "Open.."
         '
         'ComptimerunToolStripMenuItem
@@ -178,12 +177,6 @@ Partial Class frm_Main
         Me.ComptimerunToolStripMenuItem.Name = "ComptimerunToolStripMenuItem"
         Me.ComptimerunToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.ComptimerunToolStripMenuItem.Text = "Activity Sheet"
-        '
-        'BankToolStripMenuItem
-        '
-        Me.BankToolStripMenuItem.Name = "BankToolStripMenuItem"
-        Me.BankToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
-        Me.BankToolStripMenuItem.Text = "Bank"
         '
         'ToolStripSeparator1
         '
@@ -522,7 +515,6 @@ Partial Class frm_Main
     Friend WithEvents ApplyToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ComptimerunToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BankToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents calcearnedTextBox As System.Windows.Forms.TextBox
     Friend WithEvents ReadMeFileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btn_ReconcileData As System.Windows.Forms.Button
