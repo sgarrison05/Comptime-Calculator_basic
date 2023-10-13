@@ -231,15 +231,8 @@ Public Class frm_Main
         MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If my_another = Windows.Forms.DialogResult.Yes Then
                 Me.Show()
-                newbalLabel.Text = "0.00"
-                calcearnedTextBox.Text = "Ready"
-                caseComboBox.Text = ""
-                earnedTextBox.Clear()
-                takenTextBox.Clear()
-                accruedRadioButton.Select()
-                newbalance = 0D
-                accruedDateTimePicker.Focus()
-                Me.applyButton.Enabled = False
+
+                CleanHouse()
 
             Else : my_another = Windows.Forms.DialogResult.No
                 MessageBox.Show("No calcuation will be made and the form will be reset. You may exit the program.", title,
