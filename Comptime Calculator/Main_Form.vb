@@ -156,8 +156,8 @@ Public Class frm_Main
         Dim my_another As DialogResult
 
         'It will ask to you append file.
-        my_apply = MessageBox.Show("Do you wish to add to new balance to bank?", title, MessageBoxButtons.YesNo,
-        MessageBoxIcon.Question)
+        my_apply = MessageBox.Show("Do you wish to add to new balance to bank?",
+                                   title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If my_apply = Windows.Forms.DialogResult.Yes Then
 
