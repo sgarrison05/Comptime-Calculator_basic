@@ -125,6 +125,11 @@ Public Class frm_Main
 
                     user = InputBox("Please Enter Your name", title, )
 
+                    'Quick Conversion for two decimal places for label
+                    Dim myConvert As Decimal = CDec(prevbalLabel.Text)
+                    prevbalLabel.Text = myConvert.ToString("N2")
+                    previous = CDec(prevbalLabel.Text)
+
                     Me.Show()
                     Me.Text = "Personal Comptime Calculator for " & user
                     newbalLabel.Text = "0.00"
@@ -197,7 +202,8 @@ Public Class frm_Main
                 My.Computer.FileSystem.WriteAllText(cpath,
                                                     "Orange County Juvenile Probation Dept" & ControlChars.NewLine &
                                                     "---------------------------------------" & ControlChars.NewLine &
-                                                    "Personal Comptime Account for: " & user & ControlChars.NewLine & ControlChars.NewLine &
+                                                    "Personal Comptime Account for: " & user & ControlChars.NewLine &
+                                                    ControlChars.NewLine &
                                                     heading & ControlChars.NewLine &
                                                     "------------" & Strings.Space(10) &
                                                     "--------------" & Strings.Space(5) &
@@ -272,6 +278,7 @@ Public Class frm_Main
                                             "Orange County Juvenile Probation Dept" & ControlChars.NewLine &
                                             "---------------------------------------" & ControlChars.NewLine &
                                             "Personal Comptime Account for: " & user & ControlChars.NewLine &
+                                            ControlChars.NewLine &
                                             heading & ControlChars.NewLine &
                                             "------------" & Strings.Space(10) &
                                             "--------------" & Strings.Space(5) &

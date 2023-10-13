@@ -165,3 +165,22 @@ D:\github\Comptime Calculator_v410\Comptime Calculator\obj\Debug\Comptime Calcul
 D:\Programming\github\comptime_calculator_vb\Comptime Calculator\obj\Debug\Comptime Calculator.exe
 D:\Programming\github\comptime_calculator_vb\Comptime Calculator\obj\Debug\Comptime Calculator.xml
 D:\Programming\github\comptime_calculator_vb\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\bin\Debug\Comptime Calculator.exe.config
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\bin\Debug\Comptime Calculator.exe.manifest
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\bin\Debug\Comptime Calculator.application
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\bin\Debug\Comptime Calculator.exe
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\bin\Debug\Comptime Calculator.pdb
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\bin\Debug\Comptime Calculator.xml
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.AssemblyReference.cache
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_About.resources
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Main.resources
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\obj\Debug\Comptime_Calculator.Resources.resources
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\obj\Debug\Comptime_Calculator.frm_Reconcile.resources
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.GenerateResource.cache
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\obj\Debug\Comptime Calculator.vbproj.CoreCompileInputs.cache
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\obj\Debug\Comptime Calculator.TrustInfo.xml
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\obj\Debug\Comptime Calculator.exe.manifest
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\obj\Debug\Comptime Calculator.application
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\obj\Debug\Comptime Calculator.exe
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\obj\Debug\Comptime Calculator.xml
+D:\Dev\MyScripts_uc\vb\Comptime\Comptime-Calculator_basic\Comptime Calculator\obj\Debug\Comptime Calculator.pdb
