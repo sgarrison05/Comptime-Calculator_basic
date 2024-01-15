@@ -10,10 +10,10 @@ Option Explicit On
 
 Public Class frm_Main
 
+    Public objUser As New Users
     Private Const cdirectory As String = "C:\Comptime"
     Private Const cpath As String = "C:\Comptime\comptimerun.txt"
     Private title As String = "Comptime Calculator"
-    Public user As String
     Private newbalance As Decimal
     Private previous As Decimal
     Private myentry As String
@@ -91,7 +91,7 @@ Public Class frm_Main
 
                     'if user is found, it adds it to preview
                     If entryuser = True Then
-                        user = entry.Substring(31)
+                        objUser.user = entry.Substring(31)
                     End If
 
                     'if not found updates entryindex with next line
@@ -100,7 +100,7 @@ Public Class frm_Main
 
                 Loop
 
-                Me.Text = "Personal Comptime Calculator for " & user
+                Me.Text = "Personal Comptime Calculator for " & objUser.user
                 newbalLabel.Text = "0.00"
                 calcearnedTextBox.Text = "Ready"
 
@@ -123,7 +123,7 @@ Public Class frm_Main
                         End If
                     Loop
 
-                    user = InputBox("Please Enter Your name", title, )
+                    objUser.user = InputBox("Please Enter Your name", title, )
 
                     'Quick Conversion for two decimal places for label
                     Dim myConvert As Decimal = CDec(prevbalLabel.Text)
@@ -131,7 +131,7 @@ Public Class frm_Main
                     previous = CDec(prevbalLabel.Text)
 
                     Me.Show()
-                    Me.Text = "Personal Comptime Calculator for " & user
+                    Me.Text = "Personal Comptime Calculator for " & objUser.user
                     newbalLabel.Text = "0.00"
                     calcearnedTextBox.Text = "Ready"
 
@@ -202,7 +202,7 @@ Public Class frm_Main
                 My.Computer.FileSystem.WriteAllText(cpath,
                                                     "Orange County Juvenile Probation Dept" & ControlChars.NewLine &
                                                     "---------------------------------------" & ControlChars.NewLine &
-                                                    "Personal Comptime Account for: " & user & ControlChars.NewLine &
+                                                    "Personal Comptime Account for: " & objUser.user & ControlChars.NewLine &
                                                     ControlChars.NewLine &
                                                     heading & ControlChars.NewLine &
                                                     "------------" & Strings.Space(10) &
@@ -277,7 +277,7 @@ Public Class frm_Main
         My.Computer.FileSystem.WriteAllText(cpath,
                                             "Orange County Juvenile Probation Dept" & ControlChars.NewLine &
                                             "---------------------------------------" & ControlChars.NewLine &
-                                            "Personal Comptime Account for: " & user & ControlChars.NewLine &
+                                            "Personal Comptime Account for: " & objUser.user & ControlChars.NewLine &
                                             ControlChars.NewLine &
                                             heading & ControlChars.NewLine &
                                             "------------" & Strings.Space(10) &
