@@ -1,3 +1,4 @@
+Option Explicit On
 'Title                  Comptime Calculator
 'Purpose                To calculate comptime time earned or spent
 '                       in a particular instance
@@ -6,17 +7,20 @@
 
 'Update Notes:          Elemenated the bank file
 
-Option Explicit On
+Imports Microsoft.VisualBasic.ApplicationServices
 
 Public Class frm_Main
 
-    Public objUser As New Users
-    Private Const cdirectory As String = "C:\Comptime"
-    Private Const cpath As String = "C:\Comptime\comptimerun.txt"
-    Private title As String = "Comptime Calculator"
+    Private myName As String
+    Private myPosition As String
+    Private myRate As Decimal
+    Private myDept As String
+    Private Const cdirectory As String = "D:\Temp\Comptime"
+    Private Const cpath As String = "D:\Temp\Comptime\comptimerun.txt"
+    Private Const title As String = "Comptime Calculator"
     Private newbalance As Decimal
     Private previous As Decimal
-    Private myentry As String
+    Private myEntry As String
     Private heading As String = "Date Entered" & Strings.Space(10) &
                                 "CaseNo." & Strings.Space(13) &
                                 "Earned(+)" & Strings.Space(10) &
@@ -91,7 +95,7 @@ Public Class frm_Main
 
                     'if user is found, it adds it to preview
                     If entryuser = True Then
-                        objUser.user = entry.Substring(31)
+                        myName = entry.Substring(31)
                     End If
 
                     'if not found updates entryindex with next line
@@ -100,7 +104,7 @@ Public Class frm_Main
 
                 Loop
 
-                Me.Text = "Personal Comptime Calculator for " & objUser.user
+                Me.Text = "Personal Comptime Calculator for " & myName
                 newbalLabel.Text = "0.00"
                 calcearnedTextBox.Text = "Ready"
 
@@ -123,7 +127,39 @@ Public Class frm_Main
                         End If
                     Loop
 
-                    objUser.user = InputBox("Please Enter Your name", title, )
+                    myName = InputBox("Please Enter Your name", title, )
+                    myPosition = InputBox("Please Enter Your Position" & vbCrLf &
+                                          "Chose between Staff, JPO, or Chief", title, )
+
+                    Select Case myPosition
+                        Case "Staff"
+                            Dim objEmployee As New Staff With {
+                                .user = myName
+                            }
+                            myPosition = objEmployee.mposition
+                            myDept = objEmployee.dname
+
+                        Case "JPO"
+                            Dim objEmployee As New JPO With {
+                                .user = myName
+                            }
+                            myPosition = objEmployee.mposition
+                            myDept = objEmployee.dname
+
+                        Case "Chief"
+                            Dim objEmployee As New Chief With {
+                                .user = myName
+                            }
+                            myPosition = objEmployee.mposition
+                            myDept = objEmployee.dname
+
+                        Case Else
+                            MessageBox.Show("That position does not exist!" & ControlChars.NewLine &
+                                            "Can not create bankfile.")
+                            Application.Exit()
+
+                    End Select
+
 
                     'Quick Conversion for two decimal places for label
                     Dim myConvert As Decimal = CDec(prevbalLabel.Text)
@@ -131,7 +167,7 @@ Public Class frm_Main
                     previous = CDec(prevbalLabel.Text)
 
                     Me.Show()
-                    Me.Text = "Personal Comptime Calculator for " & objUser.user
+                    Me.Text = "Personal Comptime Calculator for " & myName
                     newbalLabel.Text = "0.00"
                     calcearnedTextBox.Text = "Ready"
 
@@ -200,9 +236,10 @@ Public Class frm_Main
                 'writes current balance text file
             Else : My.Computer.FileSystem.CreateDirectory(cdirectory)
                 My.Computer.FileSystem.WriteAllText(cpath,
-                                                    "Orange County Juvenile Probation Dept" & ControlChars.NewLine &
+                                                    myDept & ControlChars.NewLine &
                                                     "---------------------------------------" & ControlChars.NewLine &
-                                                    "Personal Comptime Account for: " & objUser.user & ControlChars.NewLine &
+                                                    "Personal Comptime Account for: " & myName & ", " & myPosition &
+                                                    ControlChars.NewLine &
                                                     ControlChars.NewLine &
                                                     heading & ControlChars.NewLine &
                                                     "------------" & Strings.Space(10) &
@@ -275,9 +312,10 @@ Public Class frm_Main
 
         My.Computer.FileSystem.CreateDirectory(cdirectory)
         My.Computer.FileSystem.WriteAllText(cpath,
-                                            "Orange County Juvenile Probation Dept" & ControlChars.NewLine &
+                                            myDept & ControlChars.NewLine &
                                             "---------------------------------------" & ControlChars.NewLine &
-                                            "Personal Comptime Account for: " & objUser.user & ControlChars.NewLine &
+                                            "Personal Comptime Account for: " & myName & ", " & myPosition &
+                                            ControlChars.NewLine &
                                             ControlChars.NewLine &
                                             heading & ControlChars.NewLine &
                                             "------------" & Strings.Space(10) &
@@ -525,6 +563,10 @@ Public Class frm_Main
         Me.applyButton.Enabled = False
 
     End Sub
+
+    Public Function GetEmployeeName()
+        Return myName
+    End Function
 
     '---------------------------------------Buttons and Click Events -------------------------------------------------------------
 

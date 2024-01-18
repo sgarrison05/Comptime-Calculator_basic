@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Comptime Calculator.exe" size="143360">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Comptime Calculator.exe" size="144384">
       <assemblyIdentity name="Comptime Calculator" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>igQPRWXoryEroho5hq8hu7W9MjyNhg/0OZvCcBI2Oi8=</dsig:DigestValue>
+        <dsig:DigestValue>48iLVeAP6xaHYYmYvO2WNYjxv1NC4BZaSTlekcVR72w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

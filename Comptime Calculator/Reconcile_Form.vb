@@ -1,7 +1,7 @@
 ﻿
 Public Class frm_Reconcile
 
-    Dim path As String = "C:\Comptime\comptimerun.txt"
+    Const path As String = "D:\Temp\Comptime\comptimerun.txt"
     Dim readtxt As String
     Dim entry As String
     Dim newLineIndex As Integer
@@ -179,7 +179,7 @@ Public Class frm_Reconcile
         'in it's own folder
 
         'sets path for folder
-        Dim path2 As String = "C:\Comptime\" & CStr(txtYear.Text)
+        Dim path2 As String = "D:\Temp\Comptime\" & CStr(txtYear.Text)
 
 
         If Me.libxOrig.Items.Count > 0 And Me.libxPreview.Items.Count > 0 Then
@@ -195,7 +195,7 @@ Public Class frm_Reconcile
                                                     txtYear.Text.ToString & ".txt",
                                                     "Orange County Juvenile Probation Dept." & ControlChars.NewLine &
                                                     "---------------------------------------" & ControlChars.NewLine &
-                                                    "Personal Comptime for " & frm_Main.user &
+                                                    "Personal Comptime for " & frm_Main.GetEmployeeName &
                                                     " for year " &
                                                     txtYear.Text.ToString & ControlChars.NewLine & ControlChars.NewLine &
                                                     "Date Entered" & Strings.Space(10) &
@@ -214,7 +214,7 @@ Public Class frm_Reconcile
                                                     txtYear.Text.ToString & ".txt",
                                                     "Orange County Juvenile Probation Dept." & ControlChars.NewLine &
                                                     "---------------------------------------" & ControlChars.NewLine &
-                                                    "Personal Comptime for " & frm_Main.user &
+                                                    "Personal Comptime for " & frm_Main.GetEmployeeName &
                                                     " for year " &
                                                     txtYear.Text.ToString & ControlChars.NewLine & ControlChars.NewLine &
                                                     "Date Entered" & Strings.Space(10) &
@@ -247,7 +247,7 @@ Public Class frm_Reconcile
                                                     "Orange County Juvenile Probation Dept." & ControlChars.NewLine &
                                                     "---------------------------------------" & ControlChars.NewLine &
                                                     "Personal Comptime Account for: " &
-                                                    frm_Main.user & ControlChars.NewLine & ControlChars.NewLine &
+                                                    frm_Main.GetEmployeeName & ControlChars.NewLine & ControlChars.NewLine &
                                                     "Date Entered" & Strings.Space(10) &
                                                     "CaseNo." & Strings.Space(13) &
                                                     "Earned(+)" & Strings.Space(10) &
@@ -265,7 +265,7 @@ Public Class frm_Reconcile
                                                     "Orange County Juvenile Probation Dept." & ControlChars.NewLine &
                                                     "---------------------------------------" & ControlChars.NewLine &
                                                     "Personal Comptime Account for: " &
-                                                    frm_Main.user & ControlChars.NewLine & ControlChars.NewLine &
+                                                    frm_Main.GetEmployeeName & ControlChars.NewLine & ControlChars.NewLine &
                                                     "Date Entered" & Strings.Space(10) &
                                                     "CaseNo." & Strings.Space(13) &
                                                     "Earned(+)" & Strings.Space(10) &
