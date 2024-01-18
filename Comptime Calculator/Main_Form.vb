@@ -67,6 +67,10 @@ Public Class frm_Main
             Dim newLineIndex As Integer = 0
             Dim entryIndex As Integer = 0
             Dim entryuser As String
+            Dim sentence As String
+            Dim nameEndIndex As Integer
+            Dim nameStartIndex As Integer
+            Dim positionStartIndex As Integer
 
             'checks for existing comptimerun.txt
             'if it exists, it pulls it and stores it
@@ -85,17 +89,24 @@ Public Class frm_Main
                     'finds line  with username that you are searching for
                     entryuser = entry.Contains("Account")
 
-                    'if line is found with a date, add to myentry variable to find bank balance at the end
-                    If entry.Contains("/") Then
-                        myentry = Trim(Microsoft.VisualBasic.Right(entry, 7))
+                    'if user is found, it adds it to preview
+                    If entryuser Then
+                        sentence = entry
+                        nameStartIndex = entry.IndexOf(":") + 2
+                        nameEndIndex = entry.IndexOf(",")
+                        myName = sentence.Substring(nameStartIndex, nameEndIndex - nameStartIndex)
+                        positionStartIndex = entry.IndexOf(",") + 2
+                        myPosition = sentence.Substring(positionStartIndex)
+
                     End If
 
-                    'Retrieve Current Bank balance
-                    prevbalLabel.Text = myentry
+                    'if line is found with a date, add to myentry variable to find bank balance at the end
+                    If entry.Contains("/") Then
+                        myEntry = Trim(Microsoft.VisualBasic.Right(entry, 7))
 
-                    'if user is found, it adds it to preview
-                    If entryuser = True Then
-                        myName = entry.Substring(31)
+                        'Retrieve Current Bank balance
+                        prevbalLabel.Text = myEntry
+
                     End If
 
                     'if not found updates entryindex with next line
@@ -138,6 +149,7 @@ Public Class frm_Main
                             }
                             myPosition = objEmployee.mposition
                             myDept = objEmployee.dname
+                            myRate = objEmployee.Rate
 
                         Case "JPO"
                             Dim objEmployee As New JPO With {
@@ -145,6 +157,7 @@ Public Class frm_Main
                             }
                             myPosition = objEmployee.mposition
                             myDept = objEmployee.dname
+                            myRate = objEmployee.Rate
 
                         Case "Chief"
                             Dim objEmployee As New Chief With {
@@ -152,6 +165,7 @@ Public Class frm_Main
                             }
                             myPosition = objEmployee.mposition
                             myDept = objEmployee.dname
+                            myRate = objEmployee.Rate
 
                         Case Else
                             MessageBox.Show("That position does not exist!" & ControlChars.NewLine &
@@ -359,7 +373,7 @@ Public Class frm_Main
 
             'If conversions successful, make calculations
             If isEarned And isTaken Then
-                calcearned = earned * 1.5D
+                calcearned = earned * myRate
                 calcearned = Math.Round(calcearned, 2)
                 previewbankbal = calcearned + Convert.ToDecimal(prevbalLabel.Text)
                 calcearnedTextBox.Text = ""
@@ -406,7 +420,7 @@ Public Class frm_Main
 
             'If conversions successful, make calculations
             If isEarned And isTaken Then
-                calcearned = earned * 1.5D
+                calcearned = earned * myRate
                 calcearned = Math.Round(calcearned, 2)
                 newbalance = calcearned - taken
                 newbalance = Math.Round(newbalance, 2)

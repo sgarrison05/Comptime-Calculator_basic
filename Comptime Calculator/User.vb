@@ -2,15 +2,27 @@
 
 Public Class Employee
     'Attempt to simulate a standard user
-    Public dname As String = "Orange County Juvenile Probation Dept."
+    Public Const dname As String = "Orange County Juvenile Probation Dept."
     Public user As String
     Public mposition As String
-    Public rate As Decimal
+    Private _rate As Decimal
+
+    Public Property Rate() As Decimal
+
+        Get
+            Return _rate
+        End Get
+        Set(value As Decimal)
+            _rate = value
+        End Set
+
+    End Property
 
     Public Sub New()
+        'Sets the Defaults
         user = Nothing
         mposition = Nothing
-        rate = Nothing
+        Rate = 1.5D
     End Sub
 
 End Class
@@ -23,7 +35,7 @@ Public Class Staff
     Public Sub New()
         'Set the defaults
         mposition = "Office Staff"
-        rate = 1.5D
+        Rate = 1.5D
     End Sub
 
 End Class
@@ -36,7 +48,7 @@ Public Class JPO
     Public Sub New()
         'Set the defaults
         mposition = "JPO"
-        rate = 1.5D
+        Rate = 1.5D
     End Sub
 
 End Class
@@ -49,7 +61,7 @@ Public Class Chief
     Public Sub New()
         'Set the defaults
         mposition = "Chief"
-        rate = 1D
+        Rate = 1D
     End Sub
 
 End Class
