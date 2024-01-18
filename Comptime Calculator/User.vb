@@ -34,7 +34,7 @@ Public Class Staff
 
     Public Sub New()
         'Set the defaults
-        mposition = "Office Staff"
+        mposition = "Staff"
         Rate = 1.5D
     End Sub
 

@@ -115,6 +115,34 @@ Public Class frm_Main
 
                 Loop
 
+                Select Case myPosition
+
+                    Case "Staff"
+                        Dim objEmployee As New Staff With {
+                                .user = myName
+                            }
+                        myPosition = objEmployee.mposition
+                        myDept = objEmployee.dname
+                        myRate = objEmployee.Rate
+
+                    Case "JPO"
+                        Dim objEmployee As New JPO With {
+                                .user = myName
+                            }
+                        myPosition = objEmployee.mposition
+                        myDept = objEmployee.dname
+                        myRate = objEmployee.Rate
+
+                    Case "Chief"
+                        Dim objEmployee As New Chief With {
+                                .user = myName
+                            }
+                        myPosition = objEmployee.mposition
+                        myDept = objEmployee.dname
+                        myRate = objEmployee.Rate
+
+                End Select
+
                 Me.Text = "Personal Comptime Calculator for " & myName
                 newbalLabel.Text = "0.00"
                 calcearnedTextBox.Text = "Ready"
