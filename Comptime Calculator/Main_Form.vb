@@ -3,9 +3,9 @@ Option Explicit On
 'Purpose                To calculate comptime time earned or spent
 '                       in a particular instance
 'Created By             Shon Garrison, December 2008
-'Updated Last           September 28, 2021
+'Updated Last           January 2024
 
-'Update Notes:          Elemenated the bank file
+'Update Notes:          Incorporated Classes
 
 Imports Microsoft.VisualBasic.ApplicationServices
 
@@ -150,17 +150,19 @@ Public Class frm_Main
             End If
         Else 'sets up the comptime back in the specified path
             my_decision = MessageBox.Show _
-            ("The current comptime balance file does not exist.  This is your comptime bank, would you like to create it?",
-            "Comptime Calculator", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+            ("The current comptime balance file does not exist." & vbCrLf &
+             "This Is your comptime bank, would you Like to create it?",
+            "Comptime Calculator", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+            MessageBoxDefaultButton.Button1)
 
             If my_decision = DialogResult.Yes Then
                 Dim init_bal_decision As DialogResult
-                init_bal_decision = MessageBox.Show("Do you have an current balance to enter?", title, MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question)
+                init_bal_decision = MessageBox.Show("Do you have an current balance to enter?", title,
+                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
                 If init_bal_decision = Windows.Forms.DialogResult.Yes Then
                     Do Until IsNumeric(prevbalLabel.Text) Or prevbalLabel.Text <> String.Empty
-                        prevbalLabel.Text = InputBox("Please enter current balance or click 'Ok' to go to calculator.", title, "0.00")
+                        prevbalLabel.Text = InputBox("Please enter current balance Or click 'Ok' to go to calculator.", title, "0.00")
                         If Not IsNumeric(prevbalLabel.Text) Then
                             MessageBox.Show("Number must be numeric.", title, MessageBoxButtons.OK)
                         End If
