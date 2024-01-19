@@ -198,12 +198,11 @@ Public Class frm_Main
                             myRate = objEmployee.Rate
 
                         Case Else
-                            MessageBox.Show("That position does not exist!" & ControlChars.NewLine &
+                            MessageBox.Show("That position does not exist!" & vbCrLf &
                                             "Can not create bankfile.")
                             Application.Exit()
 
                     End Select
-
 
                     'Quick Conversion for two decimal places for label
                     Dim myConvert As Decimal = CDec(prevbalLabel.Text)
@@ -315,14 +314,15 @@ Public Class frm_Main
             'If the user does not, then the program will direct user to exit.
         Else : my_apply = Windows.Forms.DialogResult.No
             my_another = MessageBox.Show("Do you want to make another calculation?", title,
-        MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                                          MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If my_another = Windows.Forms.DialogResult.Yes Then
                 Me.Show()
 
                 CleanHouse()
 
             Else : my_another = Windows.Forms.DialogResult.No
-                MessageBox.Show("No calcuation will be made and the form will be reset. You may exit the program.", title,
+                MessageBox.Show("No calcuation will be made and the form will be reset." & vbCrLf &
+                                "You may exit the program.", title,
                                 MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.Show()
 
@@ -498,8 +498,9 @@ Public Class frm_Main
         'declares variables
         Dim my_choice As DialogResult
 
-        my_choice = MessageBox.Show("Do you wish to add to new balance to the bank?", title, MessageBoxButtons.YesNo,
-        MessageBoxIcon.Question)
+        my_choice = MessageBox.Show("Do you wish to add to new balance to the bank?",
+                                    title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
         If my_choice = Windows.Forms.DialogResult.Yes Then
             'declare block variables
             Dim curdate As String
@@ -567,7 +568,7 @@ Public Class frm_Main
         Dim my_result As DialogResult
 
         my_result = MessageBox.Show("Are you sure that you are ready to exit?", title,
-        MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If my_result = Windows.Forms.DialogResult.No Then
 
@@ -609,7 +610,10 @@ Public Class frm_Main
     End Sub
 
     Public Function GetEmployeeName()
+
+        'Public function to pass username to reconcile form
         Return myName
+
     End Function
 
     '---------------------------------------Buttons and Click Events -------------------------------------------------------------
@@ -708,7 +712,7 @@ Public Class frm_Main
 
         Dim proc As New System.Diagnostics.Process
         proc.StartInfo.FileName = "notepad.exe"
-        proc.StartInfo.Arguments = "C:/Comptime/Comptimerun.txt"
+        proc.StartInfo.Arguments = cpath
 
         proc.Start()
     End Sub
@@ -721,11 +725,12 @@ Public Class frm_Main
 
         'Opens your comptime readme file
 
-        Dim proc As New System.Diagnostics.Process
-        proc.StartInfo.FileName = "notepad.exe"
-        proc.StartInfo.Arguments = "C:/Comptime/Readme.txt"
+        'Dim proc As New System.Diagnostics.Process
+        'proc.StartInfo.FileName = "notepad.exe"
+        'proc.StartInfo.Arguments = "C:/Comptime/Readme.txt"
 
-        proc.Start()
+        'proc.Start()
+
     End Sub
 
     Private Sub ClearFormToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)

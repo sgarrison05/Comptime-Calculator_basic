@@ -171,6 +171,7 @@ Public Class frm_Reconcile
 
         're-enables reconcile button after preview selected
         Me.btnReconcile.Enabled = True
+
     End Sub
 
     Private Sub btnReconcile_Click(sender As Object, e As EventArgs) Handles btnReconcile.Click
