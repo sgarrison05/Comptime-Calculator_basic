@@ -66,6 +66,7 @@ Partial Class frm_Main
         Me.caseComboBox = New System.Windows.Forms.ComboBox()
         Me.hrs2Label = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.warningLbl = New System.Windows.Forms.Label()
         Me.optionsGroupBox.SuspendLayout()
         Me.comptimeMenuStrip.SuspendLayout()
         Me.actionGroupBox.SuspendLayout()
@@ -462,12 +463,23 @@ Partial Class frm_Main
         Me.Label3.Size = New System.Drawing.Size(326, 1)
         Me.Label3.TabIndex = 20
         '
+        'warningLbl
+        '
+        Me.warningLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.warningLbl.ForeColor = System.Drawing.Color.Red
+        Me.warningLbl.Location = New System.Drawing.Point(167, 305)
+        Me.warningLbl.Name = "warningLbl"
+        Me.warningLbl.Size = New System.Drawing.Size(281, 44)
+        Me.warningLbl.TabIndex = 24
+        Me.warningLbl.Text = "Warning:  Time Cannot Exceed 50 hours"
+        '
         'frm_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.exitButton
         Me.ClientSize = New System.Drawing.Size(609, 509)
+        Me.Controls.Add(Me.warningLbl)
         Me.Controls.Add(Me.lbl_CalcResultID)
         Me.Controls.Add(Me.calcearnedTextBox)
         Me.Controls.Add(Me.Label3)
@@ -549,5 +561,5 @@ Partial Class frm_Main
     Friend WithEvents caseComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents hrs2Label As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-
+    Friend WithEvents warningLbl As Label
 End Class
