@@ -22,13 +22,18 @@ Public Class frm_Main
     Private _myentry As String
 
     Friend ReadOnly _heading As String =
-        "Date Entered" & Strings.Space(10) &
+        "Date Entered" & Strings.Space(7) &
         "CaseNo." & Strings.Space(13) &
-        "Earned(+)" & Strings.Space(10) &
+        "Earned(+)" & Strings.Space(7) &
         "Taken(-)" & Strings.Space(9) &
         "Balance"
 
-    Friend ReadOnly _columnDivider As String = Nothing
+    Friend ReadOnly _columnDivider As String =
+        "-------------" & Strings.Space(6) &
+        "----------" & Strings.Space(10) &
+        "----------" & Strings.Space(6) &
+        "----------" & Strings.Space(7) &
+        "----------"
 
     '--------------------------------------------  Events -------------------------------------------------------------------------
     Private Sub compcalcForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -45,7 +50,6 @@ Public Class frm_Main
 
     Private Sub InitializeControls()
 
-        Me.earnedTextBox.ReadOnly = True
         Me.applyButton.Enabled = False
         Me.AboutToolStripMenuItem.Enabled = False
 
@@ -114,7 +118,7 @@ Public Class frm_Main
 
         Dim createResult As DialogResult =
             MessageBox.Show("The current comptime balance file does not exist. " &
-                            "This is your comptime bank � would you like to create it?",
+                            "This is your comptime bank. Would you like to create it?",
                             TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If createResult = DialogResult.No Then
@@ -221,9 +225,9 @@ Public Class frm_Main
 
             Dim placeholderRow As String =
                 Me.accruedDateTimePicker.Text & Strings.Space(9) &
-                "Placeholder".PadRight(15, " "c) & Strings.Space(5) &
-                "0.00".PadLeft(5, " "c) & Strings.Space(17) &
-                "0.00".PadLeft(5, " "c) & Strings.Space(10) &
+                "Placeholder".PadRight(15, " "c) & Strings.Space(4) &
+                "0.00".PadLeft(5, " "c) & Strings.Space(11) &
+                "0.00".PadLeft(5, " "c) & Strings.Space(13) &
                 Convert.ToString(_previousBalance).PadLeft(5, " "c) & ControlChars.NewLine
 
             My.Computer.FileSystem.WriteAllText(CPATH, placeholderRow, True)
@@ -286,9 +290,9 @@ Public Class frm_Main
             calcearnedTextBox.Text = ""
 
             calcearnedTextBox.Text = "Total taken time to enter on affidavit = " &
-                                        taken.ToString("N2") &
-                                        " hours" &
-                                        BuildPreviewText(previewBalance)
+               taken.ToString("N2") &
+               " hours" &
+               BuildPreviewText(previewBalance)
         End If
 
         Me.applyButton.Enabled = True
@@ -339,7 +343,7 @@ Public Class frm_Main
 
     Private Sub Separation()
 
-        My.Computer.FileSystem.WriteAllText(cpath, "".PadLeft(85, "-") &
+        My.Computer.FileSystem.WriteAllText(CPATH, "".PadLeft(85, "-") &
                                             ControlChars.NewLine, True)
 
     End Sub
@@ -382,9 +386,9 @@ Public Class frm_Main
 
             Dim transactionRow As String =
                 currentDate & Strings.Space(9) &
-                caseNo.PadRight(15, " "c) & Strings.Space(5) &
-                earnedText.PadLeft(5, " "c) & Strings.Space(17) &
-                takenText.PadLeft(5, " "c) & Strings.Space(10) &
+                caseNo.PadRight(15, " "c) & Strings.Space(4) &
+                earnedText.PadLeft(5, " "c) & Strings.Space(11) &
+                takenText.PadLeft(5, " "c) & Strings.Space(13) &
                 balanceText.PadLeft(5, " "c) & ControlChars.NewLine
 
             My.Computer.FileSystem.WriteAllText(CPATH, transactionRow, True)
@@ -394,7 +398,6 @@ Public Class frm_Main
             MessageBox.Show("Error writing to comptime file:" & Environment.NewLine & ex.Message,
                             TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
 
     End Sub
 
@@ -417,17 +420,15 @@ Public Class frm_Main
     Private Function BuildPreviewText(previewBalance As Decimal) As String
 
         Return ControlChars.NewLine &
-               "=".PadLeft(80, "=") & ControlChars.NewLine &
+               "=".PadLeft(72, "=") & ControlChars.NewLine &
                "Preview of Entry to Activity Sheet:" & ControlChars.NewLine & ControlChars.NewLine &
                "Date Entered" & Strings.Space(14) &
                "CaseNo." & Strings.Space(14) &
                "Earned(+)" & Strings.Space(12) &
-               "Type" & Strings.Space(22) &
                "Taken(-)" & Strings.Space(16) &
                "Balance" & ControlChars.NewLine &
                "-----------------" & Strings.Space(13) &
                "----------" & Strings.Space(16) &
-               "------------" & Strings.Space(13) &
                "----------" & Strings.Space(17) &
                "----------" & Strings.Space(17) &
                "----------" & ControlChars.NewLine &
