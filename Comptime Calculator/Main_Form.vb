@@ -15,14 +15,11 @@ Public Class frm_Main
     Private Const WARNING_HOURS As Decimal = 50D
     Private Const COMP_TIME_MULTIPLIER As Decimal = 1.5D
 
-
-
     Public userName As String
     Private _newBalance As Decimal
     Private _previousBalance As Decimal
     Private _lastEntryBalance As String
     Private _myentry As String
-
 
     Friend ReadOnly _heading As String =
         "Date Entered" & Strings.Space(10) &
@@ -537,7 +534,7 @@ Public Class frm_Main
 
         Dim proc As New System.Diagnostics.Process
         proc.StartInfo.FileName = "notepad.exe"
-        proc.StartInfo.Arguments = "C:/Comptime/Comptimerun.txt"
+        proc.StartInfo.Arguments = CPATH
 
         proc.Start()
     End Sub
