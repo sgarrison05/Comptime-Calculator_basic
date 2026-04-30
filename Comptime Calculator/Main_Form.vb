@@ -36,6 +36,7 @@ Public Class frm_Main
         "----------"
 
     '--------------------------------------------  Events -------------------------------------------------------------------------
+
     Private Sub compcalcForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         InitializeControls()
@@ -439,6 +440,7 @@ Public Class frm_Main
                Convert.ToString(previewBalance).PadLeft(5, " ")
 
     End Function
+
     '---------------------------------------Buttons and Click Events -------------------------------------------------------------
 
     Private Sub clearButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles clearButton.Click
@@ -466,8 +468,10 @@ Public Class frm_Main
 
     End Sub
 
-    Private Sub ClearToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ClearToolStripMenuItem.Click
-        CalcClear()
+    Private Sub applyButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles applyButton.Click
+
+        ApplyCalculations()
+
     End Sub
 
     Private Sub earnedTextBox_Enter(ByVal sender As Object, ByVal e As System.EventArgs)
@@ -518,11 +522,7 @@ Public Class frm_Main
         earnedTextBox.Enabled = True
     End Sub
 
-    Private Sub applyButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles applyButton.Click
-
-        ApplyCalculations()
-
-    End Sub
+    '---------------------------------------Tool Strip Menu Items -------------------------------------------------------------
 
     Private Sub ExitToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ExitToolStripMenuItem.Click
 
@@ -555,16 +555,14 @@ Public Class frm_Main
         proc.Start()
     End Sub
 
-    Private Sub ClearFormToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
-
-        CalcClear()
-
-    End Sub
-
     Private Sub CalculateToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles CalculateToolStripMenuItem.Click
 
         PreviewCalculations()
 
+    End Sub
+
+    Private Sub ClearToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ClearToolStripMenuItem.Click
+        CalcClear()
     End Sub
 
     Private Sub ApplyToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ApplyToolStripMenuItem.Click
