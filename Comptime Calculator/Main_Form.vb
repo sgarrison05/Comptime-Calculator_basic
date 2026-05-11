@@ -268,8 +268,8 @@ Public Class frm_Main
             Me.newbalLabel.Text = Convert.ToString(_newBalance)
 
             Me.calcearnedTextBox.Text = "Total accrued time to enter on affidavit = " &
-                calcEarned.ToString("N2") &
-                " hours" &
+                                        calcEarned.ToString("N2") &
+                                        " hours" &
                 BuildPreviewText(previewBalance)
 
         ElseIf spentRadioButton.Checked Then
@@ -291,15 +291,13 @@ Public Class frm_Main
             calcearnedTextBox.Text = ""
 
             calcearnedTextBox.Text = "Total taken time to enter on affidavit = " &
-               taken.ToString("N2") &
-               " hours" &
+                                     taken.ToString("N2") &
+                                     " hours" &
                BuildPreviewText(previewBalance)
         End If
 
         Me.applyButton.Enabled = True
         Me.ApplyToolStripMenuItem.Enabled = True
-
-
 
     End Sub
 
