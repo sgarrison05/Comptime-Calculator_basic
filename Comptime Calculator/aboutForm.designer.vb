@@ -40,8 +40,8 @@ Partial Class frm_About
         Me.copywriteTextBox.Name = "copywriteTextBox"
         Me.copywriteTextBox.Size = New System.Drawing.Size(233, 66)
         Me.copywriteTextBox.TabIndex = 0
-        Me.copywriteTextBox.Text = "Comptime Calculator" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Version: 4.10" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Created By:  Shon Garrison 2009" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Last Updated" & _
-    ": August 2016"
+        Me.copywriteTextBox.Text = "Comptime Calculator" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Version: 4.12" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Created By:  Shon Garrison 2009" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Last Updated" &
+    ": May 2026"
         '
         'deptidTextBox
         '
@@ -53,7 +53,7 @@ Partial Class frm_About
         Me.deptidTextBox.Name = "deptidTextBox"
         Me.deptidTextBox.Size = New System.Drawing.Size(280, 126)
         Me.deptidTextBox.TabIndex = 1
-        Me.deptidTextBox.Text = "For use by:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Orange County Juvenile Probation Dept." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "213 Market St." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Orange, Texa" & _
+        Me.deptidTextBox.Text = "For use by:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Orange County Juvenile Probation Dept." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "213 Market St." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Orange, Texa" &
     "s 77630" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(409) 882 - 7885" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(409) 882 - 7844"
         '
         'ccalcPictureBox

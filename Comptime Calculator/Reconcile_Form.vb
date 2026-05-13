@@ -1,75 +1,28 @@
 ﻿
 Public Class frm_Reconcile
 
-    Dim path As String = "C:\Comptime\comptimerun.txt"
-    Dim readtxt As String
-    Dim entry As String
-    Dim newLineIndex As Integer
-    Dim entryIndex As Integer
-    Dim searchyear As String
-    Dim entrywyr As String
-    Dim searchyearorig As String
-    Dim temp As String
+    Dim reconcilledPath As String = "D:\Temp\Comptime\" & CStr(Year(Today) - 1)
 
     Private Sub frm_Reconcile_Load(sender As Object, e As System.EventArgs) Handles Me.Load
 
-        'clear out variables for recalculation
-        searchyear = 0
-        readtxt = ""
-        entry = ""
-        entrywyr = ""
-        newLineIndex = 0
-        entryIndex = 0
-        temp = ""
-
-        'disable reconcile button prior to preview
-        Me.btnReconcile.Enabled = False
-
         'default selects the previous year
-        Me.txtYear.Text = Year(Today) - 1
-
+        Me.txtYear.Text = CStr(Year(Today) - 1)
+        Me.btnReconcile.Enabled = False
         Me.libxReconcile.Items.Clear()
 
-        'checks for existing comptimerun.txt
-        'if it exists, it pulls it and stores it
-        If My.Computer.FileSystem.FileExists(path) Then
+        Try
+            If My.Computer.FileSystem.FileExists(frm_Main.CPATH) Then
+                Dim allEntries As List(Of String) = ReadAllTransactionLines(frm_Main.CPATH)
+                For Each line As String In allEntries
+                    Me.libxReconcile.Items.Add(line)
+                Next
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error loading bank file:" & Environment.NewLine & ex.Message,
+                            frm_Main.TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
-            readtxt = My.Computer.FileSystem.ReadAllText(path)
-
-            'saves copy of text on load
-            temp = readtxt
-
-
-            'primer for first read of readtxt
-            newLineIndex = readtxt.IndexOf(ControlChars.NewLine, entryIndex)
-
-            Do Until newLineIndex = -1
-
-                'get each line
-                entry = readtxt.Substring(entryIndex, newLineIndex - entryIndex)
-
-                'finds every line with year you are searching for
-                entrywyr = entry.Contains("/")
-
-                'if found, it adds it to preview
-                If entrywyr = True Then
-
-                    libxReconcile.Items.Add(entry)
-
-                End If
-
-
-                'updates entryindex with next line
-                entryIndex = newLineIndex + 2
-                newLineIndex = readtxt.IndexOf(ControlChars.NewLine, entryIndex)
-
-            Loop
-
-
-            'gives year focus
-            Me.txtYear.Focus()
-
-        End If
+        Me.txtYear.Focus()
 
     End Sub
 
@@ -84,93 +37,50 @@ Public Class frm_Reconcile
     Private Sub btnPreview_Click(sender As Object, e As EventArgs) Handles btnPreview.Click
 
         'Previews the Previous Year
-        'clear out variables for recalculation
-        searchyear = 0
-        readtxt = ""
-        entry = ""
-        entrywyr = ""
-        newLineIndex = 0
-        entryIndex = 0
-        temp = ""
-
 
         Me.libxPreview.Items.Clear()
         Me.libxOrig.Items.Clear()
 
-
-        'parses year to search
-        Integer.TryParse(Me.txtYear.Text, searchyear)
-
-        'checks for existing comptimerun.txt
-        'if it exists, it pulls it and stores it
-        If My.Computer.FileSystem.FileExists(path) Then
-            readtxt = My.Computer.FileSystem.ReadAllText(path)
-
+        Dim previousYear As Integer
+        If Not Integer.TryParse(Me.txtYear.Text, previousYear) Then
+            MessageBox.Show("Please enter a valid 4-digit year.", frm_Main.TITLE,
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.txtYear.Focus()
+            Return
         End If
 
-        'collects txt variable contents before any manipulation to data
-        temp = readtxt
+        Dim currentYear As Integer = previousYear + 1
 
-        'primer for first read
-        newLineIndex = readtxt.IndexOf(ControlChars.NewLine, entryIndex)
-
-        Do Until newLineIndex = -1
-
-            'get each line
-            entry = readtxt.Substring(entryIndex, newLineIndex - entryIndex)
-
-            'finds every line with year you are searching for
-            entrywyr = entry.Contains(searchyear)
-
-            'if found, it adds it to preview
-            If entrywyr = True Then
-                libxPreview.Items.Add(entry)
+        Try
+            If Not My.Computer.FileSystem.FileExists(frm_Main.CPATH) Then
+                MessageBox.Show("Bank file not found. Nothing to preview.",
+                                frm_Main.TITLE, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return
             End If
 
-            'updates entryindex with next line
-            entryIndex = newLineIndex + 2
-            newLineIndex = readtxt.IndexOf(ControlChars.NewLine, entryIndex)
+            Dim previousYearEntries As List(Of String) =
+                GetEntriesForYear(frm_Main.CPATH, previousYear)
 
-        Loop
+            Dim currentYearEntries As List(Of String) =
+                GetEntriesForYear(frm_Main.CPATH, currentYear)
 
-        'Previews the Current Year
-        'resets variables for second pull of original data
-        searchyearorig = 0
-        entry = ""
-        entrywyr = ""
-        newLineIndex = 0
-        entryIndex = 0
+            For Each line As String In previousYearEntries
+                Me.libxPreview.Items.Add(line)
+            Next
 
-        'parses current year to search
-        Integer.TryParse(Me.txtYear.Text, searchyearorig)
+            For Each line As String In currentYearEntries
+                Me.libxOrig.Items.Add(line)
+            Next
 
-        'since default is the previous year, add one
-        searchyearorig += 1
-
-        'primer for first read
-        newLineIndex = readtxt.IndexOf(ControlChars.NewLine, entryIndex)
-
-        Do Until newLineIndex = -1
-
-            'get each line
-            entry = readtxt.Substring(entryIndex, newLineIndex - entryIndex)
-
-            'finds every line with year you are searching for
-            entrywyr = entry.Contains(searchyearorig)
-
-            'if found, it adds it to preview
-            If entrywyr = True Then
-                libxOrig.Items.Add(entry)
-            End If
-
-            'updates entryindex with next line
-            entryIndex = newLineIndex + 2
-            newLineIndex = readtxt.IndexOf(ControlChars.NewLine, entryIndex)
-
-        Loop
+        Catch ex As Exception
+            MessageBox.Show("Error reading bank file:" & Environment.NewLine & ex.Message,
+                            frm_Main.TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End Try
 
         're-enables reconcile button after preview selected
         Me.btnReconcile.Enabled = True
+
     End Sub
 
     Private Sub btnReconcile_Click(sender As Object, e As EventArgs) Handles btnReconcile.Click
@@ -178,135 +88,131 @@ Public Class frm_Reconcile
         'Creates reconcilled text document for previous year 
         'in it's own folder
 
-        'sets path for folder
-        Dim path2 As String = "C:\Comptime\" & CStr(txtYear.Text)
+        If Me.libxPreview.Items.Count = 0 OrElse Me.libxOrig.Items.Count = 0 Then
+            MessageBox.Show("Make sure you have a previous year to reconcile.",
+                            "Important", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Me.btnClearPrev.Focus()
+            Return
+        End If
 
+        Dim previousYear As Integer
+        Integer.TryParse(Me.txtYear.Text, previousYear)
 
-        If Me.libxOrig.Items.Count > 0 And Me.libxPreview.Items.Count > 0 Then
+        Try
+            '--- Write reconciled archive file for previous year ---
+            Dim archiveDir As String = ArchivePath(previousYear)
+            Dim archiveFile As String = ReconciledFilePath(previousYear)
 
-            'checks if file exists.  If is does not, it creates it.
-            If My.Computer.FileSystem.FileExists(path2) And My.Computer.FileSystem.FileExists(path2 &
-                                                "\Comptimerun_Reconciled_" & txtYear.Text.ToString & ".txt") Then
-                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" &
-                                                    txtYear.Text.ToString & ".txt", String.Empty,
-                                                    False)
-
-                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" &
-                                                    txtYear.Text.ToString & ".txt",
-                                                    "Orange County Juvenile Probation Dept." & ControlChars.NewLine &
-                                                    "---------------------------------------" & ControlChars.NewLine &
-                                                    "Personal Comptime for " & frm_Main.user &
-                                                    " for year " &
-                                                    txtYear.Text.ToString & ControlChars.NewLine & ControlChars.NewLine &
-                                                    "Date Entered" & Strings.Space(10) &
-                                                    "CaseNo." & Strings.Space(13) &
-                                                    "Earned(+)" & Strings.Space(10) &
-                                                    "Taken(-)" & Strings.Space(9) &
-                                                    "Balance" & ControlChars.NewLine &
-                                                    "------------" & Strings.Space(10) &
-                                                    "---------" & Strings.Space(11) &
-                                                    "---------" & Strings.Space(10) &
-                                                    "--------" & Strings.Space(9) &
-                                                    "-------" & ControlChars.NewLine, False)
-            Else
-                My.Computer.FileSystem.CreateDirectory(path2)
-                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" &
-                                                    txtYear.Text.ToString & ".txt",
-                                                    "Orange County Juvenile Probation Dept." & ControlChars.NewLine &
-                                                    "---------------------------------------" & ControlChars.NewLine &
-                                                    "Personal Comptime for " & frm_Main.user &
-                                                    " for year " &
-                                                    txtYear.Text.ToString & ControlChars.NewLine & ControlChars.NewLine &
-                                                    "Date Entered" & Strings.Space(10) &
-                                                    "CaseNo." & Strings.Space(13) &
-                                                    "Earned(+)" & Strings.Space(10) &
-                                                    "Taken(-)" & Strings.Space(9) &
-                                                    "Balance" & ControlChars.NewLine &
-                                                    "------------" & Strings.Space(10) &
-                                                    "---------" & Strings.Space(11) &
-                                                    "---------" & Strings.Space(10) &
-                                                    "--------" & Strings.Space(9) &
-                                                    "-------" & ControlChars.NewLine, False)
+            If Not My.Computer.FileSystem.DirectoryExists(archiveDir) Then
+                My.Computer.FileSystem.CreateDirectory(archiveDir)
             End If
 
-            'puts all items in text file
+            ' Always overwrite the archive file cleanly
+            My.Computer.FileSystem.WriteAllText(archiveFile, String.Empty, False)
+            WriteReconciledHeader(archiveFile, previousYear)
+
             For Each item As String In Me.libxPreview.Items
-                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" &
-                                                    txtYear.Text.ToString & ".txt",
-                                                    item & ControlChars.NewLine, True)
+                My.Computer.FileSystem.WriteAllText(archiveFile, item & ControlChars.NewLine, True)
+                My.Computer.FileSystem.WriteAllText(archiveFile,
+                    "".PadLeft(100, "-"c) & ControlChars.NewLine, True)
+            Next
 
-                My.Computer.FileSystem.WriteAllText(path2 & "\Comptimerun_Reconciled_" &
-                                                    txtYear.Text.ToString & ".txt",
-                                                    "".PadLeft(85, "-") & ControlChars.NewLine, True)
-            Next item
+            '--- Rebuild active bank file with current-year entries only ---
+            My.Computer.FileSystem.WriteAllText(frm_Main.CPATH, String.Empty, False)
+            WriteMainFileHeader(frm_Main.CPATH)
 
-            'Rebuilds current comptimerun text file
-            If My.Computer.FileSystem.FileExists(path) Then
-                My.Computer.FileSystem.WriteAllText(path, String.Empty, False)
-                My.Computer.FileSystem.WriteAllText(path,
-                                                    "Orange County Juvenile Probation Dept." & ControlChars.NewLine &
-                                                    "---------------------------------------" & ControlChars.NewLine &
-                                                    "Personal Comptime Account for: " &
-                                                    frm_Main.user & ControlChars.NewLine & ControlChars.NewLine &
-                                                    "Date Entered" & Strings.Space(10) &
-                                                    "CaseNo." & Strings.Space(13) &
-                                                    "Earned(+)" & Strings.Space(10) &
-                                                    "Taken(-)" & Strings.Space(9) &
-                                                    "Balance" & ControlChars.NewLine &
-                                                    "------------" & Strings.Space(10) &
-                                                    "---------" & Strings.Space(11) &
-                                                    "---------" & Strings.Space(10) &
-                                                    "--------" & Strings.Space(9) &
-                                                    "-------" & ControlChars.NewLine, False)
-
-            Else
-
-                My.Computer.FileSystem.WriteAllText(path,
-                                                    "Orange County Juvenile Probation Dept." & ControlChars.NewLine &
-                                                    "---------------------------------------" & ControlChars.NewLine &
-                                                    "Personal Comptime Account for: " &
-                                                    frm_Main.user & ControlChars.NewLine & ControlChars.NewLine &
-                                                    "Date Entered" & Strings.Space(10) &
-                                                    "CaseNo." & Strings.Space(13) &
-                                                    "Earned(+)" & Strings.Space(10) &
-                                                    "Taken(-)" & Strings.Space(9) &
-                                                    "Balance" & ControlChars.NewLine &
-                                                    "------------" & Strings.Space(10) &
-                                                    "---------" & Strings.Space(11) &
-                                                    "---------" & Strings.Space(10) &
-                                                    "--------" & Strings.Space(9) &
-                                                    "-------" & ControlChars.NewLine, False)
-
-            End If
-
-            'puts all original items in comptimerun text file
             For Each item As String In Me.libxOrig.Items
-                My.Computer.FileSystem.WriteAllText(path,
-                                                    item & ControlChars.NewLine, True)
+                My.Computer.FileSystem.WriteAllText(frm_Main.CPATH,
+                    item & ControlChars.NewLine, True)
+                My.Computer.FileSystem.WriteAllText(frm_Main.CPATH,
+                    "".PadLeft(100, "-"c) & ControlChars.NewLine, True)
+            Next
 
-                My.Computer.FileSystem.WriteAllText(path,
-                                                    "".PadLeft(85, "-") & ControlChars.NewLine, True)
-            Next item
+            MessageBox.Show("Reconciliation complete." & Environment.NewLine &
+                            "The form will now close and return to the main form.",
+                            frm_Main.TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            'advises it is going to return to main form.
-            MessageBox.Show("Reconcilliation Complete." & ControlChars.NewLine &
-                            "The form will now close and return to the main form",
-                            "Comptime Calculator",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            'if successful returns to main form
             Me.Close()
             frm_Main.Show()
 
-        Else
-            MessageBox.Show("Make sure you have a previous year to reconcile", _
-                            "Important", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-            Me.btnClearPrev.Focus()
-
-        End If
+        Catch ex As Exception
+            MessageBox.Show("Error during reconciliation:" & Environment.NewLine & ex.Message,
+                            frm_Main.TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
     End Sub
+
+    Private Sub WriteReconciledHeader(filepath As String, year As Integer)
+
+        My.Computer.FileSystem.WriteAllText(filepath,
+           "Orange County Juvenile Probation Dept." & ControlChars.NewLine &
+           "---------------------------------------" & ControlChars.NewLine &
+           "Personal Comptime Account for: " & frm_Main.userName & ControlChars.NewLine &
+           ControlChars.NewLine &
+           frm_Main._heading & ControlChars.NewLine &
+           frm_Main._columnDivider & ControlChars.NewLine, True)
+
+    End Sub
+
+    Private Sub WriteMainFileHeader(filePath As String)
+        My.Computer.FileSystem.WriteAllText(filePath,
+            "Orange County Juvenile Probation Dept." & ControlChars.NewLine &
+            "---------------------------------------" & ControlChars.NewLine &
+            "Personal Comptime Account for: " & frm_Main.userName & ControlChars.NewLine &
+            ControlChars.NewLine &
+            frm_Main._heading & ControlChars.NewLine &
+            frm_Main._columnDivider & ControlChars.NewLine, True)
+    End Sub
+
+    Private Function ReadAllTransactionLines(filepath As String) As List(Of String)
+
+        Dim results As New List(Of String)
+        Dim fileText As String = My.Computer.FileSystem.ReadAllText(filepath)
+        Dim entryIndex As Integer = 0
+        Dim newLineIndex As Integer = fileText.IndexOf(ControlChars.NewLine, entryIndex)
+
+        Do Until newLineIndex = -1
+            Dim line As String = fileText.Substring(entryIndex, newLineIndex - entryIndex)
+            If line.Contains("/") Then
+                results.Add(line)
+            End If
+            entryIndex = newLineIndex + 2
+            newLineIndex = fileText.IndexOf(ControlChars.NewLine, entryIndex)
+        Loop
+
+        Return results
+
+    End Function
+
+    Private Function GetEntriesForYear(Filepath As String, year As Integer) As List(Of String)
+
+        Dim results As New List(Of String)
+        Dim yearString As String = year.ToString()
+        Dim fileText As String = My.Computer.FileSystem.ReadAllText(Filepath)
+        Dim entryIndex As Integer = 0
+        Dim newLineIndex As Integer = fileText.IndexOf(ControlChars.NewLine, entryIndex)
+
+        Do Until newLineIndex = -1
+            Dim line As String = fileText.Substring(entryIndex, newLineIndex - entryIndex)
+            If line.Contains(yearString) Then
+                results.Add(line)
+            End If
+            entryIndex = newLineIndex + 2
+            newLineIndex = fileText.IndexOf(ControlChars.NewLine, entryIndex)
+        Loop
+
+        Return results
+
+    End Function
+
+    Private Function ArchivePath(year As Integer) As String
+        Return System.IO.Path.Combine(frm_Main.CDIRECTORY, year.ToString())
+    End Function
+
+    Private Function ReconciledFilePath(year As Integer) As String
+        Return System.IO.Path.Combine(ArchivePath(year),
+                                      "Comptimerun_Reconciled_" & year.ToString() & ".txt")
+    End Function
 
     Private Sub txtYear_Enter(sender As Object, e As EventArgs) Handles txtYear.Enter
 
@@ -318,6 +224,7 @@ Public Class frm_Reconcile
 
         Me.libxPreview.Items.Clear()
         Me.libxOrig.Items.Clear()
+        Me.btnReconcile.Enabled = False
 
     End Sub
 
