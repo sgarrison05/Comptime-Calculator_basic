@@ -1,7 +1,7 @@
 ﻿'Title                  Comptime Calculator
 'Purpose                To calculate comptime time earned or spent in a particular instance
 'Created By             Shon Garrison, December 2008 as part of Final for LSC-O VB Class
-'Updated Last           April 2026
+'Updated Last           May 2026
 
 'Update Notes:          Refactored based on a collaboration with Claude.ai
 
