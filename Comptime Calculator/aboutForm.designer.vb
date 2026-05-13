@@ -40,8 +40,8 @@ Partial Class frm_About
         Me.copywriteTextBox.Name = "copywriteTextBox"
         Me.copywriteTextBox.Size = New System.Drawing.Size(233, 66)
         Me.copywriteTextBox.TabIndex = 0
-        Me.copywriteTextBox.Text = "Comptime Calculator" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Version: 4.12" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Created By:  Shon Garrison 2009" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Last Updated" &
-    ": May 2026"
+        Me.copywriteTextBox.Text = "Comptime Calculator" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Version: 4.2.2" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Created By:  Shon Garrison 2009" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Last Update" &
+    "d: May 2026"
         '
         'deptidTextBox
         '
