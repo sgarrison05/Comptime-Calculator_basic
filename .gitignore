@@ -1,6 +1,10 @@
 # Build and Object Folders
 bin/
 obj/
+
+# specific subdirectories
+.github/
+.vs/
  
 #Backup Folders
 Backup/
